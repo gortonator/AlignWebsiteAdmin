@@ -10,7 +10,7 @@
     <name>alignAdmin</name>
 
     <build>
-        <finalName>alignAdmin</finalName>
+        <finalName>AlignWebsiteAdmin</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
