@@ -32,6 +32,13 @@ public class StudentsDaoTest {
     coursesDao = new CoursesDao(true);
     priorEducationsDao = new PriorEducationsDao(true);
     privaciesDao = new PrivaciesDao(true);
+
+//    studentdao = new StudentsDao();
+//    workExperiencesDao = new WorkExperiencesDao();
+//    electivesDao = new ElectivesDao();
+//    coursesDao = new CoursesDao();
+//    priorEducationsDao = new PriorEducationsDao();
+//    privaciesDao = new PrivaciesDao();
   }
 
   @Before

@@ -37,6 +37,7 @@ public class WorkExperiencesDaoTest {
 
 //    workExperiencesDao = new WorkExperiencesDao();
 //    studentsDao = new StudentsDao();
+//    privaciesDao = new PrivaciesDao();
   }
 
   @Before

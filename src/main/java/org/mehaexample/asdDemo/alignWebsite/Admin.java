@@ -11,8 +11,10 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -25,7 +27,10 @@ import org.jose4j.jwe.JsonWebEncryption;
 import org.jose4j.jwe.KeyManagementAlgorithmIdentifiers;
 import org.jose4j.keys.AesKey;
 import org.json.JSONObject;
+import org.json.JSONArray;
 import org.mehaexample.asdDemo.dao.alignadmin.AdminLoginsDao;
+import org.mehaexample.asdDemo.dao.alignadmin.AdministratorNotesDao;
+import org.mehaexample.asdDemo.dao.alignadmin.AdministratorsDao;
 import org.mehaexample.asdDemo.dao.alignadmin.ElectivesAdminDao;
 import org.mehaexample.asdDemo.dao.alignadmin.GenderRatioDao;
 import org.mehaexample.asdDemo.dao.alignprivate.ElectivesDao;
@@ -35,6 +40,8 @@ import org.mehaexample.asdDemo.dao.alignprivate.StudentsDao;
 import org.mehaexample.asdDemo.dao.alignprivate.WorkExperiencesDao;
 import org.mehaexample.asdDemo.enums.Campus;
 import org.mehaexample.asdDemo.model.alignadmin.AdminLogins;
+import org.mehaexample.asdDemo.model.alignadmin.AdministratorNotes;
+import org.mehaexample.asdDemo.model.alignadmin.Administrators;
 import org.mehaexample.asdDemo.model.alignadmin.ElectivesAdmin;
 import org.mehaexample.asdDemo.model.alignadmin.GenderRatio;
 import org.mehaexample.asdDemo.model.alignadmin.LoginObject;
@@ -69,6 +76,8 @@ public class Admin{
 	ElectivesDao electivesDao = new ElectivesDao();
 	AdminLoginsDao adminLoginsDao = new AdminLoginsDao();
 	ExtraExperiencesDao extraExperiencesDao = new ExtraExperiencesDao();
+	AdministratorsDao administratorsDao = new AdministratorsDao();
+	AdministratorNotesDao administratorNotesDao = new AdministratorNotesDao();
 	StudentLogins studentLogins = new StudentLogins();
 
 	/**
@@ -77,7 +86,7 @@ public class Admin{
 	 *	
 	 *	http://localhost:8080/webapi/students
 	 * @param firstname
-	 * @return the list of student profiles matching the search fields.
+	 * @return the list of student profiles matching the search fields. 200 OK else 500
 	 */
 	@POST
 	@Path("students")
@@ -86,6 +95,9 @@ public class Admin{
 	public Response searchStudent(ParamsObject input){
 		Map<String,List<String>> map = new HashMap<String,List<String>>();
 		ArrayList<Students> studentRecords = new ArrayList<Students>();
+		JSONArray resultArray = new JSONArray();
+		JSONObject finalResult = new JSONObject();
+		int total = -1;
 		int begin = 1;
 		int end = 20;
 	try{
@@ -162,12 +174,29 @@ public class Admin{
 			end = Integer.valueOf(input.getEndindex());
 		}
 		studentRecords = (ArrayList<Students>) studentDao.getAdminFilteredStudents(map, begin, end);
+		total = studentDao.getAdminFilteredStudentsCount(map);
+		
+		for(Students st : studentRecords) {
+			JSONObject studentJson = new JSONObject();
+			JSONObject eachStudentJson = new JSONObject(st);
+			java.util.Set<String> keys = eachStudentJson.keySet();
+			for(int i=0;i<keys.toArray().length; i++){
+				studentJson.put(((String) keys.toArray()[i]).toLowerCase(), eachStudentJson.get((String) keys.toArray()[i]));
+			}
+			studentJson.put("notes",administratorNotesDao.getAdministratorNoteRecordByNeuId(studentJson.get("neuid").toString()));
+			resultArray.put(studentJson);
+		}
+		finalResult.put("students", resultArray);
+		finalResult.put("beginindex", begin);
+		finalResult.put("endindex", end);
+		finalResult.put("totalcount", total);
+		
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("please check the request.").build();
 		}
-		return Response.status(Response.Status.OK).entity(studentRecords).build();
+		return Response.status(Response.Status.OK).entity(finalResult.toString()).build();
 	}
 
 	/**
@@ -176,7 +205,7 @@ public class Admin{
 	 *	
 	 *	http://localhost:8080/webapi/students/090
 	 * @param nuid
-	 * @return the student details matching the nuid.
+	 * @return the student details matching the nuid. 200 OK else 404
 	 */
 	@GET
 	@Path("students/{nuid}")
@@ -193,17 +222,18 @@ public class Admin{
 			jsonObj.put("courses", electives);
 			List<ExtraExperiences> coop = extraExperiencesDao.getExtraExperiencesByNeuId(nuid);
 			jsonObj.put("coopexperience", coop);
+			jsonObj.put("notes",administratorNotesDao.getAdministratorNoteRecordByNeuId(nuid));
 			return Response.status(Response.Status.OK).entity(jsonObj.toString()).build();
 		}
 	}
 
 	/**
-	 * Request 2
+	 * Request 3
 	 * This is the function to get the gender ratio counts per year.
 	 *	
 	 *	http://localhost:8080/webapi/analytics/gender-ratio
 	 * @param 
-	 * @return the gender ratio is returned as a list of years with counts
+	 * @return the gender ratio is returned as a list of years with counts 200 OK else 400
 	 * @throws SQLException 
 	 */
 	@POST
@@ -216,10 +246,10 @@ public class Admin{
 			try{
 				ratio = genderRatioDao.getYearlyGenderRatio(Campus.valueOf(input.getCampus().toUpperCase()));
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist").build();
 			}
 		} else {
-			return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus field cannot be null").build();
+			return Response.status(Response.Status.BAD_REQUEST).entity("campus field cannot be null").build();
 		}
 		return Response.status(Response.Status.OK).entity(ratio).build();
 	}
@@ -231,7 +261,7 @@ public class Admin{
 	 *	
 	 *	http://localhost:8080/webapi/analytics/top-bachelor-degrees
 	 * @param 
-	 * @return the list of top 10 bachelor degrees and number of students
+	 * @return the list of top 10 bachelor degrees and number of students 200 OK else 400
 	 * @throws SQLException 
 	 * 
 	 */
@@ -245,19 +275,19 @@ public class Admin{
 			try{
 				degrees = priorEducationsDao.getTopTenBachelors(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist or year should be integer.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist or year should be integer.").build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
 				degrees = priorEducationsDao.getTopTenBachelors(Campus.valueOf(input.getCampus().toUpperCase()),null);
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist.").build();
 			}
 		} else if (input.getCampus()==null && input.getYear()!=null){
 			try{
 				degrees = priorEducationsDao.getTopTenBachelors(null,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist or year should be integer.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist or year should be integer.").build();
 			}
 		} else if (input.getCampus()==null && input.getYear()==null){
 			degrees = priorEducationsDao.getTopTenBachelors(null,null);
@@ -271,7 +301,7 @@ public class Admin{
 	 *	
 	 *	http://localhost:8080/webapi/analytics/top-employers
 	 * @param 
-	 * @return the list of top 10 employers and number of students
+	 * @return the list of top 10 employers and number of students 200 OK else 400
 	 * @throws SQLException 
 	 * 
 	 */
@@ -285,19 +315,19 @@ public class Admin{
 			try{
 				employers = workExperiencesDao.getTopTenEmployers(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist or year should be integer.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist or year should be integer.").build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
 				employers = workExperiencesDao.getTopTenEmployers(Campus.valueOf(input.getCampus().toUpperCase()),null);
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist.").build();
 			}
 		}else if (input.getCampus()==null && input.getYear()!=null){
 			try{
 				employers = workExperiencesDao.getTopTenEmployers(null,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist.").build();
 			}
 		} else if (input.getCampus()==null && input.getYear()==null){
 			employers = workExperiencesDao.getTopTenEmployers(null,null);
@@ -311,7 +341,7 @@ public class Admin{
 	 *	
 	 *	http://localhost:8080/webapi/aanalytics/top-electives
 	 * @param 
-	 * @return the list of top 10 electives and number of students
+	 * @return the list of top 10 electives and number of students 200 OK else 400
 	 * @throws SQLException 
 	 * 
 	 */
@@ -325,19 +355,19 @@ public class Admin{
 			try{
 				electives = electivesDao.getTopTenElectives(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist or year should be integer.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist or year should be integer.").build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
 				electives = electivesDao.getTopTenElectives(Campus.valueOf(input.getCampus().toUpperCase()),null);
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist.").build();
 			}
 		} else if (input.getCampus()==null && input.getYear()!=null){
 			try{
 				electives = electivesDao.getTopTenElectives(null,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("year should be integer.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("year should be integer.").build();
 			}
 		} else if (input.getCampus()==null && input.getYear()==null){
 			electives = electivesDao.getTopTenElectives(null,null);
@@ -351,7 +381,7 @@ public class Admin{
 	 *	
 	 *	http://localhost:8080/webapi/analytics/coop-students
 	 * @param 
-	 * @return the list student details , companies they worked for as coop
+	 * @return the list student details , companies they worked for as coop 200 OK else 400
 	 * @throws SQLException 
 	 * 
 	 */
@@ -365,16 +395,16 @@ public class Admin{
 			try{
 				coopStudentsList = workExperiencesDao.getStudentCoopCompanies(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist or year should be integer.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist or year should be integer.").build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
 				coopStudentsList = workExperiencesDao.getStudentCoopCompanies(Campus.valueOf(input.getCampus().toUpperCase()),null);
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist.").build();
 			}
 		} else if (input.getCampus()==null){
-			return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Campus cannot be null.").build();
+			return Response.status(Response.Status.BAD_REQUEST).entity("Campus cannot be null.").build();
 		}
 		return Response.status(Response.Status.OK).entity(coopStudentsList).build();
 	}
@@ -385,7 +415,7 @@ public class Admin{
 	 * 
 	 * http://localhost:8080/webapi/analytics/company
 	 * @param params
-	 * @return the list student details working for a company
+	 * @return the list student details working for a company 200 OK else 400
 	 */
 	@POST
 	@Path("/analytics/company")
@@ -395,16 +425,16 @@ public class Admin{
 			try{
 				studentsList = workExperiencesDao.getStudentsWorkingInACompany(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()),input.getCompany());
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist or year should be integer.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist or year should be integer.").build();
 			}
 		} else if (input.getCampus()!=null && input.getCompany()!=null && input.getYear()==null){
 			try{
 				studentsList = workExperiencesDao.getStudentsWorkingInACompany(Campus.valueOf(input.getCampus().toUpperCase()),null,input.getCompany());
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist.").build();
 			}
 		} else if (input.getCampus()==null || input.getCompany()==null){
-			return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Campus and Company cannot be null.").build();
+			return Response.status(Response.Status.BAD_REQUEST).entity("Campus and Company cannot be null.").build();
 		}
 
 		return Response.status(Response.Status.OK).
@@ -417,7 +447,7 @@ public class Admin{
 	 * 
 	 * http://localhost:8080/webapi/analytics/working
 	 * @param params
-	 * @return the list student details and company they are working for.
+	 * @return the list student details and company they are working for. 200 OK else 400
 	 */
 	@POST
 	@Path("/analytics/working")
@@ -428,17 +458,17 @@ public class Admin{
 				studentsList = workExperiencesDao.
 						getStudentCurrentCompanies(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist or year should be integer.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist or year should be integer.").build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
 				studentsList = workExperiencesDao.
 						getStudentCurrentCompanies(Campus.valueOf(input.getCampus().toUpperCase()),null);
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist.").build();
 			}
 		} else if (input.getCampus()==null){
-			return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Campus cannot be null.").build();
+			return Response.status(Response.Status.BAD_REQUEST).entity("Campus cannot be null.").build();
 		}
 		return Response.status(Response.Status.OK).
 				entity(studentsList).build();  
@@ -450,7 +480,7 @@ public class Admin{
 	 * 
 	 * http://localhost:8080/webapi/analytics/undergrad-institutions
 	 * @param params
-	 * @return the list of undergrad institution and count
+	 * @return the list of undergrad institution and count 200 OK else 400
 	 */
 	@POST
 	@Path("/analytics/undergrad-institutions")
@@ -461,28 +491,105 @@ public class Admin{
 				instList = priorEducationsDao.
 						getListOfBachelorInstitutions(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist or year should be integer.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist or year should be integer.").build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
 				instList = priorEducationsDao.
 						getListOfBachelorInstitutions(Campus.valueOf(input.getCampus().toUpperCase()),null);
 			} catch(Exception e){
-				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("campus doesn't exist.").build();
+				return Response.status(Response.Status.BAD_REQUEST).entity("campus doesn't exist.").build();
 			}
 		} else if (input.getCampus()==null){
-			return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Campus cannot be null.").build();
+			return Response.status(Response.Status.BAD_REQUEST).entity("Campus cannot be null.").build();
 		}
 		return Response.status(Response.Status.OK).
 				entity(instList).build();  
 	}
 	
 	/**
+	 * Request 11
+	 * This is a function to update an existing student notes
+	 * 
+	 * http://localhost:8080/webapi/notes/{noteid}
+	 * @param AdministratorNotes
+	 * @return 200 if notes updated successfully else return 404, 500
+	 */
+	@PUT
+	@Path("/notes/{noteid}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response updateNote(AdministratorNotes input,@PathParam("noteid") String noteid){
+		try{
+			if(administratorNotesDao.updateAdministratorNote(input)){
+				return Response.status(Response.Status.OK).
+						entity("note updated successfully").build();
+			}
+			} catch (Exception e){
+				return Response.status(Response.Status.NOT_FOUND).entity("Please check the note id").build();
+			}
+		return Response.status(Response.Status.INTERNAL_SERVER_ERROR).
+				entity("note updation failed").build();
+	}
+	
+	/**
 	 * Request 12
+	 * This is a function to create a student notes
+	 * 
+	 * http://localhost:8080/webapi/{adminneuid}/notes
+	 * @param AdministratorNotes
+	 * @return 200 if notes created successfully else return 400, 404
+	 */
+	@POST
+	@Path("/{adminneuid}/notes")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response createNote(AdministratorNotes input,@PathParam("adminneuid") String adminneuid){
+		try{
+			Administrators admin = administratorsDao.getAdministratorRecord(adminneuid);
+			if(admin == null){
+				return Response.status(Response.Status.NOT_FOUND).
+						entity("Please check the administrator NEUID").build();
+			}
+			AdministratorNotes note = administratorNotesDao.addAdministratorNoteRecord(input);
+			return Response.status(Response.Status.OK).
+						entity("note created").build();
+			} catch (Exception e){
+				return Response.status(Response.Status.BAD_REQUEST).entity("Please check the request").build();
+			}
+	}
+	
+	/**
+	 * Request 13
+	 * This is a function to DELETE a student notes
+	 * 
+	 * http://localhost:8080/webapi/notes/{adminnoteid}
+	 * @param 
+	 * @return 200 if notes deleted successfully else return 400, 406
+	 */
+	@DELETE
+	@Path("/notes/{adminnoteid}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response deleteNote(@PathParam("adminnoteid") String adminnoteid){
+		try{
+			if(administratorNotesDao.deleteAdministratorNoteRecord(Integer.valueOf(adminnoteid))){
+				return Response.status(Response.Status.OK).
+						entity("note deleted successfully").build();
+			}
+			} catch (Exception e){
+				return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Please check the request").build();
+			}
+		return Response.status(Response.Status.BAD_REQUEST).entity("Please check the request").build();
+	}
+	
+	
+	/**
+	 * Request 14
 	 * This function creates the password for admin when they reset their password
 	 * 
 	 * @param passwordCreateObject
-	 * @return 200 if password changed successfully else return 404
+	 * @return 200 if password changed successfully else return 400,500
 	 */
 	@POST
 	@Path("/password-create")
@@ -537,12 +644,12 @@ public class Admin{
 	}
 	
 	/**
-	 * Request 13
+	 * Request 15
 	 * This is a function to login using admin email and password
 	 * 
 	 * http://localhost:8080/webapi/login
 	 * @param passwordChangeObject
-	 * @return the token if logged in successfully
+	 * @return the token if logged in successfully 200 OK else 404,401,400,500
 	 */
 	@POST
 	@Path("/login")
@@ -587,7 +694,8 @@ public class Admin{
 				senderJwe.setKey(keyMain);
 				String compactSerialization = senderJwe.getCompactSerialization();
 				jsonObj.put("token", compactSerialization);
-				jsonObj.put("id", "nuidOfAdmin");
+				Administrators admin = administratorsDao.findAdministratorByEmail(loginInput.getUsername());
+				jsonObj.put("id", admin.getAdministratorNeuId());
 				
 				return Response.status(Response.Status.OK).
 						entity(jsonObj.toString()).build();
@@ -603,12 +711,12 @@ public class Admin{
 	}
 	
 	/**
-	 * Request 14
+	 * Request 16
 	 * This is a function to logout
 	 * 
 	 * http://localhost:8080/webapi/logout
 	 * @param 
-	 * @return 200 OK
+	 * @return 200 OK else 404,500
 	 */
 	@POST
 	@Path("/logout")
@@ -634,12 +742,12 @@ public class Admin{
 	}
 
 	/**
-	 * Request 15
+	 * Request 17
 	 * This is a function to change an existing admin's password
 	 * 
 	 * http://localhost:8080/webapi/password-change
 	 * @param passwordChangeObject
-	 * @return 200 if password changed successfully else return 404
+	 * @return 200 if password changed successfully else return 404,400,401
 	 */
 	@POST
 	@Path("/password-change")
@@ -682,11 +790,11 @@ public class Admin{
 
 
 	/**
-	 * Request 16
+	 * Request 18
 	 * This function sends email to admin’s northeastern ID to reset the password.
 	 * 
 	 * @param adminEmail
-	 * @return 200 if password reset successfully else return 404
+	 * @return 200 if password reset successfully else return 404,400,500
 	 */
 	@POST
 	@Path("/password-reset")
@@ -698,7 +806,6 @@ public class Admin{
 				return Response.status(Response.Status.BAD_REQUEST).
 					entity("Email Id can't be null").build();
 		}else{
-			// Check if the admin is registered already
 			AdminLogins adminLogins = adminLoginsDao.findAdminLoginsByEmail(adminEmail);
 			if(adminLogins == null){
 				return Response.status(Response.Status.NOT_FOUND).
@@ -708,9 +815,7 @@ public class Admin{
 				return Response.status(Response.Status.NOT_FOUND).
 						entity("Password can't be reset....Please create password and register: " + adminEmail).build();
 			}
-			// generate registration key 
 			String registrationKey = createRegistrationKey(); 
-			// Create TimeStamp for Key Expiration for 15 min
 			Timestamp keyExpirationTime = new Timestamp(System.currentTimeMillis()+ 15*60*1000);
 			AdminLogins adminLoginsNew = new AdminLogins();
 			adminLoginsNew.setEmail(adminEmail);
@@ -721,23 +826,18 @@ public class Admin{
 			adminLoginsNew.setConfirmed(true);
 
 			boolean adminLoginUpdated = adminLoginsDao.updateAdminLogin(adminLoginsNew);
-
 			if(adminLoginUpdated) {
-
 				// after generation, send email
 				MailClient.sendPasswordResetEmail(adminEmail, registrationKey);
-
 				return Response.status(Response.Status.OK).
 						entity("Password Reset link sent succesfully!" ).build(); 
 			}
-
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).
 					entity("Something Went Wrong" + adminEmail).build();
 		}
 	}
 
 	private String createRegistrationKey() {
-
 		return UUID.randomUUID().toString();
 	}	
 }

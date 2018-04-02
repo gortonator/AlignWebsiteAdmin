@@ -37,6 +37,7 @@ public class ElectiveDaoTest {
 //    electivesDao = new ElectivesDao();
 //    studentsDao = new StudentsDao();
 //    coursesDao = new CoursesDao();
+//    privaciesDao = new PrivaciesDao();
   }
 
   @Test

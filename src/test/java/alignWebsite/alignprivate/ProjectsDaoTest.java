@@ -32,6 +32,7 @@ public class ProjectsDaoTest {
 
 //    studentsDao = new StudentsDao();
 //    projectsDao = new ProjectsDao();
+//    privaciesDao = new PrivaciesDao();
   }
 
   @Before

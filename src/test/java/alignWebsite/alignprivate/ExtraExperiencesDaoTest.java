@@ -27,8 +27,9 @@ public class ExtraExperiencesDaoTest {
     studentsDao = new StudentsDao(true);
     privaciesDao = new PrivaciesDao(true);
 
-//        extraExperiencesDao = new ExtraExperiencesDao();
-//        studentsDao = new StudentsDao();
+//    extraExperiencesDao = new ExtraExperiencesDao();
+//    studentsDao = new StudentsDao();
+//    privaciesDao = new PrivaciesDao();
   }
 
   @Before
