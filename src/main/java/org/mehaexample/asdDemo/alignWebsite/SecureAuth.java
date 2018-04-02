@@ -11,7 +11,6 @@ import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 
@@ -45,7 +44,11 @@ public class SecureAuth implements ContainerRequestFilter{
 	   !requestContext.getUriInfo().getPath().contains(REGISTER_URL) &&
 	   !requestContext.getUriInfo().getPath().contains(CREATE_URL) && 
 	   !requestContext.getUriInfo().getPath().contains(RESET_URL)){
-	try {	
+	try {
+		String method = requestContext.getMethod();
+		if (method.equals("OPTIONS")){
+			return;
+		}		
 		List<String> authHeader =  requestContext.getHeaders().get(AUTHOIRIZATION_HEADER);
 		if(authHeader.size() > 0){
 			try {
@@ -106,13 +109,5 @@ public class SecureAuth implements ContainerRequestFilter{
 		} else {
 			return;
 		}
-	}
-
-	public void filter(ContainerRequestContext requestContext,  ContainerResponseContext responseContext)
-			throws IOException {
-		MultivaluedMap<String, Object> headers = responseContext.getHeaders();
-
-		headers.add("Access-Control-Allow-Origin", "*");
-		headers.add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");	
 	}
 }
