@@ -429,6 +429,8 @@ public class Admin{
 	 */
 	@POST
 	@Path("/analytics/company")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response getStudentsWorkingForACompany(ParamsObject input){
 		List<StudentBasicInfo> studentsList = new ArrayList<StudentBasicInfo>();
 		if (input.getCampus()!=null && input.getCompany()!=null && input.getYear()!=null){
@@ -460,6 +462,8 @@ public class Admin{
 	 */
 	@POST
 	@Path("/analytics/working")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response getStudentWorkingFullTime(ParamsObject input){
 		List<StudentCoopList> studentsList = new ArrayList<StudentCoopList>();
 		if (input.getCampus()!=null && input.getYear()!=null){
@@ -493,6 +497,8 @@ public class Admin{
 	 */
 	@POST
 	@Path("/analytics/undergrad-institutions")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response getStudentundergradInstitutuins(ParamsObject input){
 		List<StudentBachelorInstitution> instList = new ArrayList<StudentBachelorInstitution>();
 		if (input.getCampus()!=null && input.getYear()!=null){
