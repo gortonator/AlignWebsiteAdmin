@@ -9,7 +9,6 @@ import java.util.StringTokenizer;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
-import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
@@ -48,11 +47,10 @@ public class SecureAuth implements ContainerRequestFilter{
 		String method = requestContext.getMethod();
 		if (method.equals("OPTIONS")){
 			return;
-		}		
+		}
 		List<String> authHeader =  requestContext.getHeaders().get(AUTHOIRIZATION_HEADER);
 		if(authHeader.size() > 0){
-			try {
-			String authToken = authHeader.get(0);			
+			String authToken = authHeader.get(0);
 			String ip = sr.getRemoteAddr();
 			String secretKey = ip+"sEcR3t_nsA-K3y";
 			byte[] key = secretKey.getBytes();
@@ -77,25 +75,27 @@ public class SecureAuth implements ContainerRequestFilter{
 			if(adminLogins == null){
 				requestContext.abortWith(Response.status(Response.Status.NOT_ACCEPTABLE).
 						entity("Token not valid. Please login again.").build());
-			}
-			String loginTime = adminLogins.getLoginTime().toString();
-			String expireTime = adminLogins.getKeyExpiration().toString();
-			Timestamp now = new Timestamp(System.currentTimeMillis());
-			Timestamp valid = Timestamp.valueOf(now.toString());
-			Timestamp expire = Timestamp.valueOf(expireTime);
-			String timeLogin = loginTime.substring(0,loginTime.length()-4);
-			if(ip.equals(ipAddress) && timeLogin.equals(tokenCheck) && valid.before(expire)) {
-				Timestamp keyExpiration = new Timestamp(System.currentTimeMillis()+15*60*1000);
-				adminLogins.setKeyExpiration(keyExpiration);
-				adminLoginsDao.updateAdminLogin(adminLogins);
-				return;
-			} else {
-				requestContext.abortWith(Response.status(Response.Status.NOT_ACCEPTABLE).
-						entity("Token expired. Please login again.").build());
-			}
-			} catch (Exception e) {
-				requestContext.abortWith(Response.status(Response.Status.NOT_ACCEPTABLE).
-						entity("Token Tampered. Please login again.").build());
+			}else {
+				String loginTime = "";
+				String expireTime = "";
+				if (adminLogins.getLoginTime() != null && adminLogins.getKeyExpiration()!= null){
+					loginTime = adminLogins.getLoginTime().toString();
+					expireTime = adminLogins.getKeyExpiration().toString();
+				}
+				Timestamp now = new Timestamp(System.currentTimeMillis());
+				Timestamp valid = Timestamp.valueOf(now.toString());
+				Timestamp expire = Timestamp.valueOf(expireTime);
+				String timeLogin = loginTime.substring(0,loginTime.length()-4);
+				
+				if(ip.equals(ipAddress) && timeLogin.equals(tokenCheck) && valid.before(expire)) {
+					Timestamp keyExpiration = new Timestamp(System.currentTimeMillis()+15*60*1000);
+					adminLogins.setKeyExpiration(keyExpiration);
+					adminLoginsDao.updateAdminLogin(adminLogins);
+					return;
+				} else {
+					requestContext.abortWith(Response.status(Response.Status.NOT_ACCEPTABLE).
+							entity("Token expired. Please login again.").build());
+				}
 			}
 		} else {
 			requestContext.abortWith(Response.status(Response.Status.NOT_ACCEPTABLE).
