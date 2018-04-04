@@ -2,234 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6367ed3-ec7e-49c9-b070-88b4d2835f63" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/alignWebsite/CorsFilter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/jacoco.exec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/AdminTest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/alignAdmin_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/alignAdmin_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_2_0_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_lambdaworks_scrypt_1_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_enterprise_cdi_api_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_interceptor_javax_interceptor_api_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_json_bind_javax_json_bind_api_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_json_javax_json_api_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_8_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_36.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_3_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_platform_3_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_maven_dependency_tree_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bitbucket_b_c_jose4j_0_6_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_component_annotations_1_5_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_utils_3_0_22.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_aether_aether_util_0_9_0_M2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_yasson_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_5_0_b42.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_javax_inject_2_5_0_b42.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_api_2_5_0_b42.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_locator_2_5_0_b42.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_utils_2_5_0_b42.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_javax_json_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_containers_jersey_container_servlet_core_2_26.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_client_2_26.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_26.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_server_2_26.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_inject_jersey_hk2_2_26.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_jaxb_2_26.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_json_binding_2_26.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_11_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_4_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20180130.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mariadb_jdbc_mariadb_java_client_1_1_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_21.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_sonarsource_scanner_api_sonar_scanner_api_2_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_sonarsource_scanner_maven_sonar_maven_plugin_3_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_sonatype_plexus_plexus_cipher_1_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_sonatype_plexus_plexus_sec_dispatcher_1_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/alignAdmin.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdminLoginsDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdminTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdministratorNotesDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdministratorsDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.ElectivesAdminDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.GenderRatioDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.CoursesDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.ElectiveDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.ExtraExperiencesDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.PriorEducationsDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.PrivaciesDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.ProjectsDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.StudentLoginsDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.StudentsDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.WorkExperiencesDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.SingleValueAggregatedDataDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.StudentsPublicDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.UndergraduatesPublicDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.WorkExperiencesPublicDaoTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdminLoginsDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdminTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdministratorNotesDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdministratorsDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.ElectivesAdminDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.GenderRatioDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.CoursesDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.ElectiveDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.ExtraExperiencesDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.PriorEducationsDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.PrivaciesDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.ProjectsDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.StudentLoginsDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.StudentsDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.WorkExperiencesDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.SingleValueAggregatedDataDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.StudentsPublicDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.UndergraduatesPublicDaoTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.WorkExperiencesPublicDaoTest.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/alignWebsite/PublicFacing.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/alignWebsite/StudentFacing.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/org.mehaexample.asdDemo/alignWebsite/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/org.mehaexample.asdDemo/alignWebsite/pom.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/Constants.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/alignWebsite/Admin.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/alignWebsite/Admin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/alignWebsite/SecureAuth.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/alignWebsite/SecureAuth.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdminLoginsDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdminLoginsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdminSessionFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdminSessionFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdminTestSessionFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdminTestSessionFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdministratorNotesDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdministratorNotesDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdministratorsDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdministratorsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/ElectivesAdminDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/ElectivesAdminDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/GenderRatioDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/GenderRatioDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/CoursesDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/CoursesDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/ElectivesDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/ElectivesDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/ExtraExperiencesDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/ExtraExperiencesDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/PriorEducationsDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/PriorEducationsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/PrivaciesDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/PrivaciesDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/ProjectsDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/ProjectsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentLoginsDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentLoginsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentSessionFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentSessionFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentTestSessionFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentTestSessionFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/WorkExperiencesDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/WorkExperiencesDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/MultipleValueAggregatedDataDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/MultipleValueAggregatedDataDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/PublicSessionFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/PublicSessionFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/PublicTestSessionFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/PublicTestSessionFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/SingleValueAggregatedDataDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/SingleValueAggregatedDataDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/StudentsPublicDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/StudentsPublicDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/UndergraduatesPublicDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/UndergraduatesPublicDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/WorkExperiencesPublicDao.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/WorkExperiencesPublicDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/Campus.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/Campus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/DegreeCandidacy.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/DegreeCandidacy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/EnrollmentStatus.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/EnrollmentStatus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/Gender.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/Gender.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/Term.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/Term.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/TermType.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/TermType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/AdminLogins.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/AdminLogins.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/AdministratorNotes.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/AdministratorNotes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/Administrators.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/Administrators.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/ElectivesAdmin.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/ElectivesAdmin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/GenderRatio.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/GenderRatio.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/LoginObject.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/LoginObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/ParamsObject.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/ParamsObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/StudentBachelorInstitution.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/StudentBachelorInstitution.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/TopBachelor.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/TopBachelor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/TopElective.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/TopElective.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/TopEmployer.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/TopEmployer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Courses.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Courses.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Electives.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Electives.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/ExtraExperiences.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/ExtraExperiences.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/PriorEducations.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/PriorEducations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Privacies.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Privacies.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Projects.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Projects.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/StudentBasicInfo.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/StudentBasicInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/StudentCoopList.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/StudentCoopList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/StudentLogins.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/StudentLogins.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Students.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Students.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/WorkExperiences.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/WorkExperiences.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/DataCount.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/DataCount.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/MultipleValueAggregatedData.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/MultipleValueAggregatedData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/SingleValueAggregatedData.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/SingleValueAggregatedData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/StudentsPublic.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/StudentsPublic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopCoops.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopCoops.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopGradYears.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopGradYears.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopUndergradDegrees.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopUndergradDegrees.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopUndergradSchools.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopUndergradSchools.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/UndergraduatesPublic.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/UndergraduatesPublic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/WorkExperiencesPublic.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/WorkExperiencesPublic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/EmailToRegister.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/EmailToRegister.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/PasswordChangeObject.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/PasswordChangeObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/PasswordCreateObject.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/PasswordCreateObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/PasswordResetObject.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/PasswordResetObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/StudentSerachCriteria.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/StudentSerachCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/StudentsInCompany.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/StudentsInCompany.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/StudentsWorkingFullTime.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/StudentsWorkingFullTime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopCoopsNumber.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopCoopsNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopGraduationYearsNumber.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopGraduationYearsNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopUnderGradDegreesNumber.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopUnderGradDegreesNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopUnderGradSchools.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopUnderGradSchools.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/MailClient$1.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/MailClient$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/MailClient$2.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/MailClient$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/MailClient.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/MailClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/StringUtils.class" afterPath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/StringUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/AdminLoginsDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/AdminLoginsDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/AdministratorNotesDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/AdministratorNotesDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/AdministratorsDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/AdministratorsDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/ElectivesAdminDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/ElectivesAdminDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/GenderRatioDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/GenderRatioDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/CoursesDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/CoursesDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/ElectiveDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/ElectiveDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/ExtraExperiencesDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/ExtraExperiencesDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/PriorEducationsDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/PriorEducationsDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/PrivaciesDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/PrivaciesDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/ProjectsDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/ProjectsDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/StudentLoginsDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/StudentLoginsDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/StudentsDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/StudentsDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/WorkExperiencesDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/WorkExperiencesDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignpublic/MultipleValueAggregatedDataDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignpublic/MultipleValueAggregatedDataDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignpublic/SingleValueAggregatedDataDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignpublic/SingleValueAggregatedDataDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignpublic/StudentsPublicDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignpublic/StudentsPublicDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignpublic/UndergraduatesPublicDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignpublic/UndergraduatesPublicDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignpublic/WorkExperiencesPublicDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignpublic/WorkExperiencesPublicDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/model/alignadmin/ElectivesAdmin.java" afterPath="$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/model/alignadmin/ElectivesAdmin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/ElectivesAdmin.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/ElectivesAdmin.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.Private.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.Private.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate_Admin.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate_Admin.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate_Public.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate_Public.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate_admin_test.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate_admin_test.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate_private_test.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate_private_test.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate_public_test.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate_public_test.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/alignWebsite/alignadmin/AdminTest.java" afterPath="$PROJECT_DIR$/src/test/java/alignWebsite/alignadmin/AdminTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/alignWebsite/alignadmin/ElectivesAdminDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/alignWebsite/alignadmin/ElectivesAdminDaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ElectivesAdmin.hbm.xml" afterPath="$PROJECT_DIR$/target/classes/ElectivesAdmin.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate_Admin.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate_Admin.cfg.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -240,38 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="hibernate_Public.cfg.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_Public.cfg.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="68" lean-forward="true" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hibernate_Admin.cfg.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_Admin.cfg.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="72" lean-forward="false" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hibernate.Private.cfg.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.Private.cfg.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="89" lean-forward="false" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -294,6 +37,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/hibernate_Admin.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate_Public.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.Private.cfg.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -325,9 +69,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -351,75 +92,15 @@
               <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="asdDemo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="asdDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="asdDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="restModels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="alignWebsite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="alignWebsite" type="462c0819:PsiDirectoryNode" />
-              <item name="alignadmin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -595,7 +276,8 @@
       <option name="presentableId" value="Default" />
       <updated>1522800100059</updated>
       <workItem from="1522800101339" duration="12000" />
-      <workItem from="1522800115447" duration="983000" />
+      <workItem from="1522800115447" duration="1176000" />
+      <workItem from="1522815622247" duration="320000" />
     </task>
     <servers />
   </component>
@@ -617,11 +299,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="995000" />
+    <option name="totallyTimeSpent" value="1508000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="811" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -635,16 +316,15 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -653,6 +333,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -668,11 +349,34 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_Public.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_Admin.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="72" lean-forward="false" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.Private.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="55" lean-forward="true" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/alignAdmin.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-733">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -688,7 +392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
           <caret line="93" column="3" lean-forward="false" selection-start-line="93" selection-start-column="3" selection-end-line="93" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,54 +417,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_admin_test.cfg.xml">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="61" lean-forward="true" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_private_test.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_public_test.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_Public.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="68" lean-forward="true" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="87" />
+        <state relative-caret-position="105">
+          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_Admin.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="295">
           <caret line="30" column="72" lean-forward="false" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_admin_test.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="15" column="61" lean-forward="true" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_Public.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_public_test.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_private_test.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.Private.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="89" lean-forward="false" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
+        <state relative-caret-position="433">
+          <caret line="39" column="55" lean-forward="false" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
           <folding />
         </state>
       </provider>
