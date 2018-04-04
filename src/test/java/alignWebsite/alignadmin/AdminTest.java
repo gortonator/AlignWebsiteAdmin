@@ -32,7 +32,7 @@ import org.mehaexample.asdDemo.model.alignadmin.ParamsObject;
 import org.mehaexample.asdDemo.model.alignadmin.TopBachelor;
 import org.mehaexample.asdDemo.model.alignadmin.TopEmployer;
 import org.mehaexample.asdDemo.model.alignprivate.StudentLogins;
-import org.mehaexample.asdDemo.restModels.StudentProfile;
+//import org.mehaexample.asdDemo.restModels.StudentProfile;
 import org.mehaexample.asdDemo.model.alignprivate.ExtraExperiences;
 import org.mehaexample.asdDemo.model.alignprivate.Privacies;
 import org.mehaexample.asdDemo.model.alignprivate.Projects;

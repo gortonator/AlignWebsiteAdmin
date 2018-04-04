@@ -13,7 +13,7 @@
         </property>
 
         <property name="hibernate.connection.url">
-            jdbc:mariadb://localhost:3307/AlignAdmin
+            jdbc:mariadb://localhost:3307/AlignAdmin?autoReconnect=true
         </property>
 
         <property name="hibernate.connection.username">
