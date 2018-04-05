@@ -147,9 +147,12 @@ public class Admin{
 		}
 		if (input.getNuundergrad()!=null){
 			ArrayList<String> nuundergrad = new ArrayList<String>();
+			ArrayList<String> degree = new ArrayList<String>();
 			if(Boolean.getBoolean(input.getNuundergrad())){
 				nuundergrad.add("Northeastern University");
+				degree.add("BACHELOR");
 				map.put("institutionName",nuundergrad);
+				map.put("degreeCandidacy",degree);
 			}
 		}
 		if (input.getCoop()!=null){
