@@ -371,7 +371,7 @@ public class Admin{
 		
 		for(int i=0; i<employers.size();i++){
 			JSONObject jsonObj = new JSONObject();
-			jsonObj.put("companyname", employers.get(i).getCompanyName());
+			jsonObj.put("name", employers.get(i).getCompanyName());
 			jsonObj.put("students", employers.get(i).getTotalStudents());
 			result.put(jsonObj);
 		}
@@ -468,6 +468,7 @@ public class Admin{
 		for(int i=0; i<coopStudentsList.size();i++){
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("nuid", coopStudentsList.get(i).getNeuId());
+			jsonObj.put("companies", coopStudentsList.get(i).getCompanies());
 			jsonObj.put("name", coopStudentsList.get(i).getFirstName()+" "+coopStudentsList.get(i).getLastName());
 			result.put(jsonObj);
 		}
@@ -552,7 +553,7 @@ public class Admin{
 		for(int i=0; i<studentsList.size();i++){
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("nuid", studentsList.get(i).getNeuId());
-			jsonObj.put("company", studentsList.get(i).getCompanies());
+			jsonObj.put("company", studentsList.get(i).getCompanies().get(0));
 			jsonObj.put("name", studentsList.get(i).getFirstName()+" "+studentsList.get(i).getLastName());
 			result.put(jsonObj);
 		}
