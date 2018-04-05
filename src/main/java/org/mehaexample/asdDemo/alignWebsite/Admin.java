@@ -147,8 +147,10 @@ public class Admin{
 		}
 		if (input.getNuundergrad()!=null){
 			ArrayList<String> nuundergrad = new ArrayList<String>();
-			nuundergrad.add(input.getUndergradmajor());
-			map.put("institutionName",nuundergrad);
+			if(Boolean.getBoolean(input.getUndergradmajor())){
+				nuundergrad.add("Northeastern University");
+				map.put("institutionName",nuundergrad);
+			}
 		}
 		if (input.getCoop()!=null){
 			ArrayList<String> coop = new ArrayList<String>();
@@ -157,7 +159,13 @@ public class Admin{
 		}
 		if (input.getGender()!=null){
 			ArrayList<String> gender = new ArrayList<String>();
-			gender.add(input.getGender());
+			if(input.getGender().equalsIgnoreCase("male")){
+				gender.add("M");
+			}else if(input.getGender().equalsIgnoreCase("female")){
+				gender.add("F");
+			}else {
+				gender.add(input.getGender());
+			}
 			map.put("gender",gender);
 		}
 		if (input.getRace()!=null){
