@@ -45,6 +45,7 @@ import org.mehaexample.asdDemo.model.alignadmin.Administrators;
 import org.mehaexample.asdDemo.model.alignadmin.ElectivesAdmin;
 import org.mehaexample.asdDemo.model.alignadmin.GenderRatio;
 import org.mehaexample.asdDemo.model.alignadmin.LoginObject;
+import org.mehaexample.asdDemo.model.alignadmin.SearchObject;
 import org.mehaexample.asdDemo.model.alignadmin.StudentBachelorInstitution;
 import org.mehaexample.asdDemo.model.alignadmin.TopBachelor;
 import org.mehaexample.asdDemo.model.alignadmin.TopElective;
@@ -92,7 +93,7 @@ public class Admin{
 	@Path("students")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response searchStudent(ParamsObject input){
+	public Response searchStudent(SearchObject input){
 		Map<String,List<String>> map = new HashMap<String,List<String>>();
 		ArrayList<Students> studentRecords;
 		JSONArray resultArray = new JSONArray();
@@ -126,9 +127,8 @@ public class Admin{
 			map.put("enrollmentStatus",enrollmentstatusList);
 		}
 		if (input.getCampus()!=null){
-			ArrayList<String> campusList = new ArrayList<String>();
-			campusList.add(input.getCampus());
-			map.put("campus",campusList);
+			if(input.getCampus().size() > 0)
+				map.put("campus",input.getCampus());
 		}
 		if (input.getCompany()!=null){
 			ArrayList<String> companyList = new ArrayList<String>();
