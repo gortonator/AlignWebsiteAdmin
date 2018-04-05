@@ -148,9 +148,9 @@ public class Admin{
 		if (input.getNuundergrad()!=null){
 			ArrayList<String> nuundergrad = new ArrayList<String>();
 			ArrayList<String> degree = new ArrayList<String>();
-			if(Boolean.getBoolean(input.getNuundergrad())){
+			if(input.getNuundergrad().equalsIgnoreCase("true")){
 				nuundergrad.add("Northeastern University");
-				degree.add("BACHELOR");
+				degree.add("BACHELORS");
 				map.put("institutionName",nuundergrad);
 				map.put("degreeCandidacy",degree);
 			}
