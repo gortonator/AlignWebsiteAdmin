@@ -240,16 +240,25 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getGenderRatio(ParamsObject input){
 		List<GenderRatio> ratio;
+		JSONArray result = new JSONArray();
 		if (input.getCampus()!=null){
 			try{
 				ratio = genderRatioDao.getYearlyGenderRatio(Campus.valueOf(input.getCampus().toUpperCase()));
+				
+				for(int i=0; i<ratio.size();i++){
+					JSONObject jsonObj = new JSONObject();
+					jsonObj.put("male", ratio.get(i).getMale());
+					jsonObj.put("female", ratio.get(i).getFemale());
+					jsonObj.put("year", ratio.get(i).getEntryYear());
+					result.put(jsonObj);
+	    		}
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
 		} else {
 			return Response.status(Response.Status.BAD_REQUEST).entity("campus field cannot be null").build();
 		}
-		return Response.status(Response.Status.OK).entity(ratio).build();
+		return Response.status(Response.Status.OK).entity(result.toString()).build();
 	}
 
 
@@ -269,6 +278,7 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTopBachelorDegree(ParamsObject input) throws SQLException{
 		List<TopBachelor> degrees = new ArrayList<TopBachelor>();
+		JSONArray result = new JSONArray();
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
 				degrees = priorEducationsDao.getTopTenBachelors(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
@@ -294,7 +304,15 @@ public class Admin{
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
 		}
-		return Response.status(Response.Status.OK).entity(degrees).build();
+		
+		for(int i=0; i<degrees.size();i++){
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("degree", degrees.get(i).getDegree());
+			jsonObj.put("students", degrees.get(i).getTotalStudents());
+			result.put(jsonObj);
+		}
+		
+		return Response.status(Response.Status.OK).entity(result.toString()).build();
 	}
 
 	/**
@@ -313,6 +331,7 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTopEmployers(ParamsObject input){
 		List<TopEmployer> employers = new ArrayList<TopEmployer>();
+		JSONArray result = new JSONArray();
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
 				employers = workExperiencesDao.getTopTenEmployers(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
@@ -338,7 +357,15 @@ public class Admin{
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
 		} 
-		return Response.status(Response.Status.OK).entity(employers).build();
+		
+		for(int i=0; i<employers.size();i++){
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("companyname", employers.get(i).getCompanyName());
+			jsonObj.put("students", employers.get(i).getTotalStudents());
+			result.put(jsonObj);
+		}
+		
+		return Response.status(Response.Status.OK).entity(result.toString()).build();
 	}
 
 	/**
@@ -357,6 +384,7 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTopElectives(ParamsObject input){
 		List<TopElective> electives = new ArrayList<TopElective>();
+		JSONArray result = new JSONArray();
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
 				electives = electivesDao.getTopTenElectives(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
@@ -382,7 +410,15 @@ public class Admin{
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
 		}
-		return Response.status(Response.Status.OK).entity(electives).build();
+		
+		for(int i=0; i<electives.size();i++){
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("elective", electives.get(i).getCourseName());
+			jsonObj.put("students", electives.get(i).getTotalStudents());
+			result.put(jsonObj);
+		}
+		
+		return Response.status(Response.Status.OK).entity(result.toString()).build();
 	}
 
 	/**
@@ -401,6 +437,7 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getCoopStudents(ParamsObject input){
 		List<StudentCoopList> coopStudentsList = new ArrayList<StudentCoopList>();
+		JSONArray result = new JSONArray();
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
 				coopStudentsList = workExperiencesDao.getStudentCoopCompanies(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
@@ -416,7 +453,15 @@ public class Admin{
 		} else if (input.getCampus()==null){
 			return Response.status(Response.Status.BAD_REQUEST).entity("Campus cannot be null.").build();
 		}
-		return Response.status(Response.Status.OK).entity(coopStudentsList).build();
+
+		for(int i=0; i<coopStudentsList.size();i++){
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("nuid", coopStudentsList.get(i).getNeuId());
+			jsonObj.put("name", coopStudentsList.get(i).getFirstName()+" "+coopStudentsList.get(i).getLastName());
+			result.put(jsonObj);
+		}
+		
+		return Response.status(Response.Status.OK).entity(result.toString()).build();
 	}
 
 	/**
@@ -433,6 +478,7 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getStudentsWorkingForACompany(ParamsObject input){
 		List<StudentBasicInfo> studentsList = new ArrayList<StudentBasicInfo>();
+		JSONArray result = new JSONArray();
 		if (input.getCampus()!=null && input.getCompany()!=null && input.getYear()!=null){
 			try{
 				studentsList = workExperiencesDao.getStudentsWorkingInACompany(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()),input.getCompany());
@@ -448,8 +494,15 @@ public class Admin{
 		} else if (input.getCampus()==null || input.getCompany()==null){
 			return Response.status(Response.Status.BAD_REQUEST).entity("Campus and Company cannot be null.").build();
 		}
-		return Response.status(Response.Status.OK).
-				entity(studentsList).build();  
+
+		for(int i=0; i<studentsList.size();i++){
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("nuid", studentsList.get(i).getNeuId());
+			jsonObj.put("name", studentsList.get(i).getFirstName()+" "+studentsList.get(i).getLastName());
+			result.put(jsonObj);
+		}
+		
+		return Response.status(Response.Status.OK).entity(result.toString()).build(); 
 	}
 
 	/**
@@ -466,6 +519,7 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getStudentWorkingFullTime(ParamsObject input){
 		List<StudentCoopList> studentsList = new ArrayList<StudentCoopList>();
+		JSONArray result = new JSONArray();
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
 				studentsList = workExperiencesDao.
@@ -483,8 +537,16 @@ public class Admin{
 		} else if (input.getCampus()==null){
 			return Response.status(Response.Status.BAD_REQUEST).entity("Campus cannot be null.").build();
 		}
-		return Response.status(Response.Status.OK).
-				entity(studentsList).build();  
+
+		for(int i=0; i<studentsList.size();i++){
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("nuid", studentsList.get(i).getNeuId());
+			jsonObj.put("company", studentsList.get(i).getCompanies());
+			jsonObj.put("name", studentsList.get(i).getFirstName()+" "+studentsList.get(i).getLastName());
+			result.put(jsonObj);
+		}
+		
+		return Response.status(Response.Status.OK).entity(result.toString()).build();   
 	}
 	
 	/**
@@ -501,6 +563,7 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getStudentundergradInstitutuins(ParamsObject input){
 		List<StudentBachelorInstitution> instList = new ArrayList<StudentBachelorInstitution>();
+		JSONArray result = new JSONArray();
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
 				instList = priorEducationsDao.
@@ -518,9 +581,17 @@ public class Admin{
 		} else if (input.getCampus()==null){
 			return Response.status(Response.Status.BAD_REQUEST).entity("Campus cannot be null.").build();
 		}
-		return Response.status(Response.Status.OK).
-				entity(instList).build();  
+
+		for(int i=0; i<instList.size();i++){
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("count", instList.get(i).getTotalStudents());
+			jsonObj.put("name", instList.get(i).getInstitutionName());
+			result.put(jsonObj);
+		}
+		
+		return Response.status(Response.Status.OK).entity(result.toString()).build();   
 	}
+	
 	
 	/**
 	 * Request 11
@@ -536,6 +607,7 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response updateNote(AdministratorNotes input,@PathParam("noteid") String noteid){
 		try{
+			input.setAdministratorNoteId(Integer.parseInt(noteid));
 			if(administratorNotesDao.updateAdministratorNote(input)){
 				return Response.status(Response.Status.OK).
 						entity("note updated successfully").build();
@@ -566,6 +638,7 @@ public class Admin{
 				return Response.status(Response.Status.NOT_FOUND).
 						entity("administrator NEUID cannot be null").build();
 			}
+			input.setAdministratorNeuId(adminneuid);
 			AdministratorNotes note = administratorNotesDao.addAdministratorNoteRecord(input);
 			return Response.status(Response.Status.OK).
 						entity(note).build();
