@@ -209,6 +209,8 @@ public class StudentsDao {
               query.setParameter(filter + i, Gender.valueOf(filterElements.get(i).trim().toUpperCase()));
             } else if (filter.trim().equalsIgnoreCase("DegreeCandidacy")) {
               query.setParameter(filter + i, DegreeCandidacy.valueOf(filterElements.get(i).trim().toUpperCase()));
+            } else if (filter.trim().equalsIgnoreCase("EnrollmentStatus")) {
+              query.setParameter(filter + i, EnrollmentStatus.valueOf(filterElements.get(i).trim().toUpperCase()));
             } else {
               query.setParameter(filter + i, filterElements.get(i));
             }
