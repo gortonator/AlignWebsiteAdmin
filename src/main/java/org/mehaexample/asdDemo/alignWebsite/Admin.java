@@ -607,6 +607,20 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response updateNote(AdministratorNotes input,@PathParam("noteid") String noteid){
 		try{
+			
+			AdministratorNotes existingNote = administratorNotesDao.getAdministratorNoteById(Integer.parseInt(noteid));
+			if(input.getAdministratorNeuId() == null){
+				input.setAdministratorNeuId(existingNote.getAdministratorNeuId());
+			}
+			if(input.getNeuId() == null){
+				input.setNeuId(existingNote.getNeuId());
+			}
+			if(input.getTitle() == null){
+				input.setTitle(existingNote.getTitle());
+			}
+			if(input.getDesc() == null){
+				input.setDesc(existingNote.getDesc());
+			}
 			input.setAdministratorNoteId(Integer.parseInt(noteid));
 			if(administratorNotesDao.updateAdministratorNote(input)){
 				return Response.status(Response.Status.OK).
