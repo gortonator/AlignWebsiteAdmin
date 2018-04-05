@@ -147,7 +147,7 @@ public class Admin{
 		}
 		if (input.getNuundergrad()!=null){
 			ArrayList<String> nuundergrad = new ArrayList<String>();
-			if(Boolean.getBoolean(input.getUndergradmajor())){
+			if(Boolean.getBoolean(input.getNuundergrad())){
 				nuundergrad.add("Northeastern University");
 				map.put("institutionName",nuundergrad);
 			}
