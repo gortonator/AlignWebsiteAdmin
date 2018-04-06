@@ -245,6 +245,7 @@ public class StudentsDaoTest {
     majorName.add("computer science");
     List<String> institutionName = new ArrayList<>();
     institutionName.add("university of washington");
+//    institutionName.add("Northeastern University");
     List<String> gender = new ArrayList<>();
     gender.add("M");
     List<String> degreeCandidacy = new ArrayList<>();

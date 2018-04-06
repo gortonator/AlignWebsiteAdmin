@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="alignWebsite.alignprivate.CoursesDaoTest" time="0.083" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="alignWebsite.alignprivate.CoursesDaoTest" time="0.098" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -64,13 +64,13 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="addDuplicate" time="0.011"/>
-  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="updateNonExistentCourse" time="0.007"/>
-  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="deleteNonExistentCourse" time="0.009"/>
+  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="addDuplicate" time="0.013"/>
+  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="updateNonExistentCourse" time="0.01"/>
+  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="deleteNonExistentCourse" time="0.008"/>
   <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="deleteNullArgument" time="0.007"/>
-  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="deleteEmptyArgument" time="0.005"/>
+  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="deleteEmptyArgument" time="0.006"/>
   <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="addNullcourseTest" time="0.006"/>
-  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="addAndUpdateCourseTest" time="0.013"/>
-  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="deleteCourseTest" time="0.013"/>
-  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="getAllCoursesTest" time="0.012"/>
+  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="addAndUpdateCourseTest" time="0.017"/>
+  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="deleteCourseTest" time="0.016"/>
+  <testcase classname="alignWebsite.alignprivate.CoursesDaoTest" name="getAllCoursesTest" time="0.015"/>
 </testsuite>

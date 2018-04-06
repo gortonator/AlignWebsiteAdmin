@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="22" failures="0" name="alignWebsite.alignprivate.StudentsDaoTest" time="0.625" errors="0" skipped="0">
+<testsuite tests="22" failures="0" name="alignWebsite.alignprivate.StudentsDaoTest" time="0.749" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -65,25 +65,25 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getStudentRecord" time="0.03"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="deleteNonExistentNeuId" time="0.022"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="updateNonExistentStudent" time="0.02"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="deleteWithNullArgument" time="0.018"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="deleteWithEmptyArgument" time="0.017"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="addDuplicateStudent" time="0.021"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getRaceListTest" time="0.019"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getStateListTest" time="0.019"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalDropoutStudentsTest" time="0.018"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalFullTimeStudentsTest" time="0.016"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalPartTimeStudentsTest" time="0.015"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalStudentsWithScholarshipTest" time="0.017"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalStudentInACampusTest" time="0.024"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalGraduatedStudents" time="0.017"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getAdminFilteredStudentsTest" time="0.096"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="findStudentByEmailTest" time="0.024"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="deleteStudentRecord" time="0.024"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getAllStudents" time="0.019"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="countMaleAndFemaleStudents" time="0.022"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="searchSimilarStudents" time="0.019"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="updateStudentRecord" time="0.023"/>
-  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getStudentFilteredStudents" time="0.125"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="deleteNonExistentNeuId" time="0.024"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="updateNonExistentStudent" time="0.026"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="deleteWithNullArgument" time="0.026"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="deleteWithEmptyArgument" time="0.028"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="addDuplicateStudent" time="0.032"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getRaceListTest" time="0.027"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getStateListTest" time="0.025"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalDropoutStudentsTest" time="0.023"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalFullTimeStudentsTest" time="0.019"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalPartTimeStudentsTest" time="0.019"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalStudentsWithScholarshipTest" time="0.022"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalStudentInACampusTest" time="0.032"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getTotalGraduatedStudents" time="0.022"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getAdminFilteredStudentsTest" time="0.111"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="findStudentByEmailTest" time="0.03"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="deleteStudentRecord" time="0.031"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getAllStudents" time="0.023"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="countMaleAndFemaleStudents" time="0.023"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="searchSimilarStudents" time="0.02"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="updateStudentRecord" time="0.022"/>
+  <testcase classname="alignWebsite.alignprivate.StudentsDaoTest" name="getStudentFilteredStudents" time="0.134"/>
 </testsuite>

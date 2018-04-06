@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" time="0.054" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" time="0.09" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -64,9 +64,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" name="updateGetDeleteEmployersTest" time="0.015"/>
-  <testcase classname="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" name="updateGetDeleteBachelorDegreesTest" time="0.01"/>
-  <testcase classname="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" name="updateGetDeleteRacesTest" time="0.011"/>
-  <testcase classname="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" name="updateGetDeleteStudentsStatesTest" time="0.009"/>
-  <testcase classname="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" name="updateGetDeleteHighestDegreesTest" time="0.009"/>
+  <testcase classname="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" name="updateGetDeleteEmployersTest" time="0.021"/>
+  <testcase classname="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" name="updateGetDeleteBachelorDegreesTest" time="0.014"/>
+  <testcase classname="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" name="updateGetDeleteRacesTest" time="0.023"/>
+  <testcase classname="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" name="updateGetDeleteStudentsStatesTest" time="0.017"/>
+  <testcase classname="alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest" name="updateGetDeleteHighestDegreesTest" time="0.015"/>
 </testsuite>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="alignWebsite.alignadmin.AdminLoginsDaoTest" time="0.022" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="alignWebsite.alignadmin.AdminLoginsDaoTest" time="0.017" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -65,7 +65,7 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="alignWebsite.alignadmin.AdminLoginsDaoTest" name="addDuplicateAdminLogins" time="0.002"/>
-  <testcase classname="alignWebsite.alignadmin.AdminLoginsDaoTest" name="updateNonExistentAdminLogins" time="0.002"/>
-  <testcase classname="alignWebsite.alignadmin.AdminLoginsDaoTest" name="deleteNonExistentAdminLogins" time="0.002"/>
-  <testcase classname="alignWebsite.alignadmin.AdminLoginsDaoTest" name="AdminLoginIntegrationTest" time="0.016"/>
+  <testcase classname="alignWebsite.alignadmin.AdminLoginsDaoTest" name="updateNonExistentAdminLogins" time="0.001"/>
+  <testcase classname="alignWebsite.alignadmin.AdminLoginsDaoTest" name="deleteNonExistentAdminLogins" time="0.001"/>
+  <testcase classname="alignWebsite.alignadmin.AdminLoginsDaoTest" name="AdminLoginIntegrationTest" time="0.013"/>
 </testsuite>

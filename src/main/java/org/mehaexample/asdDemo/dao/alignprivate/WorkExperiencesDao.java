@@ -214,7 +214,7 @@ public class WorkExperiencesDao {
     if (year != null) {
       hql.append("AND s.expectedLastYear = :year ");
     }
-    hql.append("GROUP BY s.neuId ");
+    hql.append("GROUP BY we.companyName ");
     hql.append("ORDER BY Count(*) DESC ");
     try {
       session = factory.openSession();

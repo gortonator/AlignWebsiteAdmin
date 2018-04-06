@@ -2,90 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6367ed3-ec7e-49c9-b070-88b4d2835f63" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/Constants.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/alignWebsite/Admin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/alignWebsite/CorsFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/alignWebsite/SecureAuth.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdminLoginsDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdminSessionFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdminTestSessionFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdministratorNotesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/AdministratorsDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/ElectivesAdminDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignadmin/GenderRatioDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/CoursesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/ElectivesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/ExtraExperiencesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/PriorEducationsDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/PrivaciesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/ProjectsDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentLoginsDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentSessionFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentTestSessionFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignprivate/WorkExperiencesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/MultipleValueAggregatedDataDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/PublicSessionFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/PublicTestSessionFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/SingleValueAggregatedDataDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/StudentsPublicDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/UndergraduatesPublicDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/dao/alignpublic/WorkExperiencesPublicDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/Campus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/DegreeCandidacy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/EnrollmentStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/Gender.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/Term.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/enums/TermType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/AdminLogins.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/AdministratorNotes.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/Administrators.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/ElectivesAdmin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/GenderRatio.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/LoginObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/ParamsObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/StudentBachelorInstitution.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/TopBachelor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/TopElective.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignadmin/TopEmployer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Courses.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Electives.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/ExtraExperiences.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/PriorEducations.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Privacies.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Projects.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/StudentBasicInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/StudentCoopList.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/StudentLogins.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/Students.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignprivate/WorkExperiences.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/DataCount.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/MultipleValueAggregatedData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/SingleValueAggregatedData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/StudentsPublic.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopCoops.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopGradYears.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopUndergradDegrees.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/TopUndergradSchools.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/UndergraduatesPublic.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/model/alignpublic/WorkExperiencesPublic.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/EmailToRegister.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/PasswordChangeObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/PasswordCreateObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/PasswordResetObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/StudentSerachCriteria.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/StudentsInCompany.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/StudentsWorkingFullTime.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopCoopsNumber.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopGraduationYearsNumber.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopUnderGradDegreesNumber.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/restModels/TopUnderGradSchools.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/MailClient$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/MailClient$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/MailClient.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/mehaexample/asdDemo/utils/StringUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdminTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdminTest.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignadmin/AdminTest.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/jacoco.exec" afterPath="$PROJECT_DIR$/target/jacoco.exec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/StudentsDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/alignWebsite/alignprivate/StudentsDaoTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alignAdmin.iml" afterPath="$PROJECT_DIR$/alignAdmin.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/WorkExperiencesDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/WorkExperiencesDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/alignWebsite/alignprivate/StudentsDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/alignWebsite/alignprivate/StudentsDaoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.Private.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.Private.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate_Admin.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate_Admin.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate_Public.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate_Public.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate_admin_test.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate_admin_test.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate_private_test.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate_private_test.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate_public_test.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate_public_test.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdminLoginsDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdminLoginsDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdministratorNotesDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdministratorNotesDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdministratorsDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.AdministratorsDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.ElectivesAdminDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.ElectivesAdminDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.GenderRatioDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignadmin.GenderRatioDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.CoursesDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.CoursesDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.ElectiveDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.ElectiveDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.ExtraExperiencesDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.ExtraExperiencesDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.PriorEducationsDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.PriorEducationsDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.PrivaciesDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.PrivaciesDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.ProjectsDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.ProjectsDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.StudentLoginsDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.StudentLoginsDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.StudentsDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.StudentsDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.WorkExperiencesDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignprivate.WorkExperiencesDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.SingleValueAggregatedDataDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.SingleValueAggregatedDataDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.StudentsPublicDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.StudentsPublicDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.UndergraduatesPublicDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.UndergraduatesPublicDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.WorkExperiencesPublicDaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-alignWebsite.alignpublic.WorkExperiencesPublicDaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdminLoginsDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdminLoginsDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdministratorNotesDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdministratorNotesDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdministratorsDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.AdministratorsDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.ElectivesAdminDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.ElectivesAdminDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.GenderRatioDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignadmin.GenderRatioDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.CoursesDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.CoursesDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.ElectiveDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.ElectiveDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.ExtraExperiencesDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.ExtraExperiencesDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.PriorEducationsDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.PriorEducationsDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.PrivaciesDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.PrivaciesDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.ProjectsDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.ProjectsDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.StudentLoginsDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.StudentLoginsDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.StudentsDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.StudentsDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.WorkExperiencesDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignprivate.WorkExperiencesDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.MultipleValueAggregatedDataDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.SingleValueAggregatedDataDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.SingleValueAggregatedDataDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.StudentsPublicDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.StudentsPublicDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.UndergraduatesPublicDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.UndergraduatesPublicDaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.WorkExperiencesPublicDaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/alignWebsite.alignpublic.WorkExperiencesPublicDaoTest.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,51 +66,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="AdministratorNotesDaoTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/alignWebsite/alignadmin/AdministratorNotesDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="151" column="25" lean-forward="false" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
+            <state relative-caret-position="0">
+              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentsDao.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudentsDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="212" column="113" lean-forward="false" selection-start-line="212" selection-start-column="113" selection-end-line="212" selection-end-column="113" />
+            <state relative-caret-position="-625">
+              <caret line="200" column="47" lean-forward="false" selection-start-line="200" selection-start-column="46" selection-end-line="200" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkExperiencesDao.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/WorkExperiencesDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="215" column="5" lean-forward="true" selection-start-line="215" selection-start-column="5" selection-end-line="215" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hibernate_admin_test.cfg.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_admin_test.cfg.xml">
+      <file leaf-file-name="PriorEducationsDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/PriorEducationsDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="61" lean-forward="false" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="80" />
+            <state relative-caret-position="-2521">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hibernate_private_test.cfg.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_private_test.cfg.xml">
+      <file leaf-file-name="AdministratorsDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignadmin/AdministratorsDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hibernate_public_test.cfg.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate_public_test.cfg.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="72" />
+            <state relative-caret-position="60">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -173,6 +144,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/alignWebsite/Admin.java" />
+        <option value="$PROJECT_DIR$/src/test/java/alignWebsite/alignprivate/StudentsDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/alignWebsite/alignprivate/WorkExperiencesDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/WorkExperiencesDao.java" />
       </list>
     </option>
   </component>
@@ -181,6 +156,12 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
@@ -203,6 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -243,7 +225,26 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="asdDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="alignWebsite" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="asdDemo" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="asdDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="alignadmin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
@@ -255,14 +256,71 @@
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="alignprivate" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="asdDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="asdDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="alignadmin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="alignWebsite" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="alignWebsite" type="462c0819:PsiDirectoryNode" />
+              <item name="alignadmin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alignAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlignWebsiteAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="alignWebsite" type="462c0819:PsiDirectoryNode" />
+              <item name="alignprivate" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,7 +342,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AdminTest">
+  <component name="RunManager" selected="JUnit.WorkExperiencesDaoTest.test">
     <configuration name="AdminTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -310,20 +368,95 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="ElectivesAdminDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StudentsDaoTest.getAdminFilteredStudentsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="alignWebsite.alignadmin.*" />
+          <option name="PATTERN" value="alignWebsite.alignprivate.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="alignAdmin" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="alignWebsite.alignadmin" />
-      <option name="MAIN_CLASS_NAME" value="alignWebsite.alignadmin.ElectivesAdminDaoTest" />
+      <option name="PACKAGE_NAME" value="alignWebsite.alignprivate" />
+      <option name="MAIN_CLASS_NAME" value="alignWebsite.alignprivate.StudentsDaoTest" />
+      <option name="METHOD_NAME" value="getAdminFilteredStudentsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="StudentsDaoTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="alignWebsite.alignprivate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="alignAdmin" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="alignWebsite.alignprivate" />
+      <option name="MAIN_CLASS_NAME" value="alignWebsite.alignprivate.StudentsDaoTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="WorkExperiencesDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="alignWebsite.alignprivate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="alignAdmin" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="alignWebsite.alignprivate" />
+      <option name="MAIN_CLASS_NAME" value="alignWebsite.alignprivate.WorkExperiencesDaoTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="WorkExperiencesDaoTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="alignWebsite.alignprivate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="alignAdmin" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="alignWebsite.alignprivate" />
+      <option name="MAIN_CLASS_NAME" value="alignWebsite.alignprivate.WorkExperiencesDaoTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -416,14 +549,20 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.ElectivesAdminDaoTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.AdminTest" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.AdminTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.StudentsDaoTest.getAdminFilteredStudentsTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.StudentsDaoTest.test" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.WorkExperiencesDaoTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.WorkExperiencesDaoTest.test" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.AdminTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ElectivesAdminDaoTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.WorkExperiencesDaoTest.test" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.WorkExperiencesDaoTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.StudentsDaoTest.test" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.StudentsDaoTest.getAdminFilteredStudentsTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.AdminTest" />
       </list>
     </recent_temporary>
   </component>
@@ -441,37 +580,55 @@
       <workItem from="1522800115447" duration="1176000" />
       <workItem from="1522815622247" duration="320000" />
       <workItem from="1522816124467" duration="330000" />
-      <workItem from="1522907596597" duration="446000" />
+      <workItem from="1522907596597" duration="2147000" />
+      <workItem from="1522910010592" duration="447000" />
+      <workItem from="1522910626401" duration="475000" />
+      <workItem from="1522979153779" duration="1557000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AdminTest - 2018.04.03 at 17h 11m 22s.xml">
-      <configuration name="AdminTest" configurationId="JUnit" />
+    <history-entry file="WorkExperiencesDaoTest - 2018.04.05 at 18h 53m 23s.xml">
+      <configuration name="WorkExperiencesDaoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElectivesAdminDaoTest - 2018.04.03 at 17h 08m 50s.xml">
-      <configuration name="ElectivesAdminDaoTest" configurationId="JUnit" />
+    <history-entry file="WorkExperiencesDaoTest - 2018.04.05 at 18h 53m 40s.xml">
+      <configuration name="WorkExperiencesDaoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElectivesAdminDaoTest - 2018.04.03 at 17h 09m 57s.xml">
-      <configuration name="ElectivesAdminDaoTest" configurationId="JUnit" />
+    <history-entry file="WorkExperiencesDaoTest - 2018.04.05 at 18h 53m 59s.xml">
+      <configuration name="WorkExperiencesDaoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElectivesAdminDaoTest - 2018.04.03 at 17h 10m 09s.xml">
-      <configuration name="ElectivesAdminDaoTest" configurationId="JUnit" />
+    <history-entry file="WorkExperiencesDaoTest - 2018.04.05 at 18h 54m 35s.xml">
+      <configuration name="WorkExperiencesDaoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElectivesAdminDaoTest - 2018.04.03 at 17h 10m 31s.xml">
-      <configuration name="ElectivesAdminDaoTest" configurationId="JUnit" />
+    <history-entry file="WorkExperiencesDaoTest_test - 2018.04.05 at 18h 59m 09s.xml">
+      <configuration name="WorkExperiencesDaoTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkExperiencesDaoTest_test - 2018.04.05 at 19h 20m 08s.xml">
+      <configuration name="WorkExperiencesDaoTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkExperiencesDaoTest_test - 2018.04.05 at 19h 20m 19s.xml">
+      <configuration name="WorkExperiencesDaoTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkExperiencesDaoTest_test - 2018.04.05 at 19h 20m 33s.xml">
+      <configuration name="WorkExperiencesDaoTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkExperiencesDaoTest_test - 2018.04.05 at 19h 21m 03s.xml">
+      <configuration name="WorkExperiencesDaoTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkExperiencesDaoTest_test - 2018.04.05 at 19h 21m 22s.xml">
+      <configuration name="WorkExperiencesDaoTest.test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2284000" />
+    <option name="totallyTimeSpent" value="6464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -481,15 +638,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.49427754" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2639485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -498,7 +656,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -516,6 +673,100 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/java/alignWebsite/alignadmin/AdministratorNotesDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2670">
+          <caret line="178" column="16" lean-forward="false" selection-start-line="178" selection-start-column="16" selection-end-line="178" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/alignWebsite/alignprivate/StudentsDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="171" column="3" lean-forward="false" selection-start-line="171" selection-start-column="3" selection-end-line="171" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/alignWebsite/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="148" column="62" lean-forward="false" selection-start-line="148" selection-start-column="62" selection-end-line="148" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/alignWebsite/alignadmin/AdministratorNotesDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2670">
+          <caret line="178" column="16" lean-forward="false" selection-start-line="178" selection-start-column="16" selection-end-line="178" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/alignWebsite/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="135" column="41" lean-forward="true" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/alignWebsite/alignprivate/StudentsDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3555">
+          <caret line="237" column="30" lean-forward="true" selection-start-line="237" selection-start-column="30" selection-end-line="237" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="178" column="16" lean-forward="true" selection-start-line="178" selection-start-column="16" selection-end-line="178" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/alignWebsite/alignadmin/AdministratorNotesDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/alignWebsite/alignprivate/StudentsDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3375">
+          <caret line="253" column="4" lean-forward="true" selection-start-line="253" selection-start-column="4" selection-end-line="253" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -528,7 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="61" lean-forward="true" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -536,7 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,13 +793,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
+        <state relative-caret-position="1730">
           <caret line="151" column="25" lean-forward="false" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
           <folding />
         </state>
@@ -560,7 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="61" lean-forward="false" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -568,7 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -576,14 +822,95 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/alignWebsite/alignadmin/AdministratorNotesDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/alignWebsite/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="148" column="62" lean-forward="false" selection-start-line="148" selection-start-column="62" selection-end-line="148" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/alignWebsite/alignprivate/StudentsDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="171" column="3" lean-forward="false" selection-start-line="171" selection-start-column="3" selection-end-line="171" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignadmin/GenderRatioDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignadmin/AdministratorsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/StudentsDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="212" column="113" lean-forward="false" selection-start-line="212" selection-start-column="113" selection-end-line="212" selection-end-column="113" />
+        <state relative-caret-position="-625">
+          <caret line="200" column="47" lean-forward="false" selection-start-line="200" selection-start-column="46" selection-end-line="200" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/PriorEducationsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2521">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/model/alignadmin/AdminLogins.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-290">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/alignWebsite/alignprivate/WorkExperiencesDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="158" column="71" lean-forward="false" selection-start-line="158" selection-start-column="71" selection-end-line="158" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mehaexample/asdDemo/dao/alignprivate/WorkExperiencesDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="215" column="5" lean-forward="true" selection-start-line="215" selection-start-column="5" selection-end-line="215" selection-end-column="5" />
           <folding />
         </state>
       </provider>

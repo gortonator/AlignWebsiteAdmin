@@ -64,8 +64,8 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="alignWebsite.alignpublic.WorkExperiencesPublicDaoTest" name="deleteNonExistentWorkExperienceTest" time="0.002"/>
+  <testcase classname="alignWebsite.alignpublic.WorkExperiencesPublicDaoTest" name="deleteNonExistentWorkExperienceTest" time="0.003"/>
   <testcase classname="alignWebsite.alignpublic.WorkExperiencesPublicDaoTest" name="findWorkExperienceByIdTest" time="0.002"/>
   <testcase classname="alignWebsite.alignpublic.WorkExperiencesPublicDaoTest" name="getTopCoopsTest" time="0.004"/>
-  <testcase classname="alignWebsite.alignpublic.WorkExperiencesPublicDaoTest" name="getListOfAllCoopCompanies" time="0.003"/>
+  <testcase classname="alignWebsite.alignpublic.WorkExperiencesPublicDaoTest" name="getListOfAllCoopCompanies" time="0.002"/>
 </testsuite>
