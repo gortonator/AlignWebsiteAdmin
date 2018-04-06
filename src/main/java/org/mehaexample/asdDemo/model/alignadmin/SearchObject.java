@@ -10,7 +10,7 @@ public class SearchObject {
 	private String lastname;
 	private String email;
 	private String degreeyear;
-	private String enrollmentstatus;
+	private List<String> enrollmentstatus;
 	private String company;
 	private String beginindex;
 	private String endindex;
@@ -49,7 +49,7 @@ public class SearchObject {
 	 */
 	public SearchObject(List<String> campus, String year, String firstname,
 			String lastname, String email, String degreeyear,
-			String enrollmentstatus, String company, String beginindex,
+			List<String> enrollmentstatus, String company, String beginindex,
 			String endindex, String neuid, String undergradmajor,
 			String nuundergrad, String coop, String gender, String race) {
 		super();
@@ -158,14 +158,14 @@ public class SearchObject {
 	/**
 	 * @return the enrollmentstatus
 	 */
-	public String getEnrollmentstatus() {
+	public List<String> getEnrollmentstatus() {
 		return enrollmentstatus;
 	}
 
 	/**
 	 * @param enrollmentstatus the enrollmentstatus to set
 	 */
-	public void setEnrollmentstatus(String enrollmentstatus) {
+	public void setEnrollmentstatus(List<String> enrollmentstatus) {
 		this.enrollmentstatus = enrollmentstatus;
 	}
 
@@ -294,8 +294,5 @@ public class SearchObject {
 	public void setRace(String race) {
 		this.race = race;
 	}
-	
-	
-	
 	
 }

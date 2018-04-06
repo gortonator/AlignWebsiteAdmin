@@ -122,9 +122,8 @@ public class Admin{
 			map.put("expectedLastYear",degreeyearList);
 		}
 		if (input.getEnrollmentstatus()!=null){
-			ArrayList<String> enrollmentstatusList = new ArrayList<String>();
-			enrollmentstatusList.add(input.getEnrollmentstatus());
-			map.put("enrollmentStatus",enrollmentstatusList);
+			if(input.getEnrollmentstatus().size() > 0)
+				map.put("enrollmentStatus",input.getEnrollmentstatus());
 		}
 		if (input.getCampus()!=null){
 			if(input.getCampus().size() > 0)
