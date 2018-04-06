@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="alignAdmin:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="AlignWebsiteAdmin.war">
-      <element id="artifact" artifact-name="alignAdmin:war exploded" />
-    </root>
-  </artifact>
-</component>
