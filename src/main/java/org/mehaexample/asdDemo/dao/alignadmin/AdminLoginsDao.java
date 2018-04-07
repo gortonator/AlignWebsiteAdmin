@@ -4,7 +4,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.mehaexample.asdDemo.model.alignadmin.AdminLogins;
 
 import java.util.List;
@@ -24,12 +23,23 @@ public class AdminLoginsDao {
     this.factory = AdminSessionFactory.getFactory();
   }
 
+  /**
+   * Test constructor.
+   *
+   * @param test set true to construct a test dao.
+   */
   public AdminLoginsDao(boolean test) {
     if (test) {
       this.factory = AdminTestSessionFactory.getFactory();
     }
   }
 
+  /**
+   * Find and admin logins by email.
+   *
+   * @param email email to be found.
+   * @return admin logins object if found; null otherwise.
+   */
   public AdminLogins findAdminLoginsByEmail(String email) {
     try {
       session = factory.openSession();
@@ -45,6 +55,18 @@ public class AdminLoginsDao {
     }
   }
 
+  /**
+   * Create a new Admin Login. The Administrator has to be created
+   * first in the Admin Database before creating the login. Otherwise,
+   * it will fail.
+   *
+   * @param adminLogin new Admin Login object to be created; Admin should
+   *                   be created before creating this admin login.
+   * @return new admin login.
+   * @throws HibernateException if email based on the Administrator has
+   *                            not been created yet, or there is something wrong
+   *                            with the Database connection.
+   */
   public AdminLogins createAdminLogin(AdminLogins adminLogin) {
     Transaction tx = null;
     if (findAdminLoginsByEmail(adminLogin.getEmail()) != null) {
@@ -65,6 +87,13 @@ public class AdminLoginsDao {
     return adminLogin;
   }
 
+  /**
+   * Update the admin login. This method will update
+   * the login based on the email of the admin login param.
+   *
+   * @param adminLogin updated admin login.
+   * @return true if updated, false otherwise.
+   */
   public boolean updateAdminLogin(AdminLogins adminLogin) {
     Transaction tx = null;
     if (findAdminLoginsByEmail(adminLogin.getEmail()) != null) {
@@ -86,6 +115,12 @@ public class AdminLoginsDao {
     return true;
   }
 
+  /**
+   * Delete an admin login by their email.
+   *
+   * @param email for the admin login to be deleted.
+   * @return true if deleted, false otherwise.
+   */
   public boolean deleteAdminLogin(String email) {
     AdminLogins adminLogin = findAdminLoginsByEmail(email);
     if (adminLogin != null) {

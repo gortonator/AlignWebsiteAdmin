@@ -197,6 +197,13 @@ public class PriorEducationsDao {
     return true;
   }
 
+  /**
+   * Get top ten bachelor degree based on the campus and year of graduation.
+   *
+   * @param campus campus location.
+   * @param year   year of graduation of students.
+   * @return top ten bachelor degrees / majors list.
+   */
   public List<TopBachelor> getTopTenBachelors(Campus campus, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT NEW org.mehaexample.asdDemo.model.alignadmin.TopBachelor( " +
             "pe.majorName, Count(*) ) " +
@@ -227,6 +234,14 @@ public class PriorEducationsDao {
     }
   }
 
+  /**
+   * Get the list of Bachelor Institutions based on the campus location
+   * and year of expected graduations of students.
+   *
+   * @param campus campus locations of students.
+   * @param year   year of graduation of students.
+   * @returna list of Student Bachelor Institutions.
+   */
   public List<StudentBachelorInstitution> getListOfBachelorInstitutions(Campus campus, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT NEW org.mehaexample.asdDemo.model.alignadmin.StudentBachelorInstitution( " +
             "pe.institutionName, Count(*) ) " +
