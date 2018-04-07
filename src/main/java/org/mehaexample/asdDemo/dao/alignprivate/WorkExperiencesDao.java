@@ -80,6 +80,13 @@ public class WorkExperiencesDao {
     }
   }
 
+  /**
+   * Find work experience record of a student in private DB; however
+   * set null to the things that are supposed to be hidden.
+   *
+   * @param neuId student neu Id.
+   * @return list of work experiences.
+   */
   public List<WorkExperiences> getWorkExperiencesWithPrivacy(String neuId) {
     Privacies privacy = privaciesDao.getPrivacyByNeuId(neuId);
     if (!privacy.isCoop()) {
@@ -155,6 +162,14 @@ public class WorkExperiencesDao {
     return true;
   }
 
+  /**
+   * Delete all work experiences corresponding to a student neu Id.
+   *
+   * @param neuId student neu Id.
+   * @return true if deleted.
+   * @throws HibernateException if neuId does not exist or connection
+   *                            has something wrong.
+   */
   public boolean deleteWorkExperienceByNeuId(String neuId) {
     Transaction tx = null;
 
@@ -202,6 +217,14 @@ public class WorkExperiencesDao {
     return true;
   }
 
+  /**
+   * Get Top ten employers with the count of students from the private database
+   * based on the campus location and students' year of expected graduation.
+   *
+   * @param campus campus location.
+   * @param year   year of expected of graduation of students.
+   * @return list of top ten employers with count of students.
+   */
   public List<TopEmployer> getTopTenEmployers(Campus campus, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT NEW org.mehaexample.asdDemo.model.alignadmin.TopEmployer( " +
             "we.companyName, Count(*) ) " +
@@ -254,6 +277,14 @@ public class WorkExperiencesDao {
     }
   }
 
+  /**
+   * Find all students with their coop lists based on the campus location
+   * and students' year of expected graduation.
+   *
+   * @param campus campus location.
+   * @param year   year of expected graduation.
+   * @return list of students with their coop lists.
+   */
   public List<StudentCoopList> getStudentCoopCompanies(Campus campus, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT DISTINCT NEW org.mehaexample.asdDemo.model.alignprivate.StudentCoopList( " +
             "s.neuId, s.firstName, s.lastName ) " +
@@ -286,11 +317,19 @@ public class WorkExperiencesDao {
     }
   }
 
+  /**
+   * Get coop companies based on the neu Id. this method is for
+   * populating all the coop lists for each student in the
+   * getStudentCoopCompanies method.
+   *
+   * @param neuId student neuId.
+   * @return list of coop companies.
+   */
   private List<String> getCompaniesByNeuId(String neuId) {
     try {
       session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
-              "SELECT we.companyName FROM WorkExperiences we WHERE we.neuId = :neuId");
+              "SELECT we.companyName FROM WorkExperiences we WHERE we.coop = true AND we.neuId = :neuId");
       query.setParameter("neuId", neuId);
       return (List<String>) query.list();
     } finally {
@@ -298,6 +337,15 @@ public class WorkExperiencesDao {
     }
   }
 
+  /**
+   * Get a student work in a specific company. The student return will only
+   * consist of first name, last name, and neu Id.a
+   *
+   * @param campus      Campus location.
+   * @param year        year of expected graduation.
+   * @param companyName name of company.
+   * @return list of students working in a specific company.
+   */
   public List<StudentBasicInfo> getStudentsWorkingInACompany(Campus campus, Integer year, String companyName) {
     StringBuilder hql = new StringBuilder("SELECT DISTINCT NEW org.mehaexample.asdDemo.model.alignprivate.StudentBasicInfo( " +
             "s.firstName, s.lastName, s.neuId ) " +
@@ -327,6 +375,14 @@ public class WorkExperiencesDao {
     }
   }
 
+  /**
+   * Get list of students currently working in companies. This will also return
+   * the companies that the student is currently working on.
+   *
+   * @param campus campus location.
+   * @param year   year of expected graduation.
+   * @return list of students currently working in companies.
+   */
   public List<StudentCoopList> getStudentCurrentCompanies(Campus campus, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT DISTINCT NEW org.mehaexample.asdDemo.model.alignprivate.StudentCoopList( " +
             "s.neuId, s.firstName, s.lastName ) " +
@@ -360,11 +416,18 @@ public class WorkExperiencesDao {
     }
   }
 
+  /**
+   * Get list of current companies based on neu Id.
+   *
+   * @param neuId student neu Id.
+   * @return list of current companies.
+   */
   private List<String> getCurrentCompaniesByNeuId(String neuId) {
     try {
       session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
-              "SELECT we.companyName FROM WorkExperiences we WHERE we.currentJob = true AND we.neuId = :neuId");
+              "SELECT we.companyName FROM WorkExperiences we " +
+                      "WHERE we.currentJob = true AND we.neuId = :neuId AND we.coop = false");
       query.setParameter("neuId", neuId);
       return (List<String>) query.list();
     } finally {

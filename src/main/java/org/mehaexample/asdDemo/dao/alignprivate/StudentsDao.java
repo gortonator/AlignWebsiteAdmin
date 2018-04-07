@@ -129,6 +129,14 @@ public class StudentsDao {
     }
   }
 
+  /**
+   * Get a list of students based on the filtering from the Admin user.
+   *
+   * @param filters list of filters to filter students from the Database.
+   * @param begin   start index for pagination (start from 1).
+   * @param end     end index for pagination.
+   * @return list of students based on the filtering.
+   */
   public List<Students> getAdminFilteredStudents(Map<String, List<String>> filters, int begin, int end) {
     StringBuilder hql = new StringBuilder("SELECT Distinct s " +
             "FROM Students s " +
@@ -137,6 +145,12 @@ public class StudentsDao {
     return (List<Students>) populateAdminFilterHql(hql, filters, begin, end);
   }
 
+  /**
+   * Get the total count of results from the admin filtering search.
+   *
+   * @param filters list of filters to filter students from the Database.
+   * @return number of total count of results based on the filtering.
+   */
   public int getAdminFilteredStudentsCount(Map<String, List<String>> filters) {
     StringBuilder hql = new StringBuilder("SELECT Count( Distinct s ) " +
             "FROM Students s " +
@@ -146,6 +160,15 @@ public class StudentsDao {
     return count.get(0).intValue();
   }
 
+  /**
+   * Put all the filters into the HQL query Strings.
+   *
+   * @param hql     the initial hql query strings.
+   * @param filters from admin user to filter the students.
+   * @param begin   begin index for paginationz (start from 1).
+   * @param end     end index for pagination.
+   * @return General list based on the filtering returned from the Database.
+   */
   private List populateAdminFilterHql(StringBuilder hql, Map<String, List<String>> filters, Integer begin, Integer end) {
     Set<String> filterKeys = filters.keySet();
     if (!filters.isEmpty()) {

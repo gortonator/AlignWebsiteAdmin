@@ -26,13 +26,26 @@ public class ElectivesAdminDao {
     this.factory = AdminSessionFactory.getFactory();
   }
 
-  public ElectivesAdminDao( boolean test) {
+  /**
+   * Test constructor.
+   *
+   * @param test set true to construct test dao.
+   */
+  public ElectivesAdminDao(boolean test) {
     studentDao = new StudentsDao(true);
     if (test) {
       this.factory = AdminTestSessionFactory.getFactory();
     }
   }
 
+  /**
+   * Get the list of Electives of a student with corresponding neu Id.
+   * This method will also get the GPAs, retake, and plagiarism field
+   * from the database.
+   *
+   * @param neuId student Neu Id.
+   * @return list of electives taken by the student.
+   */
   public List<ElectivesAdmin> getElectivesByNeuId(String neuId) {
     try {
       session = factory.openSession();
@@ -44,6 +57,12 @@ public class ElectivesAdminDao {
     }
   }
 
+  /**
+   * Get an elective based on the elective Id.
+   *
+   * @param electiveId to get the corresponding elective.
+   * @return Elective if found, null otherwise.
+   */
   public ElectivesAdmin getElectiveById(int electiveId) {
     try {
       session = factory.openSession();
@@ -90,6 +109,12 @@ public class ElectivesAdminDao {
     return elective;
   }
 
+  /**
+   * Update an elective of a student.
+   *
+   * @param elective updated Elective.
+   * @return true if updated, false otherwise.
+   */
   public boolean updateElectives(ElectivesAdmin elective) {
     if (getElectiveById(elective.getElectiveId()) == null) {
       throw new HibernateException("Elective Id cannot be null.");
@@ -109,6 +134,12 @@ public class ElectivesAdminDao {
     }
   }
 
+  /**
+   * Delete an elective based on the Elective Id.
+   *
+   * @param id elective Id.
+   * @return true if deleted, false otherwise.
+   */
   public boolean deleteElectiveRecord(int id) {
     ElectivesAdmin electives = getElectiveById(id);
     if (electives == null) {

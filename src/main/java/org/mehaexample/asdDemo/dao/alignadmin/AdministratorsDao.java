@@ -6,7 +6,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.mehaexample.asdDemo.model.alignadmin.Administrators;
 
 public class AdministratorsDao {
@@ -26,7 +25,8 @@ public class AdministratorsDao {
 
   /**
    * test constructor
-   * @param test
+   *
+   * @param test set true to construct a test dao.
    */
   public AdministratorsDao(boolean test) {
     if (test) {

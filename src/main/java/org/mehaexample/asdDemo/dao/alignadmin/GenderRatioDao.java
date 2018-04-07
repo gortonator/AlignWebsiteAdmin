@@ -12,18 +12,32 @@ import java.util.List;
 public class GenderRatioDao {
   private SessionFactory factory;
 
+  /**
+   * Default constructor.
+   */
   public GenderRatioDao() {
     // it will check the hibernate.cfg.xml file and load it
     // next it goes to all table files in the hibernate file and loads them
     this.factory = StudentSessionFactory.getFactory();
   }
 
+  /**
+   * Test constructor.
+   *
+   * @param test set true to construct test dao.
+   */
   public GenderRatioDao(boolean test) {
     if (test) {
       this.factory = StudentTestSessionFactory.getFactory();
     }
   }
 
+  /**
+   * Get the gender ratio broke down in years based on the Campus Location.
+   *
+   * @param campus to broke down the annual gender ratio.
+   * @return list of gender ratio.
+   */
   public List<GenderRatio> getYearlyGenderRatio(Campus campus) {
     String hql = "SELECT NEW org.mehaexample.asdDemo.model.alignadmin.GenderRatio(s.entryYear, " +
             "COUNT(CASE s.gender WHEN 'M' THEN 1 ELSE NULL END), " +

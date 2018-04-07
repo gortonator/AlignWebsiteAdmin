@@ -39,7 +39,7 @@ public class AdministratorNotesDao {
    * Search for a list of Administrator Note by neu Id.
    *
    * @param neuId Student Neu Id
-   * @return A list of Administrator Notes
+   * @return list of Administrator Notes
    */
   public List<AdministratorNotes> getAdministratorNoteRecordByNeuId(String neuId) {
     try {
@@ -52,6 +52,12 @@ public class AdministratorNotesDao {
     }
   }
 
+  /**
+   * Search an Administratore Note record by the Administrator Note ID.
+   *
+   * @param administratorNoteId Administrator Note Id.
+   * @return administrator notes.
+   */
   public AdministratorNotes getAdministratorNoteById(int administratorNoteId) {
     try {
       session = factory.openSession();
@@ -108,6 +114,16 @@ public class AdministratorNotesDao {
     return note;
   }
 
+  /**
+   * Update an administrator note by giving the updated administrator note.
+   * This method will update the existing notes with the same administrator
+   * note Id from the updated note.
+   *
+   * @param note updated administrator note.
+   * @return true if successfully updated, false otherwise.
+   * @throws HibernateException if there something wrong with the connection
+   *                            to the Database.
+   */
   public boolean updateAdministratorNote(AdministratorNotes note) {
     Transaction tx = null;
     AdministratorNotes foundNote = getAdministratorNoteById(note.getAdministratorNoteId());
