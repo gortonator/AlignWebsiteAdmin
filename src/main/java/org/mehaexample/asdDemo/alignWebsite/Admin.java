@@ -945,4 +945,60 @@ public class Admin{
 	private String createRegistrationKey() {
 		return UUID.randomUUID().toString();
 	}	
+	
+	
+	    /**
+     * Request 19
+     * This is the function to get top undergraduate degrees.
+     * The body should be in the JSON format like below:
+     * <p>
+     * http://localhost:8080/alignWebsite/webapi/public-facing/top-undergraddegrees
+     *
+     * @return List of n top undergraduate degrees
+     */
+    @POST
+    @Path("autofill-search")
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAutoFillSearch(String input) {
+    	List<Students> students;
+        JSONObject result = new JSONObject();
+        JSONArray studentsArray = new JSONArray();
+        String firstName = input;
+        String middleName = input;
+        String lastName = input;
+        String neuId = input;
+        String email = input;
+
+        try {
+        	
+        	String[] inputSplit = input.split(" ");
+        	if(inputSplit.length>2){
+        		firstName = inputSplit[0];
+        		middleName = inputSplit[1];
+        		lastName = inputSplit[2];
+        	}else if(inputSplit.length>1){
+        		firstName = inputSplit[0];
+        		lastName = inputSplit[1];
+        	}else{
+        		firstName = inputSplit[0];
+        		middleName = inputSplit[0];
+        		lastName = inputSplit[0];
+        		neuId = inputSplit[0];
+        		email = inputSplit[0];
+        	}
+        	
+            students = studentDao.getAdminAutoFillSearch(firstName,middleName,lastName,neuId,email);
+            for (Students student : students) {
+                JSONObject studentJson = new JSONObject(student);
+                result.put("hey","hey");
+            }
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
+        }
+
+        return Response.status(Response.Status.OK).entity(students).build();
+    }
+	
+	
 }
