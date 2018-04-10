@@ -991,13 +991,13 @@ public class Admin{
             students = studentDao.getAdminAutoFillSearch(firstName,middleName,lastName,neuId,email);
             for (Students student : students) {
                 JSONObject studentJson = new JSONObject(student);
-                result.put("hey","hey");
+                result.put(neuId,studentJson);
             }
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
         }
 
-        return Response.status(Response.Status.OK).entity(students).build();
+        return Response.status(Response.Status.OK).entity(result.toString()).build();
     }
 	
 	
