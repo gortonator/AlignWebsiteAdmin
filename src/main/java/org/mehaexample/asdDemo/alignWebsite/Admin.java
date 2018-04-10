@@ -980,12 +980,6 @@ public class Admin{
         	}else if(inputSplit.length>1){
         		firstName = inputSplit[0];
         		lastName = inputSplit[1];
-        	}else{
-        		firstName = inputSplit[0];
-        		middleName = inputSplit[0];
-        		lastName = inputSplit[0];
-        		neuId = inputSplit[0];
-        		email = inputSplit[0];
         	}
         	
             students = studentDao.getAdminAutoFillSearch(firstName,middleName,lastName,neuId,email);
