@@ -975,11 +975,16 @@ public class Admin{
         	String[] inputSplit = input.split(" ");
         	if(inputSplit.length>2){
         		firstName = inputSplit[0];
+				result.put("firstName",firstName);
         		middleName = inputSplit[1];
+				result.put("middleName",middleName);
         		lastName = inputSplit[2];
+				result.put("lastName",lastName);
         	}else if(inputSplit.length>1){
         		firstName = inputSplit[0];
+				result.put("firstName",firstName);
         		lastName = inputSplit[1];
+				result.put("lastName",lastName);
         	}
         	
             students = studentDao.getAdminAutoFillSearch(firstName,middleName,lastName,neuId,email);
