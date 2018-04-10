@@ -118,6 +118,29 @@ public class StudentsDaoTest {
   }
 
   @Test
+  public void getAdminAutoFillSearch() {
+    List<Students> results = studentdao.getAdminAutoFillSearch(
+            "to", "to dog", "dog", "to dog", "to dog");
+    Assert.assertTrue(results.size() == 1);
+
+    results = studentdao.getAdminAutoFillSearch(
+            "to", "to", "to", "to", "to");
+    Assert.assertTrue(results.size() == 2);
+
+    results = studentdao.getAdminAutoFillSearch(
+            "mo", "mo", "mo", "mo", "mo");
+    Assert.assertTrue(results.size() == 1);
+
+    results = studentdao.getAdminAutoFillSearch(
+            "@gmail.com", "@gmail.com", "@gmail.com", "@gmail.com", "@gmail.com");
+    Assert.assertTrue(results.size() == 3);
+
+    results = studentdao.getAdminAutoFillSearch(
+            "000", "000", "000", "000", "000");
+    Assert.assertTrue(results.size() == 1);
+  }
+
+  @Test
   public void getRaceListTest() {
     List<MultipleValueAggregatedData> raceList = studentdao.getRaceList();
     Assert.assertTrue(raceList.size() == 2);

@@ -246,6 +246,49 @@ public class StudentsDao {
     }
   }
 
+  /**
+   * Get any matching students that have any inputs of the parameters.
+   *
+   * @param firstName  student first name.
+   * @param middleName student middle name.
+   * @param lastName   student last name.
+   * @param neuId      student NuID.
+   * @param email      student email.
+   * @return list of students that have any matching inputs from the parameters.
+   */
+  public List<Students> getAdminAutoFillSearch(String firstName, String middleName, String lastName, String neuId, String email) {
+    try {
+      session = factory.openSession();
+      org.hibernate.query.Query query;
+      if (firstName.equalsIgnoreCase(lastName)) {
+        query = session.createQuery(
+                "SELECT s FROM Students s " +
+                        "WHERE s.firstName like :firstName " +
+                        "OR s.middleName like :middleName " +
+                        "OR s.lastName like :lastName " +
+                        "OR s.neuId like :neuId " +
+                        "OR s.email like :email ");
+      } else {
+        query = session.createQuery(
+                "SELECT s FROM Students s " +
+                        "WHERE ( s.firstName like :firstName " +
+                        "AND s.lastName like :lastName ) " +
+                        "OR s.middleName like :middleName " +
+                        "OR s.neuId like :neuId " +
+                        "OR s.email like :email ");
+      }
+      query.setParameter("firstName", "%" + firstName + "%");
+      query.setParameter("middleName", "%" + middleName + "%");
+      query.setParameter("lastName", "%" + lastName + "%");
+      query.setParameter("neuId", "%" + neuId + "%");
+      query.setParameter("email", "%" + email + "%");
+      return (List<Students>) query.list();
+    } finally {
+      session.close();
+    }
+  }
+
+
   // THIS IS FOR MACHINE LEARNING SCRIPT
   // What is the drop out rate for Align?
   public int getTotalDropOutStudents() {
