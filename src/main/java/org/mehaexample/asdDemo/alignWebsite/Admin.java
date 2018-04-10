@@ -971,27 +971,26 @@ public class Admin{
         String email = input;
 
         try {
-        	
         	String[] inputSplit = input.split(" ");
         	if(inputSplit.length>2){
         		firstName = inputSplit[0];
-				result.put("firstName",firstName);
         		middleName = inputSplit[1];
-				result.put("middleName",middleName);
         		lastName = inputSplit[2];
-				result.put("lastName",lastName);
         	}else if(inputSplit.length>1){
         		firstName = inputSplit[0];
-				result.put("firstName",firstName);
         		lastName = inputSplit[1];
-				result.put("lastName",lastName);
         	}
         	
             students = studentDao.getAdminAutoFillSearch(firstName,middleName,lastName,neuId,email);
             for (Students student : students) {
-                JSONObject studentJson = new JSONObject(student);
-                result.put(neuId,studentJson);
+                JSONObject studentJson = new JSONObject();
+				studentJson.put("name",student.getFirstName()+" "+student.getLastName());
+				studentJson.put("nuid",student.getNeuId());
+				studentJson.put("email",student.getEmail());
+                studentsArray.put(studentJson);
             }
+			result.put("students",studentsArray);
+			result.put("resultscount",studentsArray.length());
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
         }
