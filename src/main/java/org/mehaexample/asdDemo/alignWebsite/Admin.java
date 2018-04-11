@@ -170,11 +170,6 @@ public class Admin{
 			}
 			map.put("gender",gender);
 		}
-		if (input.getRace()!=null){
-			ArrayList<String> race = new ArrayList<String>();
-			race.add(input.getRace());
-			map.put("race",race);
-		}
 		if (input.getBeginindex()!=null){
 			begin = Integer.valueOf(input.getBeginindex());
 		}
