@@ -59,9 +59,6 @@ public class StudentsDaoTest {
             Term.FALL, 2017,
             EnrollmentStatus.DROPPED_OUT, Campus.CHARLOTTE, DegreeCandidacy.MASTERS, null, true);
     newStudent.setScholarship(true);
-    newStudent.setRace("White");
-    newStudent2.setRace("Black");
-    newStudent3.setRace("White");
     studentdao.addStudent(newStudent);
     studentdao.addStudent(newStudent2);
     studentdao.addStudent(newStudent3);
@@ -138,18 +135,6 @@ public class StudentsDaoTest {
     results = studentdao.getAdminAutoFillSearch(
             "000", "000", "000", "000", "000");
     Assert.assertTrue(results.size() == 1);
-  }
-
-  @Test
-  public void getRaceListTest() {
-    List<MultipleValueAggregatedData> raceList = studentdao.getRaceList();
-    Assert.assertTrue(raceList.size() == 2);
-    Assert.assertTrue(raceList.get(0).getAnalyticKey().equals("White"));
-    Assert.assertTrue(raceList.get(0).getAnalyticTerm().equals(MultipleValueAggregatedDataDao.LIST_OF_RACES));
-    Assert.assertTrue(raceList.get(0).getAnalyticValue() == 1);
-    Assert.assertTrue(raceList.get(1).getAnalyticKey().equals("Black"));
-    Assert.assertTrue(raceList.get(1).getAnalyticValue() == 1);
-    Assert.assertTrue(raceList.get(1).getAnalyticTerm().equals(MultipleValueAggregatedDataDao.LIST_OF_RACES));
   }
 
   @Test
