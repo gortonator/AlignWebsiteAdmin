@@ -204,14 +204,14 @@ public class PriorEducationsDao {
    * @param year   year of graduation of students.
    * @return top ten bachelor degrees / majors list.
    */
-  public List<TopBachelor> getTopTenBachelors(Campus campus, Integer year) {
+  public List<TopBachelor> getTopTenBachelors(List<Campus> campuses, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT NEW org.mehaexample.asdDemo.model.alignadmin.TopBachelor( " +
             "pe.majorName, Count(*) ) " +
             "FROM Students s INNER JOIN PriorEducations pe " +
             "ON s.neuId = pe.neuId " +
             "WHERE pe.degreeCandidacy = 'BACHELORS' ");
-    if (campus != null) {
-      hql.append("AND s.campus = :campus ");
+    if (campuses != null) {
+      hql.append("AND s.campus IN (:campuses) ");
     }
     if (year != null) {
       hql.append("AND s.expectedLastYear = :year ");
@@ -222,8 +222,8 @@ public class PriorEducationsDao {
       session = factory.openSession();
       TypedQuery<TopBachelor> query = session.createQuery(hql.toString(), TopBachelor.class);
       query.setMaxResults(10);
-      if (campus != null) {
-        query.setParameter("campus", campus);
+      if (campuses != null) {
+        query.setParameter("campuses", campuses);
       }
       if (year != null) {
         query.setParameter("year", year);
