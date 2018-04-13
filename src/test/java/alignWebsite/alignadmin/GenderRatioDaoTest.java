@@ -10,6 +10,7 @@ import org.mehaexample.asdDemo.enums.*;
 import org.mehaexample.asdDemo.model.alignadmin.GenderRatio;
 import org.mehaexample.asdDemo.model.alignprivate.Students;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GenderRatioDaoTest {
@@ -53,7 +54,9 @@ public class GenderRatioDaoTest {
 
   @Test
   public void getYearlyGenderRatioTest() {
-    List<GenderRatio> seattleGenderRatio = genderRatioDao.getYearlyGenderRatio(Campus.SEATTLE);
+    List<Campus> list = new ArrayList<>();
+    list.add(Campus.SEATTLE);
+    List<GenderRatio> seattleGenderRatio = genderRatioDao.getYearlyGenderRatio(list);
     Assert.assertTrue(seattleGenderRatio.get(0).getEntryYear() == 2014);
     Assert.assertTrue(seattleGenderRatio.get(1).getEntryYear() == 2015);
     Assert.assertTrue(seattleGenderRatio.get(0).getFemale() == 0);
