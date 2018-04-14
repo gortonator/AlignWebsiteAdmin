@@ -130,13 +130,15 @@ public class WorkExperiencesDaoTest {
     newWorkExperience.setCompanyName("Amazon");
     workExperiencesDao.createWorkExperience(newWorkExperience);
 
+    List<Campus> campus = new ArrayList<>();
+    campus.add(Campus.SEATTLE);
     List<StudentBasicInfo> list =
-            workExperiencesDao.getStudentsWorkingInACompany(Campus.SEATTLE, 2016, "Amazon");
+            workExperiencesDao.getStudentsWorkingInACompany(campus, 2016, "Amazon");
     assertTrue(list.size() == 1);
     assertTrue(list.get(0).getFirstName().equals("Tom"));
     assertTrue(list.get(0).getNeuId().equals("001234567"));
 
-    list = workExperiencesDao.getStudentsWorkingInACompany(Campus.SEATTLE, 2017, "Amazon");
+    list = workExperiencesDao.getStudentsWorkingInACompany(campus, 2017, "Amazon");
     assertTrue(list.size() == 0);
 
     list = workExperiencesDao.getStudentsWorkingInACompany(null, null, "Amazon");

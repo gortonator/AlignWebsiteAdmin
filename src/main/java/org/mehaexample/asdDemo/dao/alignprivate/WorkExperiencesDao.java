@@ -346,7 +346,7 @@ public class WorkExperiencesDao {
    * @param companyName name of company.
    * @return list of students working in a specific company.
    */
-  public List<StudentBasicInfo> getStudentsWorkingInACompany(Campus campus, Integer year, String companyName) {
+  public List<StudentBasicInfo> getStudentsWorkingInACompany(List<Campus> campus, Integer year, String companyName) {
     StringBuilder hql = new StringBuilder("SELECT DISTINCT NEW org.mehaexample.asdDemo.model.alignprivate.StudentBasicInfo( " +
             "s.firstName, s.lastName, s.neuId ) " +
             "FROM Students s INNER JOIN WorkExperiences we " +
@@ -354,7 +354,7 @@ public class WorkExperiencesDao {
             "WHERE we.companyName = :companyName " +
             "AND we.coop = false ");
     if (campus != null) {
-      hql.append("AND s.campus = :campus ");
+      hql.append("AND s.campus IN (:campus)");
     }
     if (year != null) {
       hql.append("AND s.expectedLastYear = :year ");
