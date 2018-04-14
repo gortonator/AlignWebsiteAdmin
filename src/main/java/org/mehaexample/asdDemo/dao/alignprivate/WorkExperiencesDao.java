@@ -429,8 +429,8 @@ public class WorkExperiencesDao {
             "ON s.neuId = we.neuId " +
             "WHERE we.companyName = :companyName " +
             "AND s.campus IN (:campus) " +
-            "GROUP BY s.entryYear " +
-            "ORDER BY s.entryYear ASC ";
+            "GROUP BY s.expectedLastYear " +
+            "ORDER BY s.expectedLastYear ASC ";
 
     try {
       session = factory.openSession();
