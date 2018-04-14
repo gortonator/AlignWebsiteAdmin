@@ -192,15 +192,15 @@ public class WorkExperiencesDaoTest {
     newWorkExperience.setCompanyName("Google");
     workExperiencesDao.createWorkExperience(newWorkExperience);
 
-    List<StudentCoopList> temp = workExperiencesDao.getStudentCurrentCompanies(Campus.SEATTLE, 2016);
+    List<Campus> list = new ArrayList<>();
+    list.add(Campus.SEATTLE);
+    List<StudentCoopList> temp = workExperiencesDao.getStudentCurrentCompanies(list, 2016);
     assertTrue(temp.size() == 1);
     assertTrue(temp.get(0).getCompanies().get(0).equals("Google"));
 
     temp = workExperiencesDao.getStudentCurrentCompanies(null, null);
     assertTrue(temp.size() == 1);
 
-    List<Campus> list = new ArrayList<>();
-    list.add(Campus.SEATTLE);
     List<StudentCoopList> temp2 = workExperiencesDao.getStudentCoopCompanies(list, 2017);
     assertTrue(temp2.isEmpty());
 

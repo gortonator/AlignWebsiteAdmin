@@ -383,14 +383,14 @@ public class WorkExperiencesDao {
    * @param year   year of expected graduation.
    * @return list of students currently working in companies.
    */
-  public List<StudentCoopList> getStudentCurrentCompanies(Campus campus, Integer year) {
+  public List<StudentCoopList> getStudentCurrentCompanies(List<Campus> campus, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT DISTINCT NEW org.mehaexample.asdDemo.model.alignprivate.StudentCoopList( " +
             "s.neuId, s.firstName, s.lastName ) " +
             "FROM Students s INNER JOIN WorkExperiences we " +
             "ON s.neuId = we.neuId ");
     hql.append("WHERE we.currentJob = true AND we.coop = false ");
     if (campus != null) {
-      hql.append("AND s.campus = :campus ");
+      hql.append("AND s.campus IN (:campus) ");
     }
     if (year != null) {
       hql.append("AND ");
