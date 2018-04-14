@@ -242,14 +242,14 @@ public class PriorEducationsDao {
    * @param year   year of graduation of students.
    * @returna list of Student Bachelor Institutions.
    */
-  public List<StudentBachelorInstitution> getListOfBachelorInstitutions(Campus campus, Integer year) {
+  public List<StudentBachelorInstitution> getListOfBachelorInstitutions(List<Campus> campus, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT NEW org.mehaexample.asdDemo.model.alignadmin.StudentBachelorInstitution( " +
             "pe.institutionName, Count(*) ) " +
             "FROM Students s INNER JOIN PriorEducations pe " +
             "ON s.neuId = pe.neuId " +
             "WHERE pe.degreeCandidacy = 'BACHELORS' ");
     if (campus != null) {
-      hql.append("AND s.campus = :campus ");
+      hql.append("AND s.campus IN (:campus) ");
     }
     if (year != null) {
       hql.append("AND s.expectedLastYear = :year ");

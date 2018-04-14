@@ -165,16 +165,20 @@ public class PriorEducationsDaoTest {
     assertTrue(temp.get(0).getTotalStudents() == 1);
     assertTrue(temp.get(1).getTotalStudents() == 1);
 
-    temp = priorEducationsDao.getListOfBachelorInstitutions(Campus.BOSTON, 2016);
+    List<Campus> list = new ArrayList<>();
+    list.add(Campus.BOSTON);
+    temp = priorEducationsDao.getListOfBachelorInstitutions(list, 2016);
     assertTrue(temp.size() == 1);
 
-    temp = priorEducationsDao.getListOfBachelorInstitutions(Campus.SEATTLE, 2016);
+    list.clear();
+    list.add(Campus.SEATTLE);
+    temp = priorEducationsDao.getListOfBachelorInstitutions(list, 2016);
     assertTrue(temp.size() == 1);
 
-    temp = priorEducationsDao.getListOfBachelorInstitutions(Campus.SEATTLE, 2017);
+    temp = priorEducationsDao.getListOfBachelorInstitutions(list, 2017);
     assertTrue(temp.isEmpty());
 
-    temp = priorEducationsDao.getListOfBachelorInstitutions(Campus.SEATTLE, 2000);
+    temp = priorEducationsDao.getListOfBachelorInstitutions(list, 2000);
     assertTrue(temp.size() == 0);
 
     // delete new prior education
