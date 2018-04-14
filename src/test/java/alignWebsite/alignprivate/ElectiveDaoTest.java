@@ -1,5 +1,6 @@
 package alignWebsite.alignprivate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -185,17 +186,19 @@ public class ElectiveDaoTest {
 
     Electives electivesNew = electivesDao.addElective(elective);
 
-    List<TopElective> temp = electivesDao.getTopTenElectives(Campus.SEATTLE, 2016);
+    List<Campus> list = new ArrayList<>();
+    list.add(Campus.SEATTLE);
+    List<TopElective> temp = electivesDao.getTopTenElectives(list, 2016);
     Assert.assertTrue(temp.size() == 1);
     temp = electivesDao.getTopTenElectives(null, 2016);
     Assert.assertTrue(temp.size() == 1);
-    temp = electivesDao.getTopTenElectives(Campus.SEATTLE, null);
+    temp = electivesDao.getTopTenElectives(list, null);
     Assert.assertTrue(temp.size() == 1);
-    temp = electivesDao.getTopTenElectives(Campus.SEATTLE, 2017);
+    temp = electivesDao.getTopTenElectives(list, 2017);
     Assert.assertTrue(temp.size() == 0);
-    temp = electivesDao.getTopTenElectives(Campus.BOSTON, 2017);
-    Assert.assertTrue(temp.size() == 0);
-    temp = electivesDao.getTopTenElectives(Campus.SEATTLE, 1994);
+    list.clear();
+    list.add(Campus.BOSTON);
+    temp = electivesDao.getTopTenElectives(list, 2017);
     Assert.assertTrue(temp.size() == 0);
     temp = electivesDao.getTopTenElectives(null, 1994);
     Assert.assertTrue(temp.size() == 0);
@@ -208,11 +211,15 @@ public class ElectiveDaoTest {
     elective2.setCourseYear(2017);
     Electives electivesNew2 = electivesDao.addElective(elective2);
 
-    temp = electivesDao.getTopTenElectives(Campus.SEATTLE, 2016);
+    list.clear();
+    list.add(Campus.SEATTLE);
+    temp = electivesDao.getTopTenElectives(list, 2016);
     Assert.assertTrue(temp.size() == 2);
-    temp = electivesDao.getTopTenElectives(Campus.SEATTLE, 2017);
+    temp = electivesDao.getTopTenElectives(list, 2017);
     Assert.assertTrue(temp.isEmpty());
-    temp = electivesDao.getTopTenElectives(Campus.BOSTON, 2017);
+    list.clear();
+    list.add(Campus.BOSTON);
+    temp = electivesDao.getTopTenElectives(list, 2017);
     Assert.assertTrue(temp.isEmpty());
 
     electivesDao.deleteElectiveRecord(electivesNew2.getElectiveId());

@@ -170,14 +170,14 @@ public class ElectivesDao {
     return true;
   }
 
-  public List<TopElective> getTopTenElectives(Campus campus, Integer year) {
+  public List<TopElective> getTopTenElectives(List<Campus> campus, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT NEW org.mehaexample.asdDemo.model.alignadmin.TopElective( " +
             "e.courseName, Count(*) ) " +
             "FROM Students s INNER JOIN Electives e " +
             "ON s.neuId = e.neuId ");
     boolean first = true;
     if (campus != null) {
-      hql.append("WHERE s.campus = :campus ");
+      hql.append("WHERE s.campus In (:campus) ");
       first = false;
     }
     if (year != null) {
