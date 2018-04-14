@@ -20,6 +20,7 @@ import org.mehaexample.asdDemo.model.alignpublic.MultipleValueAggregatedData;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -260,12 +261,16 @@ public class WorkExperiencesDaoTest {
 
     temp = workExperiencesDao.getTopTenEmployers(null, 2016);
     assertTrue(temp.size() == 1);
-    temp = workExperiencesDao.getTopTenEmployers(Campus.SEATTLE, 2016);
+    List<Campus> list = new ArrayList<>();
+    list.add(Campus.SEATTLE);
+    temp = workExperiencesDao.getTopTenEmployers(list, 2016);
     assertTrue(temp.size() == 1);
 
-    temp = workExperiencesDao.getTopTenEmployers(Campus.BOSTON, 1994);
+    list.clear();
+    list.add(Campus.BOSTON);
+    temp = workExperiencesDao.getTopTenEmployers(list, 1994);
     assertTrue(temp.size() == 0);
-    temp = workExperiencesDao.getTopTenEmployers(Campus.BOSTON, null);
+    temp = workExperiencesDao.getTopTenEmployers(list, null);
     assertTrue(temp.size() == 0);
 
     workExperiencesDao.deleteWorkExperienceByNeuId("111234567");

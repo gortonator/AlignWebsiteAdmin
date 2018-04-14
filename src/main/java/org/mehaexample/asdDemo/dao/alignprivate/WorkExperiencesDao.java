@@ -221,18 +221,18 @@ public class WorkExperiencesDao {
    * Get Top ten employers with the count of students from the private database
    * based on the campus location and students' year of expected graduation.
    *
-   * @param campus campus location.
+   * @param campuses campus location.
    * @param year   year of expected of graduation of students.
    * @return list of top ten employers with count of students.
    */
-  public List<TopEmployer> getTopTenEmployers(Campus campus, Integer year) {
+  public List<TopEmployer> getTopTenEmployers(List<Campus> campuses, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT NEW org.mehaexample.asdDemo.model.alignadmin.TopEmployer( " +
             "we.companyName, Count(*) ) " +
             "FROM Students s INNER JOIN WorkExperiences we " +
             "ON s.neuId = we.neuId " +
             "WHERE we.coop = false ");
-    if (campus != null) {
-      hql.append("AND s.campus = :campus ");
+    if (campuses != null) {
+      hql.append("AND s.campus IN (:campuses) ");
     }
     if (year != null) {
       hql.append("AND s.expectedLastYear = :year ");
@@ -243,8 +243,8 @@ public class WorkExperiencesDao {
       session = factory.openSession();
       TypedQuery<TopEmployer> query = session.createQuery(hql.toString(), TopEmployer.class);
       query.setMaxResults(10);
-      if (campus != null) {
-        query.setParameter("campus", campus);
+      if (campuses != null) {
+        query.setParameter("campuses", campuses);
       }
       if (year != null) {
         query.setParameter("year", year);

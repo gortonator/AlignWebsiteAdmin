@@ -200,7 +200,7 @@ public class PriorEducationsDao {
   /**
    * Get top ten bachelor degree based on the campus and year of graduation.
    *
-   * @param campus campus location.
+   * @param campuses campus location.
    * @param year   year of graduation of students.
    * @return top ten bachelor degrees / majors list.
    */
