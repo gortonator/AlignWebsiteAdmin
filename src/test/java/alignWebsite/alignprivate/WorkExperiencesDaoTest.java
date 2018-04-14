@@ -14,6 +14,7 @@ import org.mehaexample.asdDemo.enums.DegreeCandidacy;
 import org.mehaexample.asdDemo.enums.EnrollmentStatus;
 import org.mehaexample.asdDemo.enums.Gender;
 import org.mehaexample.asdDemo.enums.Term;
+import org.mehaexample.asdDemo.model.alignadmin.CompanyRatio;
 import org.mehaexample.asdDemo.model.alignadmin.TopEmployer;
 import org.mehaexample.asdDemo.model.alignprivate.*;
 import org.mehaexample.asdDemo.model.alignpublic.MultipleValueAggregatedData;
@@ -337,5 +338,42 @@ public class WorkExperiencesDaoTest {
     privacy.setCoop(false);
     privaciesDao.updatePrivacy(privacy);
     assertTrue(workExperiencesDao.getWorkExperiencesWithPrivacy("001234567").size()==0);
+  }
+
+  @Test
+  public void getStudentCompanyRatioTest() throws ParseException {
+    Students student = studentsDao.getStudentRecord("111234567");
+
+    WorkExperiences newWorkExperience = new WorkExperiences();
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    newWorkExperience.setStartDate(dateFormat.parse("2018-06-01"));
+    newWorkExperience.setEndDate(dateFormat.parse("2018-12-01"));
+    newWorkExperience.setCurrentJob(false);
+    newWorkExperience.setCoop(false);
+    newWorkExperience.setTitle("Title");
+    newWorkExperience.setDescription("Description");
+    newWorkExperience.setNeuId("001234567");
+    newWorkExperience.setCompanyName("Facebook");
+    workExperiencesDao.createWorkExperience(newWorkExperience);
+
+    WorkExperiences newWorkExperience2 = new WorkExperiences();
+    newWorkExperience.setStartDate(dateFormat.parse("2018-06-01"));
+    newWorkExperience.setEndDate(dateFormat.parse("2018-12-01"));
+    newWorkExperience.setCurrentJob(false);
+    newWorkExperience.setCoop(false);
+    newWorkExperience.setTitle("Title");
+    newWorkExperience.setDescription("Description");
+    newWorkExperience.setNeuId("111234567");
+    newWorkExperience.setCompanyName("Facebook");
+    workExperiencesDao.createWorkExperience(newWorkExperience);
+
+    List<Campus> campus = new ArrayList<>();
+    campus.add(Campus.SEATTLE);
+    campus.add(Campus.BOSTON);
+    List<CompanyRatio> list = workExperiencesDao.getStudentCompanyRatio(campus, "Facebook");
+    System.out.println(list.size());
+    System.out.println(list.get(0).getCount());
+    assertTrue(list.size()==1);
+    assertTrue(list.get(0).getCount()==2);
   }
 }

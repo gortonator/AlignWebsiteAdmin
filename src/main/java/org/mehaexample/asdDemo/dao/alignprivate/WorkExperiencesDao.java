@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.mehaexample.asdDemo.dao.alignpublic.MultipleValueAggregatedDataDao;
 import org.mehaexample.asdDemo.enums.Campus;
+import org.mehaexample.asdDemo.model.alignadmin.CompanyRatio;
 import org.mehaexample.asdDemo.model.alignadmin.TopBachelor;
 import org.mehaexample.asdDemo.model.alignadmin.TopEmployer;
 import org.mehaexample.asdDemo.model.alignprivate.Privacies;
@@ -411,6 +412,35 @@ public class WorkExperiencesDao {
         student.setCompanies(getCurrentCompaniesByNeuId(student.getNeuId()));
       }
       return studentCoopLists;
+    } finally {
+      session.close();
+    }
+  }
+
+  /**
+   *  Retrieving the yearly count ratio of students for a company
+   * @param campus a list of campus locations
+   * @param companyName company name
+   * @return a list of company ratio
+   */
+  public List<CompanyRatio> getStudentCompanyRatio(List<Campus> campus, String companyName) {
+    String hql = "SELECT DISTINCT NEW org.mehaexample.asdDemo.model.alignadmin.CompanyRatio(we.companyName, cast(Count(*) as integer)) " +
+            "FROM Students s INNER JOIN WorkExperiences we " +
+            "ON s.neuId = we.neuId " +
+            "WHERE we.companyName = :companyName " +
+            "AND s.campus IN (:campus) " +
+            "GROUP BY s.entryYear " +
+            "ORDER BY s.entryYear ASC ";
+
+    try {
+      session = factory.openSession();
+      TypedQuery<CompanyRatio> query = session.createQuery(hql, CompanyRatio.class);
+
+      query.setParameter("companyName", companyName);
+      query.setParameter("campus", campus);
+
+      List<CompanyRatio> companyRatioList = query.getResultList();
+      return companyRatioList;
     } finally {
       session.close();
     }
