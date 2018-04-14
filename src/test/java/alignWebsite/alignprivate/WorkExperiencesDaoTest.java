@@ -157,18 +157,20 @@ public class WorkExperiencesDaoTest {
     newWorkExperience.setCompanyName("Google");
     workExperiencesDao.createWorkExperience(newWorkExperience);
 
-    List<StudentCoopList> temp = workExperiencesDao.getStudentCoopCompanies(Campus.SEATTLE, null);
+    List<Campus> list = new ArrayList<>();
+    list.add(Campus.SEATTLE);
+    List<StudentCoopList> temp = workExperiencesDao.getStudentCoopCompanies(list, null);
     assertTrue(temp.size() == 1);
     assertTrue(temp.get(0).getCompanies().size() == 2);
 
     temp = workExperiencesDao.getStudentCoopCompanies(null, 2016);
     assertTrue(temp.size() == 1);
 
-    List<StudentCoopList> temp2 = workExperiencesDao.getStudentCoopCompanies(Campus.SEATTLE, 2016);
+    List<StudentCoopList> temp2 = workExperiencesDao.getStudentCoopCompanies(list, 2016);
     assertTrue(temp2.size() == 1);
     assertTrue(temp2.get(0).getCompanies().get(0).equals("Amazon"));
 
-    temp2 = workExperiencesDao.getStudentCoopCompanies(Campus.SEATTLE, 1994);
+    temp2 = workExperiencesDao.getStudentCoopCompanies(list, 1994);
     assertTrue(temp2.isEmpty());
 
     workExperiencesDao.deleteWorkExperienceByNeuId("001234567");
@@ -195,7 +197,9 @@ public class WorkExperiencesDaoTest {
     temp = workExperiencesDao.getStudentCurrentCompanies(null, null);
     assertTrue(temp.size() == 1);
 
-    List<StudentCoopList> temp2 = workExperiencesDao.getStudentCoopCompanies(Campus.SEATTLE, 2017);
+    List<Campus> list = new ArrayList<>();
+    list.add(Campus.SEATTLE);
+    List<StudentCoopList> temp2 = workExperiencesDao.getStudentCoopCompanies(list, 2017);
     assertTrue(temp2.isEmpty());
 
     workExperiencesDao.deleteWorkExperienceByNeuId("001234567");
