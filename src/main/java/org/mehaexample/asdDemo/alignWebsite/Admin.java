@@ -293,15 +293,20 @@ public class Admin{
 		List<Campus> campusList = new ArrayList<Campus>();
 		List<TopBachelor> degrees = new ArrayList<TopBachelor>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
-			    
-				degrees = priorEducationsDao.getTopTenBachelors(campusList,Integer.valueOf(input.getYear()));
+			    degrees = priorEducationsDao.getTopTenBachelors(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
@@ -353,13 +358,19 @@ public class Admin{
 		List<Campus> campusList = new ArrayList<Campus>();
 		List<TopEmployer> employers = new ArrayList<TopEmployer>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
 				employers = workExperiencesDao.getTopTenEmployers(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
@@ -417,24 +428,25 @@ public class Admin{
 		List<Campus> campusList = new ArrayList<Campus>();
 		List<TopElective> electives = new ArrayList<TopElective>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
 				electives = electivesDao.getTopTenElectives(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
 				electives = electivesDao.getTopTenElectives(campusList,null);
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
@@ -481,24 +493,25 @@ public class Admin{
 		List<Campus> campusList = new ArrayList<Campus>();
 		List<StudentCoopList> coopStudentsList = new ArrayList<StudentCoopList>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
 				coopStudentsList = workExperiencesDao.getStudentCoopCompanies(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
 				coopStudentsList = workExperiencesDao.getStudentCoopCompanies(campusList,null);
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
@@ -534,24 +547,25 @@ public class Admin{
 		List<Campus> campusList = new ArrayList<Campus>();
 		List<StudentBasicInfo> studentsList = new ArrayList<StudentBasicInfo>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getCompany()!=null && input.getYear()!=null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
 				studentsList = workExperiencesDao.getStudentsWorkingInACompany(campusList,Integer.valueOf(input.getYear()),input.getCompany());
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
 		} else if (input.getCampus()!=null && input.getCompany()!=null && input.getYear()==null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
 				studentsList = workExperiencesDao.getStudentsWorkingInACompany(campusList,null,input.getCompany());
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
@@ -586,13 +600,19 @@ public class Admin{
 		List<Campus> campusList = new ArrayList<Campus>();
 		List<StudentCoopList> studentsList = new ArrayList<StudentCoopList>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
 				studentsList = workExperiencesDao.
 						getStudentCurrentCompanies(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
@@ -636,13 +656,19 @@ public class Admin{
 		List<Campus> campusList = new ArrayList<Campus>();
 		List<StudentBachelorInstitution> instList = new ArrayList<StudentBachelorInstitution>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
 				instList = priorEducationsDao.
 						getListOfBachelorInstitutions(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
@@ -650,11 +676,6 @@ public class Admin{
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
-				ListIterator<String> iterator = input.getCampus().listIterator();
-			    while (iterator.hasNext())
-			    {
-			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			    }
 				instList = priorEducationsDao.
 						getListOfBachelorInstitutions(campusList,null);
 			} catch(Exception e){
