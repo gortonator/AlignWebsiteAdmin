@@ -353,7 +353,7 @@ public class WorkExperiencesDaoTest {
     newWorkExperience.setTitle("Title");
     newWorkExperience.setDescription("Description");
     newWorkExperience.setNeuId("001234567");
-    newWorkExperience.setCompanyName("Facebook");
+    newWorkExperience.setCompanyName("ABC");
     workExperiencesDao.createWorkExperience(newWorkExperience);
 
     WorkExperiences newWorkExperience2 = new WorkExperiences();
@@ -364,15 +364,13 @@ public class WorkExperiencesDaoTest {
     newWorkExperience.setTitle("Title");
     newWorkExperience.setDescription("Description");
     newWorkExperience.setNeuId("111234567");
-    newWorkExperience.setCompanyName("Facebook");
+    newWorkExperience.setCompanyName("ABC");
     workExperiencesDao.createWorkExperience(newWorkExperience);
 
     List<Campus> campus = new ArrayList<>();
     campus.add(Campus.SEATTLE);
     campus.add(Campus.BOSTON);
-    List<CompanyRatio> list = workExperiencesDao.getStudentCompanyRatio(campus, "Facebook");
-    System.out.println(list.size());
-    System.out.println(list.get(0).getCount());
+    List<CompanyRatio> list = workExperiencesDao.getStudentCompanyRatio(campus, "ABC");
     assertTrue(list.size()==1);
     assertTrue(list.get(0).getCount()==2);
   }

@@ -17,6 +17,7 @@ import org.mehaexample.asdDemo.model.alignpublic.MultipleValueAggregatedData;
 
 import javax.persistence.TypedQuery;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class WorkExperiencesDao {
@@ -424,13 +425,14 @@ public class WorkExperiencesDao {
    * @return a list of company ratio
    */
   public List<CompanyRatio> getStudentCompanyRatio(List<Campus> campus, String companyName) {
-    String hql = "SELECT DISTINCT NEW org.mehaexample.asdDemo.model.alignadmin.CompanyRatio(we.companyName, cast(Count(*) as integer)) " +
+    String hql = "SELECT DISTINCT NEW org.mehaexample.asdDemo.model.alignadmin.CompanyRatio(" +
+            "YEAR(we.startDate), cast(Count(DISTINCT s.neuId) as integer)) " +
             "FROM Students s INNER JOIN WorkExperiences we " +
             "ON s.neuId = we.neuId " +
             "WHERE we.companyName = :companyName " +
             "AND s.campus IN (:campus) " +
-            "GROUP BY s.expectedLastYear " +
-            "ORDER BY s.expectedLastYear ASC ";
+            "GROUP BY YEAR(we.startDate) " +
+            "ORDER BY YEAR(we.startDate) ASC ";
 
     try {
       session = factory.openSession();
