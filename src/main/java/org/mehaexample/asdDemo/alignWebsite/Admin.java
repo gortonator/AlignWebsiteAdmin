@@ -251,6 +251,15 @@ public class Admin{
 		JSONArray result = new JSONArray();
 		if (input.getCampus()!=null){
 			try{
+				if(input.getCampus().size() < 1){
+					List<String> populateCampusList = new ArrayList<String>();
+					populateCampusList.add("BOSTON");
+					populateCampusList.add("SEATTLE");
+					populateCampusList.add("SILICON_VALLEY");
+					populateCampusList.add("CHARLOTTE");
+					input.setCampus(populateCampusList);
+				}
+				
 				ListIterator<String> iterator = input.getCampus().listIterator();
 			    while (iterator.hasNext())
 			    {
@@ -297,6 +306,15 @@ public class Admin{
 		
 		try{
 			if(input.getCampus() != null){
+				if(input.getCampus().size() < 1){
+					List<String> populateCampusList = new ArrayList<String>();
+					populateCampusList.add("BOSTON");
+					populateCampusList.add("SEATTLE");
+					populateCampusList.add("SILICON_VALLEY");
+					populateCampusList.add("CHARLOTTE");
+					input.setCampus(populateCampusList);
+				}
+			
 				ListIterator<String> iterator = input.getCampus().listIterator();
 				while (iterator.hasNext())
 				{
@@ -365,11 +383,22 @@ public class Admin{
 		JSONArray result = new JSONArray();
 		
 		try{
-			ListIterator<String> iterator = input.getCampus().listIterator();
-			while (iterator.hasNext())
-			{
-			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			} 
+			if(input.getCampus() != null){
+				if(input.getCampus().size() < 1){
+					List<String> populateCampusList = new ArrayList<String>();
+					populateCampusList.add("BOSTON");
+					populateCampusList.add("SEATTLE");
+					populateCampusList.add("SILICON_VALLEY");
+					populateCampusList.add("CHARLOTTE");
+					input.setCampus(populateCampusList);
+				}
+			
+				ListIterator<String> iterator = input.getCampus().listIterator();
+				while (iterator.hasNext())
+				{
+					campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+				}
+			}
 		}	catch(Exception e){
 			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 		}
@@ -430,10 +459,21 @@ public class Admin{
 		JSONArray result = new JSONArray();
 		
 		try{
-			ListIterator<String> iterator = input.getCampus().listIterator();
-			while (iterator.hasNext())
-			{
-			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			if(input.getCampus() != null){
+				if(input.getCampus().size() < 1){
+					List<String> populateCampusList = new ArrayList<String>();
+					populateCampusList.add("BOSTON");
+					populateCampusList.add("SEATTLE");
+					populateCampusList.add("SILICON_VALLEY");
+					populateCampusList.add("CHARLOTTE");
+					input.setCampus(populateCampusList);
+				}
+			
+				ListIterator<String> iterator = input.getCampus().listIterator();
+				while (iterator.hasNext())
+				{
+					campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+				}
 			} 
 		}	catch(Exception e){
 			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
@@ -495,11 +535,22 @@ public class Admin{
 		JSONArray result = new JSONArray();
 		
 		try{
-			ListIterator<String> iterator = input.getCampus().listIterator();
-			while (iterator.hasNext())
-			{
-			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			} 
+			if(input.getCampus() != null){
+				if(input.getCampus().size() < 1){
+					List<String> populateCampusList = new ArrayList<String>();
+					populateCampusList.add("BOSTON");
+					populateCampusList.add("SEATTLE");
+					populateCampusList.add("SILICON_VALLEY");
+					populateCampusList.add("CHARLOTTE");
+					input.setCampus(populateCampusList);
+				}
+			
+				ListIterator<String> iterator = input.getCampus().listIterator();
+				while (iterator.hasNext())
+				{
+					campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+				}
+			}
 		}	catch(Exception e){
 			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 		}
@@ -548,11 +599,22 @@ public class Admin{
 		JSONArray result = new JSONArray();
 		
 		try{
-			ListIterator<String> iterator = input.getCampus().listIterator();
-			while (iterator.hasNext())
-			{
-			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			} 
+			if(input.getCampus() != null){
+				if(input.getCampus().size() < 1){
+					List<String> populateCampusList = new ArrayList<String>();
+					populateCampusList.add("BOSTON");
+					populateCampusList.add("SEATTLE");
+					populateCampusList.add("SILICON_VALLEY");
+					populateCampusList.add("CHARLOTTE");
+					input.setCampus(populateCampusList);
+				}
+			
+				ListIterator<String> iterator = input.getCampus().listIterator();
+				while (iterator.hasNext())
+				{
+					campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+				}
+			}
 		}	catch(Exception e){
 			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 		}
@@ -600,11 +662,22 @@ public class Admin{
 		JSONArray result = new JSONArray();
 		
 		try{
-			ListIterator<String> iterator = input.getCampus().listIterator();
-			while (iterator.hasNext())
-			{
-			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			} 
+			if(input.getCampus() != null){
+				if(input.getCampus().size() < 1){
+					List<String> populateCampusList = new ArrayList<String>();
+					populateCampusList.add("BOSTON");
+					populateCampusList.add("SEATTLE");
+					populateCampusList.add("SILICON_VALLEY");
+					populateCampusList.add("CHARLOTTE");
+					input.setCampus(populateCampusList);
+				}
+			
+				ListIterator<String> iterator = input.getCampus().listIterator();
+				while (iterator.hasNext())
+				{
+					campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+				}
+			}
 		}	catch(Exception e){
 			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 		}
@@ -656,11 +729,22 @@ public class Admin{
 		JSONArray result = new JSONArray();
 		
 		try{
-			ListIterator<String> iterator = input.getCampus().listIterator();
-			while (iterator.hasNext())
-			{
-			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			} 
+			if(input.getCampus() != null){
+				if(input.getCampus().size() < 1){
+					List<String> populateCampusList = new ArrayList<String>();
+					populateCampusList.add("BOSTON");
+					populateCampusList.add("SEATTLE");
+					populateCampusList.add("SILICON_VALLEY");
+					populateCampusList.add("CHARLOTTE");
+					input.setCampus(populateCampusList);
+				}
+			
+				ListIterator<String> iterator = input.getCampus().listIterator();
+				while (iterator.hasNext())
+				{
+					campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+				}
+			}
 		}	catch(Exception e){
 			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 		}
@@ -1108,20 +1192,22 @@ public class Admin{
 		JSONArray result = new JSONArray();
 		
 		try{
-			if(input.getCampus().size() < 1){
-				List<String> populateCampusList = new ArrayList<String>();
-				populateCampusList.add("BOSTON");
-				populateCampusList.add("SEATTLE");
-				populateCampusList.add("SILICON_VALLEY");
-				populateCampusList.add("CHARLOTTE");
-				input.setCampus(populateCampusList);
-			}
+			if(input.getCampus() != null){
+				if(input.getCampus().size() < 1){
+					List<String> populateCampusList = new ArrayList<String>();
+					populateCampusList.add("BOSTON");
+					populateCampusList.add("SEATTLE");
+					populateCampusList.add("SILICON_VALLEY");
+					populateCampusList.add("CHARLOTTE");
+					input.setCampus(populateCampusList);
+				}
 			
-			ListIterator<String> iterator = input.getCampus().listIterator();
-			while (iterator.hasNext())
-			{
-			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			} 
+				ListIterator<String> iterator = input.getCampus().listIterator();
+				while (iterator.hasNext())
+				{
+					campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+				}
+			}
 		}	catch(Exception e){
 			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 		}
