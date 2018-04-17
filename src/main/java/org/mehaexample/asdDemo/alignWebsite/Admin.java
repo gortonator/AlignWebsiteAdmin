@@ -295,16 +295,30 @@ public class Admin{
 		JSONArray result = new JSONArray();
 		
 		try{
-			ListIterator<String> iterator = input.getCampus().listIterator();
-			while (iterator.hasNext())
-			{
-			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
-			} 
+			System.out.println("before i");
+			if(input.getCampus() != null){
+				ListIterator<String> iterator = input.getCampus().listIterator();
+				System.out.println("after i");
+				while (iterator.hasNext())
+				{
+					System.out.println("inside while");
+					campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+				}
+			}
+
 		}	catch(Exception e){
+			System.out.println("inside catch");
 			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 		}
-		
-		if (input.getCampus()!=null && input.getYear()!=null){
+
+		if (input.getCampus()==null && input.getYear()==null){
+			try{
+				degrees = priorEducationsDao.getTopTenBachelors(null,null);
+			} catch(Exception e){
+				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
+			}
+		}
+		else if (input.getCampus()!=null && input.getYear()!=null){
 			try{
 			    degrees = priorEducationsDao.getTopTenBachelors(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
@@ -321,12 +335,6 @@ public class Admin{
 				degrees = priorEducationsDao.getTopTenBachelors(null,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
-			}
-		} else if (input.getCampus()==null && input.getYear()==null){
-			try{
-				degrees = priorEducationsDao.getTopTenBachelors(null,null);
-			} catch(Exception e){
-				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
 		}
 		
@@ -447,19 +455,25 @@ public class Admin{
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
+				System.out.println("inside server1");
 				electives = electivesDao.getTopTenElectives(campusList,null);
+				System.out.println("server3"+electives.size());
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
 		} else if (input.getCampus()==null && input.getYear()!=null){
 			try{
+				System.out.println("inside server2");
 				electives = electivesDao.getTopTenElectives(null,Integer.valueOf(input.getYear()));
+				System.out.println("server2"+electives.size());
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
 		} else if (input.getCampus()==null && input.getYear()==null){
 			try{
+				System.out.println("inside server");
 				electives = electivesDao.getTopTenElectives(null,null);
+				System.out.println("server"+electives.size());
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
@@ -536,7 +550,6 @@ public class Admin{
 	 * This is a function for retrieving the students working in a given company
 	 * 
 	 * http://localhost:8080/webapi/analytics/company
-	 * @param params
 	 * @return the list student details working for a company 200 OK else 400
 	 */
 	@POST
@@ -589,7 +602,6 @@ public class Admin{
 	 * This is a function for retrieving the students working as full time
 	 * 
 	 * http://localhost:8080/webapi/analytics/working
-	 * @param params
 	 * @return the list student details and company they are working for. 200 OK else 400
 	 */
 	@POST

@@ -481,13 +481,13 @@ SearchStudent
     @Test
     public void getTopBachelorDegreeCampusNullTest() throws SQLException {
         ParamsObject paramsobj = new ParamsObject();
+        paramsobj.setCampus(null);
         paramsobj.setYear("2015");
         paramsobj.setYear("2014");
+        paramsobj.setYear("2016");
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-//        String degrees = (String) TopBachelorResponse.getEntity();
-//        Assert.assertEquals(degrees.length(), 2);
-        Assert.assertEquals(400, TopBachelorResponse.getStatus());
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
     }
 
     @Test
@@ -497,9 +497,8 @@ SearchStudent
         paramsobj.setYear(null);
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-//        String degrees = (String) TopBachelorResponse.getEntity();
-//        Assert.assertEquals(degrees.length(), 2);
-        Assert.assertEquals(400, TopBachelorResponse.getStatus());
+        System.out.println(TopBachelorResponse.getEntity());
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
     }
 
 
@@ -652,6 +651,7 @@ SearchStudent
         Assert.assertEquals(degrees.length(), 2);
         Assert.assertEquals(200, TopBachelorResponse.getStatus());
     }
+
     @Test
     public void getTopEmployersNullTest() throws SQLException {
         ParamsObject paramsobj = new ParamsObject();
@@ -694,6 +694,10 @@ SearchStudent
         ParamsObject paramsobj = new ParamsObject();
         paramsobj.setCampus(null);
         paramsobj.setYear("2015");
+        paramsobj.setYear("2014");
+        paramsobj.setYear("2016");
+        paramsobj.setYear("2017");
+        paramsobj.setYear("2018");
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getTopEmployers(paramsobj);
 //        String degrees = (String) TopBachelorResponse.getEntity();
@@ -793,9 +797,7 @@ SearchStudent
         paramsobj.setYear(null);
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getTopElectives(paramsobj);
-//        String degrees = (String) TopBachelorResponse.getEntity();
-//        System.out.println(degrees);
-//        Assert.assertEquals(degrees.length(), 16);
+        System.out.println(TopBachelorResponse.getEntity());
         Assert.assertEquals(400, TopBachelorResponse.getStatus());
     }
 
@@ -806,6 +808,7 @@ SearchStudent
         paramsobj.setCampus(null);
         paramsobj.setYear("2015");
         paramsobj.setYear("2014");
+
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getTopElectives(paramsobj);
 //        String degrees = (String) TopBachelorResponse.getEntity();
@@ -920,8 +923,7 @@ SearchStudent
     public void getTopCoopCampusNUllTest() throws SQLException, ParseException {
         ParamsObject paramsobj = new ParamsObject();
         paramsobj.setCampus(null);
-        paramsobj.setYear("2015");
-        paramsobj.setYear("2014");
+        paramsobj.setYear("2017");
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getCoopStudents(paramsobj);
         Assert.assertEquals(400, TopBachelorResponse.getStatus());
