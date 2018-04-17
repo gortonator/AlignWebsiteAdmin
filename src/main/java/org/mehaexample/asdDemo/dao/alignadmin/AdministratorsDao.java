@@ -12,7 +12,6 @@ public class AdministratorsDao {
   private static final String ADMIN_EXIST_ERROR = "Admin already exists.";
 
   private SessionFactory factory;
-  private Session session;
 
   /**
    * Default Constructor.
@@ -40,7 +39,7 @@ public class AdministratorsDao {
    * @param administrators administrator object.
    * @return true if insert successfully. Otherwise throws exception.
    */
-  public Administrators addAdministrator(Administrators administrators) {
+  public synchronized Administrators addAdministrator(Administrators administrators) {
     if (administrators == null) {
       throw new IllegalArgumentException("Administrator Argument cannot be null");
     }
@@ -48,8 +47,8 @@ public class AdministratorsDao {
     if (ifAdminNuidExists(administrators.getAdministratorNeuId())) {
       throw new HibernateException(ADMIN_EXIST_ERROR);
     } else {
+      Session session = factory.openSession();
       try {
-        session = factory.openSession();
         tx = session.beginTransaction();
         session.save(administrators);
         tx.commit();
@@ -69,8 +68,8 @@ public class AdministratorsDao {
    * @return A list of Administrators
    */
   public List<Administrators> getAllAdminstrators() {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM Administrators");
       return (List<Administrators>) query.list();
     } finally {
@@ -85,8 +84,8 @@ public class AdministratorsDao {
    * @return an Administrators object
    */
   public Administrators getAdministratorRecord(String adminNeuId) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM Administrators"
               + " WHERE administratorNeuId = :administratorNeuId ");
       query.setParameter("administratorNeuId", adminNeuId);
@@ -107,8 +106,8 @@ public class AdministratorsDao {
    * @return an Administrators object
    */
   public Administrators findAdministratorByEmail(String email) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM Administrators"
               + " WHERE email = :email ");
       query.setParameter("email", email);
@@ -128,13 +127,13 @@ public class AdministratorsDao {
    * @param administrator which contains the latest information.
    * @return true if update successfully. Otherwise, return false.
    */
-  public boolean updateAdministratorRecord(Administrators administrator) {
+  public synchronized boolean updateAdministratorRecord(Administrators administrator) {
     Transaction tx = null;
     boolean updated;
     String administratorNeuId = administrator.getAdministratorNeuId();
     if (ifAdminNuidExists(administratorNeuId)) {
+      Session session = factory.openSession();
       try {
-        session = factory.openSession();
         tx = session.beginTransaction();
         session.saveOrUpdate(administrator);
         tx.commit();
@@ -158,7 +157,7 @@ public class AdministratorsDao {
    * @param administratorNeuId administrator Neu Id.
    * @return true if delete successfully. Otherwise, false.
    */
-  public boolean deleteAdministrator(String administratorNeuId) {
+  public synchronized boolean deleteAdministrator(String administratorNeuId) {
     if (administratorNeuId == null || administratorNeuId.isEmpty()) {
       return false;
     }
@@ -168,6 +167,7 @@ public class AdministratorsDao {
       throw new HibernateException("Admin Id does not exist.");
     }
     Transaction tx = null;
+    Session session = factory.openSession();
     try {
       session = factory.openSession();
       tx = session.beginTransaction();
@@ -190,9 +190,8 @@ public class AdministratorsDao {
    */
   public boolean ifAdminNuidExists(String adminNeuId) {
     boolean find = false;
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
-
       org.hibernate.query.Query query = session.createQuery("FROM Administrators "
               + "WHERE administratorNeuId = :administratorNeuId");
       query.setParameter("administratorNeuId", adminNeuId);

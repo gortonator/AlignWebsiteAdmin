@@ -13,7 +13,6 @@ public class AdministratorNotesDao {
   private static final String NEU_ID = "neuId";
 
   private SessionFactory factory;
-  private Session session;
 
   /**
    * Default Constructor
@@ -42,8 +41,8 @@ public class AdministratorNotesDao {
    * @return list of Administrator Notes
    */
   public List<AdministratorNotes> getAdministratorNoteRecordByNeuId(String neuId) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM AdministratorNotes WHERE neuId = :neuId ");
       query.setParameter(NEU_ID, neuId);
       return (List<AdministratorNotes>) query.list();
@@ -59,8 +58,8 @@ public class AdministratorNotesDao {
    * @return administrator notes.
    */
   public AdministratorNotes getAdministratorNoteById(int administratorNoteId) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
               "FROM AdministratorNotes WHERE administratorNoteId = :administratorNoteId ");
       query.setParameter("administratorNoteId", administratorNoteId);
@@ -81,8 +80,8 @@ public class AdministratorNotesDao {
    * @return A list of Administrator Notes
    */
   public List<AdministratorNotes> getAdministratorNoteRecordByAdminNeuId(String administratorNeuId) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM AdministratorNotes " +
               "WHERE administratorNeuId = :administratorNeuId ");
       query.setParameter("administratorNeuId", administratorNeuId);
@@ -98,7 +97,8 @@ public class AdministratorNotesDao {
    * @param note Administrator Note to be inserted
    * @return Newly inserted Administrator Note if success. Otherwise, null.
    */
-  public AdministratorNotes addAdministratorNoteRecord(AdministratorNotes note) {
+  public synchronized AdministratorNotes addAdministratorNoteRecord(AdministratorNotes note) {
+    Session session = factory.openSession();
     Transaction tx = null;
     try {
       session = factory.openSession();
@@ -124,13 +124,13 @@ public class AdministratorNotesDao {
    * @throws HibernateException if there something wrong with the connection
    *                            to the Database.
    */
-  public boolean updateAdministratorNote(AdministratorNotes note) {
+  public synchronized boolean updateAdministratorNote(AdministratorNotes note) {
     Transaction tx = null;
     AdministratorNotes foundNote = getAdministratorNoteById(note.getAdministratorNoteId());
 
     if (foundNote != null) {
+      Session session = factory.openSession();
       try {
-        session = factory.openSession();
         tx = session.beginTransaction();
         session.saveOrUpdate(note);
         tx.commit();
@@ -153,13 +153,13 @@ public class AdministratorNotesDao {
    * @param noteId administratorNoteId indicates the note to be deleted from database.
    * @return true if delete successfully. Return false if failed.
    */
-  public boolean deleteAdministratorNoteRecord(int noteId) {
+  public synchronized boolean deleteAdministratorNoteRecord(int noteId) {
     Transaction tx = null;
     if (getAdministratorNoteById(noteId) == null) {
       throw new HibernateException("Administrator Note Id does not exist");
     }
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       tx = session.beginTransaction();
       org.hibernate.query.Query query = session.createQuery("DELETE FROM AdministratorNotes " +
               "WHERE administratorNoteId = :administratorNoteId ");
@@ -183,8 +183,8 @@ public class AdministratorNotesDao {
    */
   public boolean ifNuidExists(String neuId) {
     boolean find = false;
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM AdministratorNotes WHERE neuId = :neuId");
       query.setParameter(NEU_ID, neuId);
       List list = query.list();

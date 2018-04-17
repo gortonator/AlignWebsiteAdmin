@@ -22,7 +22,6 @@ import javax.persistence.TypedQuery;
 
 public class StudentsDao {
   private SessionFactory factory;
-  private Session session;
   private PrivaciesDao privaciesDao;
 
   /**
@@ -48,15 +47,15 @@ public class StudentsDao {
    * @param student student to be inserted
    * @return inserted student if successful. Otherwise null.
    */
-  public Students addStudent(Students student) {
+  public synchronized Students addStudent(Students student) {
     Transaction tx = null;
 
     if (ifNuidExists(student.getNeuId())) {
       throw new HibernateException("student already exists.");
     }
 
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       tx = session.beginTransaction();
       session.save(student);
       tx.commit();
@@ -73,8 +72,8 @@ public class StudentsDao {
   // THIS IS FOR MACHINE LEARNING AND PUBLIC SCRIPTS
   // How many students are at the {Seattle|Boston|Silicon Valley|Charlotte) campus?
   public int getTotalCurrentStudentsInACampus(Campus campus) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
               "SELECT COUNT(*) FROM Students WHERE campus = :campus AND " +
                       "(enrollmentStatus = :enrollmentStatus1 OR enrollmentStatus = :enrollmentStatus2) ");
@@ -90,8 +89,8 @@ public class StudentsDao {
   // THIS IS FOR MACHINE LEARNING SCRIPTS
   // How many students are in the ALIGN program?
   public int getTotalCurrentStudents() {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
               "SELECT COUNT(*) FROM Students WHERE " +
                       "enrollmentStatus = :enrollmentStatus1 OR enrollmentStatus = :enrollmentStatus2");
@@ -105,8 +104,8 @@ public class StudentsDao {
 
   // THIS IS FOR PUBLIC SCRIPTS
   public int getTotalStudents() {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
               "SELECT COUNT(*) FROM Students");
       return ((Long) query.list().get(0)).intValue();
@@ -118,8 +117,8 @@ public class StudentsDao {
   // THIS IS FOR MACHINE LEARNING SCRIPTS
   // HOW MANY STUDENTS GRADUATED FROM THE ALIGN PROGRAM?
   public int getTotalGraduatedStudents() {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
               "SELECT COUNT(*) FROM Students WHERE enrollmentStatus = :enrollmentStatus ");
       query.setParameter("enrollmentStatus", EnrollmentStatus.GRADUATED);
@@ -212,8 +211,8 @@ public class StudentsDao {
       hql.append("AND we.coop = true ");
     }
     hql.append(" ORDER BY s.lastName DESC ");
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(hql.toString());
       if (begin != null && end != null) {
         query.setFirstResult(begin - 1);
@@ -257,8 +256,8 @@ public class StudentsDao {
    * @return list of students that have any matching inputs from the parameters.
    */
   public List<Students> getAdminAutoFillSearch(String firstName, String middleName, String lastName, String neuId, String email) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query;
       if (firstName.equalsIgnoreCase(lastName)) {
         query = session.createQuery(
@@ -292,8 +291,8 @@ public class StudentsDao {
   // THIS IS FOR MACHINE LEARNING SCRIPT
   // What is the drop out rate for Align?
   public int getTotalDropOutStudents() {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
               "SELECT COUNT(*) FROM Students WHERE enrollmentStatus = :enrollmentStatus");
       query.setParameter("enrollmentStatus", EnrollmentStatus.DROPPED_OUT);
@@ -306,8 +305,8 @@ public class StudentsDao {
   // THIS IS FOR PUBLIC FACING SCRIPT
   // Total Full Time Students?
   public int getTotalFullTimeStudents() {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
               "SELECT COUNT(*) FROM Students WHERE enrollmentStatus = :enrollmentStatus");
       query.setParameter("enrollmentStatus", EnrollmentStatus.FULL_TIME);
@@ -320,8 +319,8 @@ public class StudentsDao {
   // THIS IS FOR PUBLIC FACING SCRIPT
   // Total Part Time Students?
   public int getTotalPartTimeStudents() {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
               "SELECT COUNT(*) FROM Students WHERE enrollmentStatus = :enrollmentStatus");
       query.setParameter("enrollmentStatus", EnrollmentStatus.PART_TIME);
@@ -334,8 +333,8 @@ public class StudentsDao {
   // THIS IS FOR PUBLIC FACING SCRIPT
   // Total Students With Scholarship?
   public int getTotalStudentsWithScholarship() {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(
               "SELECT COUNT(*) FROM Students " +
                       "WHERE scholarship = true AND " +
@@ -355,8 +354,8 @@ public class StudentsDao {
             "WHERE s.enrollmentStatus = 'FULL_TIME' OR s.enrollmentStatus = 'PART_TIME' " +
             "GROUP BY s.state " +
             "ORDER BY Count(*) DESC ";
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       TypedQuery<MultipleValueAggregatedData> query = session.createQuery(hql, MultipleValueAggregatedData.class);
       List<MultipleValueAggregatedData> list = query.getResultList();
       for (MultipleValueAggregatedData data : list) {
@@ -474,8 +473,8 @@ public class StudentsDao {
 
     hql.append(" ORDER BY s.expectedLastYear DESC ");
 
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery(hql.toString());
       if (begin != null || end != null) {
         query.setFirstResult(begin - 1);
@@ -513,8 +512,8 @@ public class StudentsDao {
    * @return a student object
    */
   public Students getStudentRecord(String neuId) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM Students WHERE neuId = :studentNuid ");
       query.setParameter("studentNuid", neuId);
       List list = query.list();
@@ -533,13 +532,13 @@ public class StudentsDao {
    * @param student which contains the new student details.
    * @return true if successful. Otherwise, false.
    */
-  public boolean updateStudentRecord(Students student) {
+  public synchronized boolean updateStudentRecord(Students student) {
     Transaction tx = null;
     String neuId = student.getNeuId();
 
     if (ifNuidExists(neuId)) {
+      Session session = factory.openSession();
       try {
-        session = factory.openSession();
         tx = session.beginTransaction();
         session.saveOrUpdate(student);
         tx.commit();
@@ -563,7 +562,7 @@ public class StudentsDao {
    * @param neuId Student Neu Id
    * @return true if delete succesfully. Otherwise, false.
    */
-  public boolean deleteStudent(String neuId) {
+  public synchronized boolean deleteStudent(String neuId) {
     if (neuId == null || neuId.isEmpty()) {
       throw new IllegalArgumentException("Neu ID argument cannot be null or empty.");
     }
@@ -572,7 +571,7 @@ public class StudentsDao {
     if (student == null) {
       throw new HibernateException("Student cannot be found.");
     }
-    session = factory.openSession();
+    Session session = factory.openSession();
     Transaction tx = null;
     try {
       tx = session.beginTransaction();
@@ -595,8 +594,8 @@ public class StudentsDao {
    * @return A list of students
    */
   public List<Students> searchStudentRecord(String firstName) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM Students WHERE firstName = :studentfirstName ");
       query.setParameter("studentfirstName", firstName);
       return (List<Students>) query.list();
@@ -611,8 +610,8 @@ public class StudentsDao {
    * @return A list of students
    */
   public List<Students> getAllStudents() {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM Students");
       return (List<Students>) query.list();
     } finally {
@@ -629,8 +628,8 @@ public class StudentsDao {
   public boolean ifNuidExists(String neuId) {
     boolean find = false;
 
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM Students WHERE neuId = :studentNeuId");
       query.setParameter("studentNeuId", neuId);
       List list = query.list();
@@ -653,7 +652,7 @@ public class StudentsDao {
    * @return the number of male students.
    */
   public int countMaleStudents() {
-    session = factory.openSession();
+    Session session = factory.openSession();
     org.hibernate.query.Query query = session.createQuery("FROM Students WHERE gender = 'M' AND " +
             "(enrollmentStatus = 'FULL_TIME' OR enrollmentStatus = 'PART_TIME') ");
     List<Students> list = query.list();
@@ -670,7 +669,7 @@ public class StudentsDao {
    * @return the number of female students.
    */
   public int countFemaleStudents() {
-    session = factory.openSession();
+    Session session = factory.openSession();
     org.hibernate.query.Query query = session.createQuery("FROM Students WHERE gender = 'F' AND " +
             "(enrollmentStatus = 'FULL_TIME' OR enrollmentStatus = 'PART_TIME') ");
     List<Students> list = query.list();
@@ -685,7 +684,7 @@ public class StudentsDao {
    * @return a list of students with the same degree.
    */
   public List<Students> searchSimilarStudents(DegreeCandidacy degree) {
-    session = factory.openSession();
+    Session session = factory.openSession();
     org.hibernate.query.Query query = session.createQuery("FROM Students WHERE degree = :degree");
     query.setParameter("degree", degree);
     List<Students> list = query.list();
@@ -700,8 +699,8 @@ public class StudentsDao {
    * @return a student object
    */
   public Students getStudentRecordByEmailId(String email) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM Students WHERE email = :email ");
       query.setParameter("email", email);
       List list = query.list();

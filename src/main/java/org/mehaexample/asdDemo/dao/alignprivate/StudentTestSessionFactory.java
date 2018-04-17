@@ -11,7 +11,7 @@ public class StudentTestSessionFactory {
             .configure("/hibernate_private_test.cfg.xml").buildSessionFactory();
   }
 
-  public static SessionFactory getFactory() {
+  public synchronized static SessionFactory getFactory() {
     return factory;
   }
 }

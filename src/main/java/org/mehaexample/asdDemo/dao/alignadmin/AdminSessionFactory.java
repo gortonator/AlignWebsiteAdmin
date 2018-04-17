@@ -11,7 +11,7 @@ public class AdminSessionFactory {
             .configure("/hibernate_Admin.cfg.xml").buildSessionFactory();
   }
 
-  public static SessionFactory getFactory() {
+  public synchronized static SessionFactory getFactory() {
     return factory;
   }
 }

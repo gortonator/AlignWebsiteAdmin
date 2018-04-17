@@ -12,7 +12,6 @@ public class AdminLoginsDao {
   private static final String ADMIN_EXIST_ERROR = "Admin Login already exist.";
 
   private SessionFactory factory;
-  private Session session;
 
   /**
    * Default Constructor.
@@ -41,8 +40,8 @@ public class AdminLoginsDao {
    * @return admin logins object if found; null otherwise.
    */
   public AdminLogins findAdminLoginsByEmail(String email) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("FROM AdminLogins WHERE email = :email");
       query.setParameter("email", email);
       List list = query.list();
@@ -67,13 +66,13 @@ public class AdminLoginsDao {
    *                            not been created yet, or there is something wrong
    *                            with the Database connection.
    */
-  public AdminLogins createAdminLogin(AdminLogins adminLogin) {
+  public synchronized AdminLogins createAdminLogin(AdminLogins adminLogin) {
     Transaction tx = null;
     if (findAdminLoginsByEmail(adminLogin.getEmail()) != null) {
       throw new HibernateException(ADMIN_EXIST_ERROR);
     } else {
+      Session session = factory.openSession();
       try {
-        session = factory.openSession();
         tx = session.beginTransaction();
         session.save(adminLogin);
         tx.commit();
@@ -94,11 +93,11 @@ public class AdminLoginsDao {
    * @param adminLogin updated admin login.
    * @return true if updated, false otherwise.
    */
-  public boolean updateAdminLogin(AdminLogins adminLogin) {
+  public synchronized boolean updateAdminLogin(AdminLogins adminLogin) {
     Transaction tx = null;
     if (findAdminLoginsByEmail(adminLogin.getEmail()) != null) {
+      Session session = factory.openSession();
       try {
-        session = factory.openSession();
         tx = session.beginTransaction();
         session.saveOrUpdate(adminLogin);
         tx.commit();
@@ -121,10 +120,10 @@ public class AdminLoginsDao {
    * @param email for the admin login to be deleted.
    * @return true if deleted, false otherwise.
    */
-  public boolean deleteAdminLogin(String email) {
+  public synchronized boolean deleteAdminLogin(String email) {
     AdminLogins adminLogin = findAdminLoginsByEmail(email);
     if (adminLogin != null) {
-      session = factory.openSession();
+      Session session = factory.openSession();
       Transaction tx = null;
       try {
         tx = session.beginTransaction();

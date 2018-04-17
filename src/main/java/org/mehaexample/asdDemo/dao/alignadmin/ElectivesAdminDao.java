@@ -12,7 +12,6 @@ import org.mehaexample.asdDemo.model.alignadmin.ElectivesAdmin;
 
 public class ElectivesAdminDao {
   private SessionFactory factory;
-  private Session session;
 
   private StudentsDao studentDao;
 
@@ -47,8 +46,8 @@ public class ElectivesAdminDao {
    * @return list of electives taken by the student.
    */
   public List<ElectivesAdmin> getElectivesByNeuId(String neuId) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("from ElectivesAdmin where neuId = :neuId");
       query.setParameter("neuId", neuId);
       return (List<ElectivesAdmin>) query.list();
@@ -64,8 +63,8 @@ public class ElectivesAdminDao {
    * @return Elective if found, null otherwise.
    */
   public ElectivesAdmin getElectiveById(int electiveId) {
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       org.hibernate.query.Query query = session.createQuery("from ElectivesAdmin where electiveId = :electiveId");
       query.setParameter("electiveId", electiveId);
       List<ElectivesAdmin> list = query.list();
@@ -84,13 +83,13 @@ public class ElectivesAdminDao {
    * @param elective elective to be added; not null.
    * @return true if insert successfully. Otherwise throws exception.
    */
-  public ElectivesAdmin addElective(ElectivesAdmin elective) {
+  public synchronized ElectivesAdmin addElective(ElectivesAdmin elective) {
     if (elective == null) {
       throw new IllegalArgumentException("Elective argument cannot be null.");
     }
 
     Transaction tx = null;
-    session = factory.openSession();
+    Session session = factory.openSession();
 
     if (studentDao.ifNuidExists(elective.getNeuId())) {
       try {
@@ -115,13 +114,13 @@ public class ElectivesAdminDao {
    * @param elective updated Elective.
    * @return true if updated, false otherwise.
    */
-  public boolean updateElectives(ElectivesAdmin elective) {
+  public synchronized boolean updateElectives(ElectivesAdmin elective) {
     if (getElectiveById(elective.getElectiveId()) == null) {
       throw new HibernateException("Elective Id cannot be null.");
     }
     Transaction tx = null;
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       tx = session.beginTransaction();
       session.saveOrUpdate(elective);
       tx.commit();
@@ -140,14 +139,14 @@ public class ElectivesAdminDao {
    * @param id elective Id.
    * @return true if deleted, false otherwise.
    */
-  public boolean deleteElectiveRecord(int id) {
+  public synchronized boolean deleteElectiveRecord(int id) {
     ElectivesAdmin electives = getElectiveById(id);
     if (electives == null) {
       throw new HibernateException("Elective Id cannot be found.");
     }
     Transaction tx = null;
+    Session session = factory.openSession();
     try {
-      session = factory.openSession();
       tx = session.beginTransaction();
       session.delete(electives);
       tx.commit();
