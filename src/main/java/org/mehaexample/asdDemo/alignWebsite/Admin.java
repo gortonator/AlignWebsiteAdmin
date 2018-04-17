@@ -43,6 +43,7 @@ import org.mehaexample.asdDemo.enums.Campus;
 import org.mehaexample.asdDemo.model.alignadmin.AdminLogins;
 import org.mehaexample.asdDemo.model.alignadmin.AdministratorNotes;
 import org.mehaexample.asdDemo.model.alignadmin.Administrators;
+import org.mehaexample.asdDemo.model.alignadmin.CompanyRatio;
 import org.mehaexample.asdDemo.model.alignadmin.ElectivesAdmin;
 import org.mehaexample.asdDemo.model.alignadmin.GenderRatio;
 import org.mehaexample.asdDemo.model.alignadmin.LoginObject;
@@ -1089,6 +1090,57 @@ public class Admin{
 
         return Response.status(Response.Status.OK).entity(result.toString()).build();
     }
+	
+	
+	
+	/**
+	 * Request 20
+	 * This is a function for retrieving the students counts working at a company
+	 * 
+	 * http://localhost:8080/webapi/analytics/yearly-students-count
+	 * @param params
+	 * @return the list of years and number of students working for that company. 200 OK else 400
+	 */
+	@POST
+	@Path("/analytics/yearly-students-count")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getgetStudentCompanyRatio(ParamsObject input){
+		List<Campus> campusList = new ArrayList<Campus>();
+		List<CompanyRatio> ratioList = new ArrayList<CompanyRatio>();
+		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
+		if (input.getCampus()!=null && input.getCompany()!=null){
+			try{
+				ratioList = workExperiencesDao.
+						getStudentCompanyRatio(campusList,input.getCompany());
+			} catch(Exception e){
+				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
+			}
+		} else {
+			return Response.status(Response.Status.BAD_REQUEST).entity("Campus cannot be null.").build();
+		}
+
+		for(int i=0; i<ratioList.size();i++){
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("year", ratioList.get(i).getYear());
+			jsonObj.put("count", ratioList.get(i).getCount());
+			result.put(jsonObj);
+		}
+		
+		return Response.status(Response.Status.OK).entity(result.toString()).build();   
+	}
+	
 	
 	
 }
