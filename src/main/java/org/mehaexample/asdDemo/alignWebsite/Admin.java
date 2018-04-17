@@ -37,6 +37,7 @@ import org.mehaexample.asdDemo.dao.alignadmin.GenderRatioDao;
 import org.mehaexample.asdDemo.dao.alignprivate.ElectivesDao;
 import org.mehaexample.asdDemo.dao.alignprivate.ExtraExperiencesDao;
 import org.mehaexample.asdDemo.dao.alignprivate.PriorEducationsDao;
+import org.mehaexample.asdDemo.dao.alignprivate.ProjectsDao;
 import org.mehaexample.asdDemo.dao.alignprivate.StudentsDao;
 import org.mehaexample.asdDemo.dao.alignprivate.WorkExperiencesDao;
 import org.mehaexample.asdDemo.enums.Campus;
@@ -79,6 +80,7 @@ public class Admin{
 	ElectivesDao electivesDao = new ElectivesDao();
 	AdminLoginsDao adminLoginsDao = new AdminLoginsDao();
 	ExtraExperiencesDao extraExperiencesDao = new ExtraExperiencesDao();
+	ProjectsDao projectsDao = new ProjectsDao();
 	AdministratorsDao administratorsDao = new AdministratorsDao();
 	AdministratorNotesDao administratorNotesDao = new AdministratorNotesDao();
 	StudentLogins studentLogins = new StudentLogins();
@@ -228,6 +230,8 @@ public class Admin{
 			List<ExtraExperiences> coop = extraExperiencesDao.getExtraExperiencesByNeuId(nuid);
 			jsonObj.put("coopexperience", coop);
 			jsonObj.put("notes",administratorNotesDao.getAdministratorNoteRecordByNeuId(nuid));
+			jsonObj.put("projects", projectsDao.getProjectsByNeuId(nuid));
+			jsonObj.put("extraexperiences", extraExperiencesDao.getExtraExperiencesByNeuId(nuid));
 			return Response.status(Response.Status.OK).entity(jsonObj.toString()).build();
 		}
 	}
