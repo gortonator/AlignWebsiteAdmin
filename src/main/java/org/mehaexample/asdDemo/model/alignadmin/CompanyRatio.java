@@ -1,20 +1,22 @@
 package org.mehaexample.asdDemo.model.alignadmin;
 
+import java.util.Date;
+
 public class CompanyRatio {
-  private String companyName;
+  private int year;
   private int count;
 
-  public CompanyRatio(String companyName, int count) {
-    this.companyName = companyName;
+  public CompanyRatio(int year, int count) {
+    this.year = year;
     this.count = count;
   }
 
-  public String getCompanyName() {
-    return companyName;
+  public int getYear() {
+    return this.year;
   }
 
-  public void setCompanyName(String companyName) {
-    this.companyName = companyName;
+  public void setYear(int year) {
+    this.year = year;
   }
 
   public int getCount() {
@@ -23,5 +25,9 @@ public class CompanyRatio {
 
   public void setCount(int count) {
     this.count = count;
+    Date date = new Date();
   }
+
+
+
 }

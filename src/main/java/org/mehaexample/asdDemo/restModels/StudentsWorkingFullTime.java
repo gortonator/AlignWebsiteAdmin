@@ -1,7 +1,6 @@
 package org.mehaexample.asdDemo.restModels;
 
 import org.mehaexample.asdDemo.enums.Campus;
-import org.mehaexample.asdDemo.utils.StringUtils;
 
 public class StudentsWorkingFullTime {
 	private String campus;
@@ -18,7 +17,7 @@ public class StudentsWorkingFullTime {
 	}
 	
 	public Campus getCampusAsEnum(){
-		if(StringUtils.isNullOrEmpty(campus)) {
+		if(campus.isEmpty() || campus == null) {
 			return null;
 		}	
 		
