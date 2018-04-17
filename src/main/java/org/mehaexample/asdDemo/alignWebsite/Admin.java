@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.UUID;
 
@@ -245,10 +246,17 @@ public class Admin{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getGenderRatio(ParamsObject input){
 		List<GenderRatio> ratio;
+		List<Campus> campusList = new ArrayList<Campus>();
 		JSONArray result = new JSONArray();
 		if (input.getCampus()!=null){
 			try{
-				ratio = genderRatioDao.getYearlyGenderRatio(Campus.valueOf(input.getCampus().toUpperCase()));
+				ListIterator<String> iterator = input.getCampus().listIterator();
+			    while (iterator.hasNext())
+			    {
+			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			    }
+			    
+				ratio = genderRatioDao.getYearlyGenderRatio(campusList);
 				
 				for(int i=0; i<ratio.size();i++){
 					JSONObject jsonObj = new JSONObject();
@@ -282,17 +290,29 @@ public class Admin{
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTopBachelorDegree(ParamsObject input) throws SQLException{
+		List<Campus> campusList = new ArrayList<Campus>();
 		List<TopBachelor> degrees = new ArrayList<TopBachelor>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
-				degrees = priorEducationsDao.getTopTenBachelors(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
+			    degrees = priorEducationsDao.getTopTenBachelors(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
-				degrees = priorEducationsDao.getTopTenBachelors(Campus.valueOf(input.getCampus().toUpperCase()),null);
+				degrees = priorEducationsDao.getTopTenBachelors(campusList,null);
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
@@ -335,17 +355,34 @@ public class Admin{
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTopEmployers(ParamsObject input){
+		List<Campus> campusList = new ArrayList<Campus>();
 		List<TopEmployer> employers = new ArrayList<TopEmployer>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
-				employers = workExperiencesDao.getTopTenEmployers(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
+				employers = workExperiencesDao.getTopTenEmployers(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
-				employers = workExperiencesDao.getTopTenEmployers(Campus.valueOf(input.getCampus().toUpperCase()),null);
+				ListIterator<String> iterator = input.getCampus().listIterator();
+			    while (iterator.hasNext())
+			    {
+			        campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			    }
+				employers = workExperiencesDao.getTopTenEmployers(campusList,null);
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
@@ -388,17 +425,29 @@ public class Admin{
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTopElectives(ParamsObject input){
+		List<Campus> campusList = new ArrayList<Campus>();
 		List<TopElective> electives = new ArrayList<TopElective>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
-				electives = electivesDao.getTopTenElectives(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
+				electives = electivesDao.getTopTenElectives(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
-				electives = electivesDao.getTopTenElectives(Campus.valueOf(input.getCampus().toUpperCase()),null);
+				electives = electivesDao.getTopTenElectives(campusList,null);
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
@@ -441,17 +490,29 @@ public class Admin{
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getCoopStudents(ParamsObject input){
+		List<Campus> campusList = new ArrayList<Campus>();
 		List<StudentCoopList> coopStudentsList = new ArrayList<StudentCoopList>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
-				coopStudentsList = workExperiencesDao.getStudentCoopCompanies(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
+				coopStudentsList = workExperiencesDao.getStudentCoopCompanies(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
-				coopStudentsList = workExperiencesDao.getStudentCoopCompanies(Campus.valueOf(input.getCampus().toUpperCase()),null);
+				coopStudentsList = workExperiencesDao.getStudentCoopCompanies(campusList,null);
 			} catch(Exception e){
 				return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
 			}
@@ -483,17 +544,29 @@ public class Admin{
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getStudentsWorkingForACompany(ParamsObject input){
+		List<Campus> campusList = new ArrayList<Campus>();
 		List<StudentBasicInfo> studentsList = new ArrayList<StudentBasicInfo>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getCompany()!=null && input.getYear()!=null){
 			try{
-				studentsList = workExperiencesDao.getStudentsWorkingInACompany(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()),input.getCompany());
+				studentsList = workExperiencesDao.getStudentsWorkingInACompany(campusList,Integer.valueOf(input.getYear()),input.getCompany());
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
 		} else if (input.getCampus()!=null && input.getCompany()!=null && input.getYear()==null){
 			try{
-				studentsList = workExperiencesDao.getStudentsWorkingInACompany(Campus.valueOf(input.getCampus().toUpperCase()),null,input.getCompany());
+				studentsList = workExperiencesDao.getStudentsWorkingInACompany(campusList,null,input.getCompany());
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
@@ -524,19 +597,31 @@ public class Admin{
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getStudentWorkingFullTime(ParamsObject input){
+		List<Campus> campusList = new ArrayList<Campus>();
 		List<StudentCoopList> studentsList = new ArrayList<StudentCoopList>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
 				studentsList = workExperiencesDao.
-						getStudentCurrentCompanies(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
+						getStudentCurrentCompanies(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
 				studentsList = workExperiencesDao.
-						getStudentCurrentCompanies(Campus.valueOf(input.getCampus().toUpperCase()),null);
+						getStudentCurrentCompanies(campusList,null);
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
@@ -568,19 +653,31 @@ public class Admin{
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getStudentundergradInstitutuins(ParamsObject input){
+		List<Campus> campusList = new ArrayList<Campus>();
 		List<StudentBachelorInstitution> instList = new ArrayList<StudentBachelorInstitution>();
 		JSONArray result = new JSONArray();
+		
+		try{
+			ListIterator<String> iterator = input.getCampus().listIterator();
+			while (iterator.hasNext())
+			{
+			    campusList.add(Campus.valueOf(iterator.next().toUpperCase()));
+			} 
+		}	catch(Exception e){
+			return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+		}
+		
 		if (input.getCampus()!=null && input.getYear()!=null){
 			try{
 				instList = priorEducationsDao.
-						getListOfBachelorInstitutions(Campus.valueOf(input.getCampus().toUpperCase()),Integer.valueOf(input.getYear()));
+						getListOfBachelorInstitutions(campusList,Integer.valueOf(input.getYear()));
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
 		} else if (input.getCampus()!=null && input.getYear()==null){
 			try{
 				instList = priorEducationsDao.
-						getListOfBachelorInstitutions(Campus.valueOf(input.getCampus().toUpperCase()),null);
+						getListOfBachelorInstitutions(campusList,null);
 			} catch(Exception e){
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e).build();
 			}
