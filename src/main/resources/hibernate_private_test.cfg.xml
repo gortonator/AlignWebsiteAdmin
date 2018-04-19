@@ -13,8 +13,10 @@
         </property>
 
         <property name="hibernate.connection.url">
-            jdbc:mariadb://${test.ip}:${test.port}/AlignPrivate?autoReconnect=true
+            jdbc:mariadb://${test.ip}:${test.port}/AlignPrivate
         </property>
+
+        <property name="hibernate.connection.autoReconnect">true</property>
 
         <property name="hibernate.connection.username">
             ${test.username}
@@ -31,14 +33,14 @@
         <property name="hibernate.c3p0.idle_test_period">3000</property>
 
         <!-- List of XML mapping files -->
-        <mapping resource="Students.hbm.xml" />
-        <mapping resource="Courses.hbm.xml" />
-        <mapping resource="WorkExperiences.hbm.xml" />
-        <mapping resource="Electives.hbm.xml" />
-        <mapping resource="PriorEducations.hbm.xml" />
-        <mapping resource="StudentLogins.hbm.xml" />
-        <mapping resource="ExtraExperiences.hbm.xml" />
-        <mapping resource="Projects.hbm.xml" />
+        <mapping resource="Students.hbm.xml"/>
+        <mapping resource="Courses.hbm.xml"/>
+        <mapping resource="WorkExperiences.hbm.xml"/>
+        <mapping resource="Electives.hbm.xml"/>
+        <mapping resource="PriorEducations.hbm.xml"/>
+        <mapping resource="StudentLogins.hbm.xml"/>
+        <mapping resource="ExtraExperiences.hbm.xml"/>
+        <mapping resource="Projects.hbm.xml"/>
         <mapping resource="Privacies.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
