@@ -175,7 +175,7 @@ public class AdminTest {
                 "401 Terry Ave", "WA", "Seattle", "98109",
                 Term.FALL, 2014, Term.SPRING, 2016,
                 EnrollmentStatus.FULL_TIME, Campus.SEATTLE, DegreeCandidacy.MASTERS, null, true);
-         student2 = new Students("1112345671", "jerrymouseadmintest@gmail.com", "Jerry", "",
+        student2 = new Students("1112345671", "jerrymouseadmintest@gmail.com", "Jerry", "",
                 "Mouse", Gender.F, "F1", "1111111111",
                 "401 Terry Ave", "WA", "Boston", "98109",
                 Term.FALL, 2014, Term.SPRING, 2016,
@@ -317,7 +317,7 @@ public class AdminTest {
         administratorNotesDao.addAdministratorNoteRecord(administratorNotes);
 
 
-       administratorsAdmin = new Administrators("135","krishnakaranam3732@gmail.com",
+        administratorsAdmin = new Administrators("135","krishnakaranam3732@gmail.com",
                 "fadmin3","madmin3","ladmi3");
         administratorsDao.addAdministrator(administratorsAdmin);
 
@@ -359,9 +359,9 @@ public class AdminTest {
     }
 
 
-/*
-SearchStudent
- */
+    /*
+    SearchStudent
+     */
     @Test
     public void searchStudent() {
         Response genderRatioResponse = adminFacing.searchStudent(searchObject);
@@ -442,6 +442,16 @@ SearchStudent
         Assert.assertEquals("campus field cannot be null", genderRatio);
     }
 
+    @Test
+    public void getGenderRatioTest34() throws SQLException, ParseException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        paramsobj.setCampus(campus);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getGenderRatio(paramsobj);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+    }
+
     /*
     getTopBachlorsDegree
      */
@@ -474,7 +484,7 @@ SearchStudent
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
         String degrees = (String) TopBachelorResponse.getEntity();
-        //Assert.assertEquals(degrees.length(), 30);
+        Assert.assertEquals(degrees.length(), 30);
         Assert.assertEquals(200, TopBachelorResponse.getStatus());
     }
 
@@ -502,134 +512,134 @@ SearchStudent
     }
 
 
-//
-//
-//    @Test
-//    public void getTopBachelorDegreeCampusNuLLTest() throws SQLException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        paramsobj.setCampus(null);
-//        paramsobj.setYear("20r15");
-//        paramsobj.setYear("201i4");
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-//        Assert.assertEquals(400, TopBachelorResponse.getStatus());
-//    }
-//
-//    @Test
-//    public void getTopBachelorDegreeYearNullTest() throws SQLException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        List<String> campus = new ArrayList<>();
-//        campus.add("CHARL");
-//        campus.add("BOST");
-//        paramsobj.setCampus(campus);
-//        paramsobj.setYear(null);
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-//        Assert.assertEquals(400, TopBachelorResponse.getStatus());
-//    }
-//
-//    @Test
-//    public void getTopBachelorDegreeErrorTest() throws SQLException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        List<String> campus = new ArrayList<>();
-//        campus.add("CHARL");
-//        campus.add("BOS");
-//        paramsobj.setCampus(campus);
-//        paramsobj.setYear("21i00");
-//        paramsobj.setYear("220i14");
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-//        Assert.assertEquals(400, TopBachelorResponse.getStatus());
-//    }
-//
-//
-//    @Test
-//    public void getTopBachelorDegreeBadTest() throws SQLException, ParseException {
-//
-//
-//       Students student3 = new Students("990", "jerry@gmail.com", "Jerry", "",
-//                "Mouse", Gender.F, "F1", "1111111111",
-//                "401 Terry Ave", "WA", "Boston", "98109",
-//                Term.FALL, 2014, Term.SPRING, 2016,
-//                EnrollmentStatus.FULL_TIME, Campus.BOSTON, DegreeCandidacy.BACHELORS, null, true);
-//        studentsDao.addStudent(student3);
-//
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//        PriorEducations newPriorEducation = new PriorEducations();
-//        newPriorEducation.setGraduationDate(dateFormat.parse("2015-01-01"));
-//        newPriorEducation.setGpa(3.50f);
-//        newPriorEducation.setDegreeCandidacy(DegreeCandidacy.BACHELORS);
-//        newPriorEducation.setNeuId(student3.getNeuId());
-//        newPriorEducation.setMajorName("Computer Science");
-//        newPriorEducation.setInstitutionName("University of Washington");
-//
-//        ParamsObject paramsobj = new ParamsObject();
-//        List<String> campus = new ArrayList<>();
-//        System.out.println("before"+campus.size());
-//        campus.add("BOSTON");
-//        System.out.println(campus.size());
-//        paramsobj.setCampus(campus);
-//        System.out.println("params"+paramsobj.getCampus().size());
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-//        Assert.assertEquals(200, TopBachelorResponse.getStatus());
-//
-//        studentsDao.deleteStudent(student3.getNeuId());
-//    }
-//
-//    @Test
-//    public void getTopBachelorDegreeBadCampusTest() throws SQLException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        List<String> campus = new ArrayList<>();
-//        paramsobj.setCampus(campus);
-//        paramsobj.setYear(null);
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-//        Assert.assertEquals(400, TopBachelorResponse.getStatus());
-//    }
-//
-//    @Test
-//    public void getTopBachelorDegreeBadCampusYearTest() throws SQLException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        List<String> campus = new ArrayList<>();
-//        paramsobj.setCampus(campus);
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-//        Assert.assertEquals(400, TopBachelorResponse.getStatus());
-//    }
-//
-//    @Test
-//    public void getTopBachelorDegreeEmptyInputTest() throws SQLException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-//        Assert.assertEquals(400, TopBachelorResponse.getStatus());
-//    }
-//
-//    @Test
-//    public void getTopBachelorDegreeBadYearCampusTest() throws SQLException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        paramsobj.setCampus(null);
-//        paramsobj.setYear(null);
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-////        String degrees = (String) TopBachelorResponse.getEntity();
-////        System.out.println(degrees);
-////        Assert.assertEquals(degrees.length(), 102);
-//        Assert.assertEquals(400, TopBachelorResponse.getStatus());
-//    }
-//
-//    @Test
-//    public void getTopBachelorDegreeBadYearTest() throws SQLException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        paramsobj.setCampus(null);
-//        paramsobj.setYear("2015");
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
-////        String degrees = (String) TopBachelorResponse.getEntity();
-////        Assert.assertEquals(degrees.length(), 2);
-//        Assert.assertEquals(400, TopBachelorResponse.getStatus());
-//    }
+
+
+    @Test
+    public void getTopBachelorDegreeCampusNuLLTest() throws SQLException {
+        ParamsObject paramsobj = new ParamsObject();
+        paramsobj.setCampus(null);
+        paramsobj.setYear("20r15");
+        paramsobj.setYear("201i4");
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
+        Assert.assertEquals(400, TopBachelorResponse.getStatus());
+    }
+
+    @Test
+    public void getTopBachelorDegreeYearsNullTest() throws SQLException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        campus.add("CHARL");
+        campus.add("BOST");
+        paramsobj.setCampus(campus);
+        paramsobj.setYear(null);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
+        Assert.assertEquals(400, TopBachelorResponse.getStatus());
+    }
+
+    @Test
+    public void getTopBachelorDegreeErrorTest() throws SQLException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        campus.add("CHARL");
+        campus.add("BOS");
+        paramsobj.setCampus(campus);
+        paramsobj.setYear("21i00");
+        paramsobj.setYear("220i14");
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
+        Assert.assertEquals(400, TopBachelorResponse.getStatus());
+    }
+
+
+    @Test
+    public void getTopBachelorDegreeBadTest() throws SQLException, ParseException {
+
+
+        Students student3 = new Students("990", "jerry@gmail.com", "Jerry", "",
+                "Mouse", Gender.F, "F1", "1111111111",
+                "401 Terry Ave", "WA", "Boston", "98109",
+                Term.FALL, 2014, Term.SPRING, 2016,
+                EnrollmentStatus.FULL_TIME, Campus.BOSTON, DegreeCandidacy.BACHELORS, null, true);
+        studentsDao.addStudent(student3);
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        PriorEducations newPriorEducation = new PriorEducations();
+        newPriorEducation.setGraduationDate(dateFormat.parse("2015-01-01"));
+        newPriorEducation.setGpa(3.50f);
+        newPriorEducation.setDegreeCandidacy(DegreeCandidacy.BACHELORS);
+        newPriorEducation.setNeuId(student3.getNeuId());
+        newPriorEducation.setMajorName("Computer Science");
+        newPriorEducation.setInstitutionName("University of Washington");
+
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        System.out.println("before"+campus.size());
+        campus.add("BOSTON");
+        System.out.println(campus.size());
+        paramsobj.setCampus(campus);
+        System.out.println("params"+paramsobj.getCampus().size());
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+
+        studentsDao.deleteStudent(student3.getNeuId());
+    }
+
+    @Test
+    public void getTopBachelorDegreeBadCampusTest() throws SQLException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        paramsobj.setCampus(campus);
+        paramsobj.setYear(null);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+    }
+
+    @Test
+    public void getTopBachelorDegreeBadCampusYearTest() throws SQLException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        paramsobj.setCampus(campus);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+    }
+
+    @Test
+    public void getTopBachelorDegreeEmptyInputTest() throws SQLException {
+        ParamsObject paramsobj = new ParamsObject();
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+    }
+
+    @Test
+    public void getTopBachelorDegreeBadYearCampusTest() throws SQLException {
+        ParamsObject paramsobj = new ParamsObject();
+        paramsobj.setCampus(null);
+        paramsobj.setYear(null);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
+//        String degrees = (String) TopBachelorResponse.getEntity();
+//        System.out.println(degrees);
+//        Assert.assertEquals(degrees.length(), 102);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+    }
+
+    @Test
+    public void getTopBachelorDegreeBadYearTest() throws SQLException {
+        ParamsObject paramsobj = new ParamsObject();
+        paramsobj.setCampus(null);
+        paramsobj.setYear("2015");
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getTopBachelorDegree(paramsobj);
+//        String degrees = (String) TopBachelorResponse.getEntity();
+//        Assert.assertEquals(degrees.length(), 2);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+    }
 
     /*
     getTopEmpoyers
@@ -966,6 +976,16 @@ SearchStudent
         Assert.assertEquals(400, TopBachelorResponse.getStatus());
     }
 
+    @Test
+    public void getTopCoop4() throws SQLException, ParseException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        paramsobj.setCampus(campus);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getCoopStudents(paramsobj);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+    }
+
     /*
     getStudentsWorkingForACompany
      */
@@ -1019,8 +1039,9 @@ SearchStudent
         Assert.assertEquals(400, TopBachelorResponse.getStatus());
     }
 
+
     @Test
-    public void getStudentsWorkingForACompanyNullTest() throws SQLException, ParseException {
+    public void getStudentsWorkingForACompanyEmptyTest() throws SQLException, ParseException {
         ParamsObject paramsobj = new ParamsObject();
         paramsobj.setCampus(null);
         paramsobj.setCompany(null);
@@ -1028,6 +1049,16 @@ SearchStudent
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getStudentsWorkingForACompany(paramsobj);
         Assert.assertEquals(400, TopBachelorResponse.getStatus());
+    }
+
+    @Test
+    public void getStudentsWorkingForACompanyNullTest2() throws SQLException, ParseException {
+        ParamsObject paramsobj = new ParamsObject();
+        paramsobj.setCampus(null);
+        paramsobj.setCompany(null);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getStudentsWorkingForACompany(paramsobj);
+        Assert.assertEquals("Campus and Company cannot be null.", TopBachelorResponse.getEntity());
     }
 
     @Test
@@ -1040,6 +1071,16 @@ SearchStudent
         paramsobj.setCompany("123");
         paramsobj.setYear("20t15");
         paramsobj.setYear("201g4");
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getStudentsWorkingForACompany(paramsobj);
+        Assert.assertEquals(400, TopBachelorResponse.getStatus());
+    }
+
+    @Test
+    public void getStudentsWorkingForACompany4() throws SQLException, ParseException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        paramsobj.setCampus(campus);
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getStudentsWorkingForACompany(paramsobj);
         Assert.assertEquals(400, TopBachelorResponse.getStatus());
@@ -1079,15 +1120,14 @@ SearchStudent
         Assert.assertEquals(400, TopBachelorResponse.getStatus());
     }
 
-//    @Test
-//    public void getStudentWorkingFullTimeCampusTest() throws SQLException, ParseException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        paramsobj.setCampus(null);
-//        paramsobj.setYear(null);
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getStudentWorkingFullTime(paramsobj);
-//        Assert.assertEquals("Campus cannot be null.", TopBachelorResponse.getEntity());
-//    }
+    @Test
+    public void getStudentWorkingFullTimeCampusTest() throws SQLException, ParseException {
+        ParamsObject paramsobj = new ParamsObject();
+        paramsobj.setCampus(null);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getStudentWorkingFullTime(paramsobj);
+        Assert.assertEquals("Campus cannot be null.", TopBachelorResponse.getEntity());
+    }
 
     //getting sql error, check why student not getting data. Getting SQL error. should return 200
 
@@ -1100,9 +1140,6 @@ SearchStudent
         paramsobj.setYear(null);
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getStudentWorkingFullTime(paramsobj);
-//        String degrees = (String) TopBachelorResponse.getEntity();
-//        System.out.println(degrees);
-//        Assert.assertEquals(degrees.length(), 2);
         Assert.assertEquals(200, TopBachelorResponse.getStatus());
     }
 
@@ -1118,6 +1155,16 @@ SearchStudent
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.getStudentWorkingFullTime(paramsobj);
         Assert.assertEquals(400, TopBachelorResponse.getStatus());
+    }
+
+    @Test
+    public void getStudentWorkingFullTime4() throws SQLException, ParseException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        paramsobj.setCampus(campus);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getStudentWorkingFullTime(paramsobj);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
     }
 
     /*
@@ -1153,7 +1200,7 @@ SearchStudent
         TopBachelorResponse = adminFacing.getStudentundergradInstitutuins(paramsobj);
         String degrees = (String) TopBachelorResponse.getEntity();
         System.out.println(degrees);
-        //Assert.assertEquals(degrees.length(), 97);
+        Assert.assertEquals(degrees.length(), 97);
         Assert.assertEquals(200, TopBachelorResponse.getStatus());
     }
 
@@ -1182,24 +1229,24 @@ SearchStudent
         Assert.assertEquals(400, TopBachelorResponse.getStatus());
     }
 
-//    @Test
-//    public void getundergradInstitutuinsCampusStringTest() throws SQLException, ParseException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        paramsobj.setCampus(null);
-//        paramsobj.setYear(null);
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getStudentundergradInstitutuins(paramsobj);
-//        Assert.assertEquals("Campus cannot be null.", TopBachelorResponse.getEntity());
-//    }
+    @Test
+    public void getundergradInstitutuinsCampusStringTest() throws SQLException, ParseException {
+        ParamsObject paramsobj = new ParamsObject();
+        paramsobj.setCampus(null);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getStudentundergradInstitutuins(paramsobj);
+        Assert.assertEquals("Campus cannot be null.", TopBachelorResponse.getEntity());
+    }
 
-//    @Test
-//    public void getundergradInstitutuinsErrorTest() throws SQLException, ParseException {
-//        ParamsObject paramsobj = new ParamsObject();
-//        paramsobj.setCampus(null);
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.getStudentundergradInstitutuins(paramsobj);
-//        Assert.assertEquals("Campus cannot be null.", TopBachelorResponse.getEntity());
-//    }
+    @Test
+    public void getundergradInstitutuinsTest4() throws SQLException, ParseException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        paramsobj.setCampus(campus);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getStudentundergradInstitutuins(paramsobj);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+    }
 
 
     /*
@@ -2568,18 +2615,6 @@ SearchStudent
     @Test
     public void AdminLogoutUnAuthorizeTest() throws SQLException, ParseException {
 
-        Administrators administrators8 = new Administrators("198","notadminLogout@gmail.com",
-                "fadmin3","madmin3","ladmi3");
-        administratorsDao.addAdministrator(administrators8);
-
-        adminLogins = new AdminLogins("notadminLogout@gmail.com",
-                "password",
-                "key",
-                Timestamp.valueOf("2017-09-23 10:10:10.0"),
-                Timestamp.valueOf("2017-09-23 10:10:10.0"),
-                false);
-        adminLoginsDao.createAdminLogin(adminLogins);
-
         HttpServletRequest request = new HttpServletRequest() {
             @Override
             public String getAuthType() {
@@ -2857,12 +2892,11 @@ SearchStudent
 
         Response TopBachelorResponse;
         TopBachelorResponse = adminFacing.logoutUser(request ,loginObject);
-        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+        Assert.assertEquals(404, TopBachelorResponse.getStatus());
 
-        adminLoginsDao.deleteAdminLogin("notadminLogout@gmail.com");
-
-        administratorsDao.deleteAdministrator(administrators8.getAdministratorNeuId());
     }
+
+
 
 
     @Test
@@ -3182,6 +3216,17 @@ SearchStudent
 
     }
 
+    @Test
+    public void ChangePasswordUnauthorizeTest() throws SQLException, ParseException {
+
+        PasswordChangeObject passwordChangeObject = new PasswordChangeObject("notadmin@gmail.com",
+                "pass","word");
+
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.changeUserPassword(passwordChangeObject);
+        Assert.assertEquals(404, TopBachelorResponse.getStatus());
+
+    }
 
     @Test
     public void ChangePasswordBadTest() throws SQLException, ParseException {
@@ -3199,16 +3244,16 @@ SearchStudent
     sendEmail
      */
 
-//    @Test
-//    public void emailForPasswordResetTest() throws SQLException, ParseException {
-//
-//        PasswordResetObject passwordResetObject = new PasswordResetObject("krishnakaranam3732@gmail.com");
-//
-//        Response TopBachelorResponse;
-//        TopBachelorResponse = adminFacing.sendEmailForPasswordResetAdmin(passwordResetObject);
-//        Assert.assertEquals(200, TopBachelorResponse.getStatus());
-//
-//    }
+    @Test
+    public void emailForPasswordResetTest() throws SQLException, ParseException {
+
+        PasswordResetObject passwordResetObject = new PasswordResetObject("krishnakaranam3732@gmail.com");
+
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.sendEmailForPasswordResetAdmin(passwordResetObject);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+
+    }
 
     @Test
     public void emailForPasswordResetNullTest() throws SQLException, ParseException {
@@ -3292,6 +3337,55 @@ SearchStudent
         studentsDao.deleteStudent(TestStudent.getNeuId());
     }
 
+    /*
+    getgetStudentCompanyRatio
+     */
+
+
+    @Test
+    public void getgetStudentCompanyRatioTest() throws SQLException, ParseException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        campus.add("SEATTLE");
+        campus.add("BOSTON");
+        paramsobj.setCampus(campus);
+        paramsobj.setCompany("Amazon");
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getgetStudentCompanyRatio(paramsobj);
+        String degrees = (String) TopBachelorResponse.getEntity();
+        System.out.println(degrees);
+        Assert.assertEquals(degrees.length(), 25);
+        Assert.assertEquals(200, TopBachelorResponse.getStatus());
+    }
+
+    @Test
+    public void getgetStudentCompanyRatioBadTest() {
+        ParamsObject paramsobj = new ParamsObject();
+        Response genderRatioResponse = adminFacing.getgetStudentCompanyRatio(paramsobj);
+        Assert.assertEquals(400, genderRatioResponse.getStatus());
+    }
+
+    @Test
+    public void getgetStudentCompanyRatioTest3() {
+        ParamsObject paramsobj = new ParamsObject();
+        paramsobj.setCampus(null);
+        paramsobj.setYear("2015");
+        Response genderRatioResponse = adminFacing.getgetStudentCompanyRatio(paramsobj);
+        String genderRatio = (String) genderRatioResponse.getEntity();
+        int status = (int) genderRatioResponse.getStatus();
+        Assert.assertEquals(status, 400);
+        Assert.assertEquals("Campus cannot be null.", genderRatio);
+    }
+
+    @Test
+    public void getgetStudentCompanyRatioTest4() throws SQLException, ParseException {
+        ParamsObject paramsobj = new ParamsObject();
+        List<String> campus = new ArrayList<>();
+        paramsobj.setCampus(campus);
+        Response TopBachelorResponse;
+        TopBachelorResponse = adminFacing.getgetStudentCompanyRatio(paramsobj);
+        Assert.assertEquals(400, TopBachelorResponse.getStatus());
+    }
 
 
 }
