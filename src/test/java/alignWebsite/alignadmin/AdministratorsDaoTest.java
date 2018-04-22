@@ -14,7 +14,6 @@ public class AdministratorsDaoTest {
 	@BeforeClass
 	public static void init() {
 		administratorsDao = new AdministratorsDao(true);
-//		administratorsDao = new AdministratorsDao();
 	}
 
 	@Before
@@ -29,17 +28,17 @@ public class AdministratorsDaoTest {
 		administratorsDao.deleteAdministrator("987654321");
 	}
 
-	// need VPN for this
-//	@Test
-//	public void databaseDeploymentConnectionTest() {
-//		new AdministratorsDao();
-//	}
-
+	/**
+	 * This is test for illegal argument of adding new Administrator.
+	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void addNullAdministratorTest() {
 		administratorsDao.addAdministrator(null);
 	}
 
+	/**
+	 * This is test for adding duplicate Administrator.
+	 */
 	@Test(expected = HibernateException.class)
 	public void addDuplicateAdminTest() {
 		Administrators newAdministrator = new Administrators("987654321", "catwoman@gmail.com",
@@ -47,6 +46,9 @@ public class AdministratorsDaoTest {
 		administratorsDao.addAdministrator(newAdministrator);
 	}
 
+	/**
+	 * This is test for updating non existent Administrator.
+	 */
 	@Test(expected = HibernateException.class)
 	public void updateNonExistentAdminTest() {
 		Administrators newAdministrator = new Administrators("000011111", "cchent@gmail.com",
@@ -54,11 +56,17 @@ public class AdministratorsDaoTest {
 		administratorsDao.updateAdministratorRecord(newAdministrator);
 	}
 
+	/**
+	 * This is test for deleting non existent Administrator.
+	 */
 	@Test(expected = HibernateException.class)
 	public void deleteNonExistentAdminTest() {
 		administratorsDao.deleteAdministrator("00001111");
 	}
 
+	/**
+	 * This is test for adding new Administrator record.
+	 */
 	@Test
 	public void addAdministratorTest() {
 		Administrators newAdministrator = new Administrators("123789456", "john.stewart@gmail.com", 
@@ -68,6 +76,9 @@ public class AdministratorsDaoTest {
 		administratorsDao.deleteAdministrator("123789456");
 	}
 
+	/**
+	 * This is test for deleting Administrator record.
+	 */
 	@Test
 	public void deleteAdminRecordTest() {
 		List<Administrators> administrators = administratorsDao.getAllAdminstrators();
@@ -81,6 +92,9 @@ public class AdministratorsDaoTest {
 		Assert.assertEquals(oldSize, newSize); 
 	}
 
+	/**
+	 * This is test for retrieving all Administrator records.
+	 */
 	@Test
 	public void getAllAdministratorsTest() {
 		List<Administrators> administrators = administratorsDao.getAllAdminstrators();
@@ -93,6 +107,9 @@ public class AdministratorsDaoTest {
 		administratorsDao.deleteAdministrator("111");
 	}
 
+	/**
+	 * This is test for getting Administrator by neu id.
+	 */
 	@Test
 	public void getAdminRecordTest() {
 		Administrators newAdministrator = new Administrators("123789456", "john.stewart@gmail.com", 
@@ -105,6 +122,9 @@ public class AdministratorsDaoTest {
 
 	}
 
+	/**
+	 * This is test for searching for Administrator by email address.
+	 */
 	@Test
 	public void findAdministratorByEmail() {
 		Administrators newAdministrator = new Administrators("123789456", "john.stewart@gmail.com",
@@ -117,6 +137,9 @@ public class AdministratorsDaoTest {
 		administratorsDao.deleteAdministrator("123789456");
 	}
 
+	/**
+	 * This is test for updating Administrator record.
+	 */
 	@Test
 	public void updateAdministratorRecordTest() {
 		Administrators administrator = new Administrators("123789456", "john.stewart@gmail.com", 
@@ -137,6 +160,9 @@ public class AdministratorsDaoTest {
 		administratorsDao.deleteAdministrator("123789456");
 	}
 
+	/**
+	 * This is test for deleting Administrator record.
+	 */
 	@Test
 	public void deleteNullAdministratorTest() {
 		boolean result = administratorsDao.deleteAdministrator("");

@@ -47,6 +47,9 @@ public class AdministratorNotesDaoTest {
     studentsDao.deleteStudent("001234567");
   }
 
+  /**
+   * This is test for updating non existent record.
+   */
   @Test(expected = HibernateException.class)
   public void updateNonExistentAdministratorNoteTest() {
     AdministratorNotes note = new AdministratorNotes("111111", "000000", "TEST", "TEST");
@@ -54,12 +57,18 @@ public class AdministratorNotesDaoTest {
     administratorNotesDao.updateAdministratorNote(note);
   }
 
+  /**
+   * This is test for deleting non existent record.
+   */
   @Test(expected = HibernateException.class)
   public void deleteNonExistentAdministratorNoteTest() {
     AdministratorNotes note = new AdministratorNotes("111111", "000000", "TEST", "TEST");
     administratorNotesDao.deleteAdministratorNoteRecord(-20);
   }
 
+  /**
+   * This is test for getting Administrator Note by student neu id.
+   */
   @Test
   public void getAdministratorNoteRecordTest() {
     Students student = studentsDao.getStudentRecord("001234567");
@@ -80,6 +89,9 @@ public class AdministratorNotesDaoTest {
     administratorNotesDao.deleteAdministratorNoteRecord(note.getAdministratorNoteId());
   }
 
+  /**
+   * This is test for adding and updating Administrator Note.
+   */
   @Test
   public void addAndUpdateAdministratorNoteRecordTest() {
     Students student = studentsDao.getStudentRecord("001234567");
@@ -98,6 +110,9 @@ public class AdministratorNotesDaoTest {
     Assert.assertTrue(!administratorNotesDao.ifNuidExists("001234567"));
   }
 
+  /**
+   * This is test for deleting Administrator Note.
+   */
   @Test
   public void deleteAdministratorNoteRecordTest() {
     Students student = studentsDao.getStudentRecord("001234567");
@@ -108,6 +123,9 @@ public class AdministratorNotesDaoTest {
     Assert.assertTrue(!administratorNotesDao.ifNuidExists("001234567"));
   }
 
+  /**
+   * This is test for checking if an Administrator Note exists or not.
+   */
   @Test
   public void ifNuidExistsTest() {
     Students student = studentsDao.getStudentRecord("001234567");

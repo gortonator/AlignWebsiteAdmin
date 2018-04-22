@@ -21,9 +21,6 @@ public class AdminLoginsDaoTest {
     adminLoginsDao = new AdminLoginsDao(true);
     administratorsDao = new AdministratorsDao(true);
 
-//    adminLoginsDao = new AdminLoginsDao();
-//    administratorsDao = new AdministratorsDao();
-
     Administrators newAdministrator = new Administrators("00000000", "catwoman@gmail.com",
             "Cat", "Main", "Woman");
     Administrators newAdministrator2 = new Administrators("11111111", "catwoman2@gmail.com",
@@ -52,6 +49,9 @@ public class AdminLoginsDaoTest {
     administratorsDao.deleteAdministrator("00000000");
   }
 
+  /**
+   * This is test for adding duplicate Administrator Login record.
+   */
   @Test(expected = HibernateException.class)
   public void addDuplicateAdminLogins() {
     AdminLogins adminLogins = new AdminLogins("catwoman2@gmail.com",
@@ -63,6 +63,9 @@ public class AdminLoginsDaoTest {
     adminLoginsDao.createAdminLogin(adminLogins);
   }
 
+  /**
+   * This is test for updating non existent record.
+   */
   @Test(expected = HibernateException.class)
   public void updateNonExistentAdminLogins() {
     AdminLogins adminLogins = new AdminLogins("catwoman12@gmail.com",
@@ -74,11 +77,17 @@ public class AdminLoginsDaoTest {
     adminLoginsDao.updateAdminLogin(adminLogins);
   }
 
+  /**
+   * This is test for deleting non existent record.
+   */
   @Test(expected = HibernateException.class)
   public void deleteNonExistentAdminLogins() {
     adminLoginsDao.deleteAdminLogin("catwoman12@gmail.com");
   }
 
+  /**
+   * This is test for adding, updating, searching and deleting Administrator Login.
+   */
   @Test
   public void AdminLoginIntegrationTest() {
     AdminLogins adminLogins = new AdminLogins("catwoman@gmail.com",

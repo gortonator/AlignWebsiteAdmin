@@ -52,6 +52,9 @@ public class GenderRatioDaoTest {
     studentsDao.deleteStudent("2222222");
   }
 
+  /**
+   * This is test for getting yearly gender ratio.
+   */
   @Test
   public void getYearlyGenderRatioTest() {
     List<Campus> list = new ArrayList<>();

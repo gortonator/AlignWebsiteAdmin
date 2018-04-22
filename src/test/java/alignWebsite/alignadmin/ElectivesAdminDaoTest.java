@@ -30,11 +30,17 @@ public class ElectivesAdminDaoTest {
 //    coursesDao = new CoursesDao();
   }
 
+  /**
+   * This is test for illegal argument.
+   */
   @Test(expected = IllegalArgumentException.class)
   public void addNullElectivesTest() {
     electivesAdminDao.addElective(null);
   }
 
+  /**
+   * This is test for adding new Elective record for non existent student.
+   */
   @Test(expected = HibernateException.class)
   public void addElectiveWithNonExistentStudentId() {
     ElectivesAdmin electivesAdmin = new ElectivesAdmin();
@@ -42,6 +48,9 @@ public class ElectivesAdminDaoTest {
     electivesAdminDao.addElective(electivesAdmin);
   }
 
+  /**
+   * This is test for updating elective for non existent student.
+   */
   @Test(expected = HibernateException.class)
   public void updateElectiveWithNonExistentStudentId() {
     ElectivesAdmin electivesAdmin = new ElectivesAdmin();
@@ -49,11 +58,17 @@ public class ElectivesAdminDaoTest {
     electivesAdminDao.updateElectives(electivesAdmin);
   }
 
+  /**
+   * This is test for deleting elective for non existent student.
+   */
   @Test(expected = HibernateException.class)
   public void deleteElectiveWithNonExistentStudentId() {
     electivesAdminDao.deleteElectiveRecord(-200);
   }
 
+  /**
+   * This is test for adding new elective.
+   */
   @Test
   public void addElectivesTest() {
     String tempId = "1221";
@@ -87,6 +102,9 @@ public class ElectivesAdminDaoTest {
     studentsDao.deleteStudent(tempId + "");
   }
 
+  /**
+   * This is test for deleting elective.
+   */
   @Test
   public void deleteElectivesTest() {
     String tempId = "289";
@@ -124,7 +142,9 @@ public class ElectivesAdminDaoTest {
     studentsDao.deleteStudent(tempId + "");
   }
 
-  //
+  /**
+   * This is test for updating elective.
+   */
   @Test
   public void updateElectivesTest() {
     String tempId = "9187";
