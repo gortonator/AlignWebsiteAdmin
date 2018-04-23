@@ -122,19 +122,6 @@ public class WorkExperiencesDao {
     return workExperience;
   }
 
-  // THIS IS THE SCRIPT FOR MACHINE LEARNING
-  // How many Align students get jobs?
-  public int getTotalStudentsGotJob() {
-    Session session = factory.openSession();
-    try {
-      org.hibernate.query.Query query = session.createQuery(
-              "SELECT COUNT(DISTINCT we.neuId) FROM WorkExperiences we WHERE we.coop = false ");
-      return ((Long) query.list().get(0)).intValue();
-    } finally {
-      session.close();
-    }
-  }
-
   /**
    * Delete a work experience in the private database.
    *
@@ -252,29 +239,6 @@ public class WorkExperiencesDao {
         query.setParameter("year", year);
       }
       return query.getResultList();
-    } finally {
-      session.close();
-    }
-  }
-
-  // THIS IS A SCRIPT FOR MACHINE LEARNING / PUBLIC FACING
-  // Who are the largest Align student employers?
-  public List<MultipleValueAggregatedData> getStudentEmployers() {
-    String hql = "SELECT NEW org.mehaexample.asdDemo.model.alignpublic.MultipleValueAggregatedData ( " +
-            "we.companyName, cast(Count(*) as integer) ) " +
-            "FROM WorkExperiences we " +
-            "WHERE we.coop = false " +
-            "GROUP BY we.companyName " +
-            "ORDER BY Count(*) DESC ";
-
-    Session session = factory.openSession();
-    try {
-      TypedQuery<MultipleValueAggregatedData> query = session.createQuery(hql, MultipleValueAggregatedData.class);
-      List<MultipleValueAggregatedData> list = query.getResultList();
-      for (MultipleValueAggregatedData data : list) {
-        data.setAnalyticTerm(MultipleValueAggregatedDataDao.LIST_OF_EMPLOYERS);
-      }
-      return list;
     } finally {
       session.close();
     }

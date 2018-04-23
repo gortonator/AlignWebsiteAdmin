@@ -29,12 +29,18 @@ public class CoursesDaoTest {
 		coursesDao.deleteCourseById("55555");
 	}
 
+	/**
+	 * This is test for inserting duplicate record
+	 */
 	@Test(expected = HibernateException.class)
 	public void addDuplicate() {
 		Courses newcourse = new Courses("55555", "course1", "course description 1");
 		coursesDao.createCourse(newcourse);
 	}
 
+	/**
+	 * This is test for updating non existent record
+	 */
 	@Test(expected = HibernateException.class)
 	public void updateNonExistentCourse() {
 		Courses newcourse = new Courses();
@@ -42,27 +48,42 @@ public class CoursesDaoTest {
 		coursesDao.updateCourse(newcourse);
 	}
 
+	/**
+	 * This is test for deleting non existent record
+	 */
 	@Test(expected = HibernateException.class)
 	public void deleteNonExistentCourse() {
 		coursesDao.deleteCourseById("12323");
 	}
 
+	/**
+	 * This is test for illegal argument
+	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void deleteNullArgument() {
 		coursesDao.deleteCourseById(null);
 	}
 
+	/**
+	 * This is test for illegal argument
+	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void deleteEmptyArgument() {
 		coursesDao.deleteCourseById("");
 	}
 
+	/**
+	 * This is test for creating null record
+	 */
 	@Test
 	public void addNullcourseTest() {
 		Courses Courses = coursesDao.createCourse(null);
 		Assert.assertNull(Courses);
 	}
 
+	/**
+	 * This is test for creating and updating course record
+	 */
 	@Test
 	public void addAndUpdateCourseTest() {
 		Courses newcourse = new Courses("222", "course1", "course description 1");
@@ -75,6 +96,9 @@ public class CoursesDaoTest {
 		coursesDao.deleteCourseById("222");
 	}
 
+	/**
+	 * This is test for deleting course record
+	 */
 	@Test
 	public void deleteCourseTest() {
 		List<Courses> Courses = coursesDao.getAllCourses();
@@ -89,6 +113,9 @@ public class CoursesDaoTest {
 		Assert.assertEquals(oldSize, newSize); 
 	}
 
+	/**
+	 * This is test to retrieving all course record
+	 */
 	@Test
 	public void getAllCoursesTest() {
 		List<Courses> courses = coursesDao.getAllCourses();

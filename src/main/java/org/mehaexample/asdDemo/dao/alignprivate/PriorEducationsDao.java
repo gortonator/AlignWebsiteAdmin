@@ -98,51 +98,6 @@ public class PriorEducationsDao {
     return priorEducation;
   }
 
-  // THIS IS A SCRIPT FOR MACHINE LEARNING / PUBLIC FACING
-  // What bachelors majors do Align students have?
-  public List<MultipleValueAggregatedData> getStudentBachelorMajors() {
-    String hql = "SELECT NEW org.mehaexample.asdDemo.model.alignpublic.MultipleValueAggregatedData ( " +
-            "pe.majorName, cast(Count(*) as integer) ) " +
-            "FROM PriorEducations pe LEFT OUTER JOIN Students s ON pe.neuId = s.neuId " +
-            "WHERE pe.degreeCandidacy = 'BACHELORS' " +
-            "AND (s.enrollmentStatus = 'FULL_TIME' OR s.enrollmentStatus = 'PART_TIME') " +
-            "GROUP BY pe.majorName " +
-            "ORDER BY Count(*) DESC ";
-    Session session = factory.openSession();
-    try {
-      TypedQuery<MultipleValueAggregatedData> query = session.createQuery(hql, MultipleValueAggregatedData.class);
-      List<MultipleValueAggregatedData> list = query.getResultList();
-      for (MultipleValueAggregatedData data : list) {
-        data.setAnalyticTerm(MultipleValueAggregatedDataDao.LIST_OF_BACHELOR_DEGREES);
-      }
-      return list;
-    } finally {
-      session.close();
-    }
-  }
-
-  // THIS IS FOR PUBLIC FACING SCRIPT
-  // Degree Breakdown?
-  public List<MultipleValueAggregatedData> getDegreeList() {
-    String hql = "SELECT NEW org.mehaexample.asdDemo.model.alignpublic.MultipleValueAggregatedData ( " +
-            "cast(pe.degreeCandidacy as string ), cast(Count(*) as integer) ) " +
-            "FROM PriorEducations pe LEFT OUTER JOIN Students s ON pe.neuId = s.neuId " +
-            "WHERE s.enrollmentStatus = 'FULL_TIME' OR s.enrollmentStatus = 'PART_TIME'" +
-            "GROUP BY pe.degreeCandidacy " +
-            "ORDER BY Count(*) DESC ";
-    Session session = factory.openSession();
-    try {
-      TypedQuery<MultipleValueAggregatedData> query = session.createQuery(hql, MultipleValueAggregatedData.class);
-      List<MultipleValueAggregatedData> list = query.getResultList();
-      for (MultipleValueAggregatedData data : list) {
-        data.setAnalyticTerm(MultipleValueAggregatedDataDao.LIST_OF_DEGREES);
-      }
-      return list;
-    } finally {
-      session.close();
-    }
-  }
-
   /**
    * Delete a prior education in the private database.
    *

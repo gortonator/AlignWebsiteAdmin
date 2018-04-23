@@ -71,24 +71,10 @@ public class PriorEducationsDaoTest {
     studentsDao.deleteStudent("111234567");
   }
 
-  @Test
-  public void getStudentBachelorDegreesTest() {
-    List<MultipleValueAggregatedData> list = priorEducationsDao.getStudentBachelorMajors();
-    assertTrue(list.size() == 1);
-    assertTrue(list.get(0).getAnalyticTerm().equals(MultipleValueAggregatedDataDao.LIST_OF_BACHELOR_DEGREES));
-    assertTrue(list.get(0).getAnalyticKey().equals("Computer Science"));
-    assertTrue(list.get(0).getAnalyticValue() == 1);
-  }
-
-  @Test
-  public void getDegreeListTest() {
-    List<MultipleValueAggregatedData> list = priorEducationsDao.getDegreeList();
-    assertTrue(list.size() == 1);
-    assertTrue(list.get(0).getAnalyticTerm().equals(MultipleValueAggregatedDataDao.LIST_OF_DEGREES));
-    assertTrue(list.get(0).getAnalyticKey().equals("BACHELORS"));
-    assertTrue(list.get(0).getAnalyticValue() == 1);
-  }
-
+  /**
+   * This is test for retrieving top ten bachelor degree based on popularity from
+   * existing students in private database.
+   */
   @Test
   public void getTopTenBachelors() throws ParseException {
     List<TopBachelor> temp = priorEducationsDao.getTopTenBachelors(null, null);
@@ -143,6 +129,11 @@ public class PriorEducationsDaoTest {
             priorEducationsDao.getPriorEducationsByNeuId("111234567").get(0).getPriorEducationId());
   }
 
+  /**
+   * Test for getting the list of bachelor institution based on majority of existing students
+   * from the private database.
+   * @throws ParseException
+   */
   @Test
   public void getListOfBachelorInstitutionsTest() throws ParseException {
     List<StudentBachelorInstitution> temp = priorEducationsDao.getListOfBachelorInstitutions(null, null);
@@ -186,6 +177,9 @@ public class PriorEducationsDaoTest {
             priorEducationsDao.getPriorEducationsByNeuId("111234567").get(0).getPriorEducationId());
   }
 
+  /**
+   * This is test for retrieving prior education by its id
+   */
   @Test
   public void getPriorEducationByIdTest() {
     int tempId = priorEducationsDao.getPriorEducationsByNeuId("001234567").get(0).getPriorEducationId();
@@ -196,6 +190,9 @@ public class PriorEducationsDaoTest {
     assertTrue(priorEducationsDao.getPriorEducationById(-20) == null);
   }
 
+  /**
+   * This is test for retrieving prior education by student neu id
+   */
   @Test
   public void getPriorEducationsByNeuIdTest() {
     List<PriorEducations> listOfPriorEducation = priorEducationsDao.getPriorEducationsByNeuId("001234567");
@@ -204,11 +201,17 @@ public class PriorEducationsDaoTest {
     assertTrue(priorEducationsDao.getPriorEducationsByNeuId("000000000").isEmpty());
   }
 
+  /**
+   * This is test for deleting non existent prior education
+   */
   @Test(expected = HibernateException.class)
   public void deleteNonExistentPriorEducation() {
     priorEducationsDao.deletePriorEducationById(-200);
   }
 
+  /**
+   * This is test for updating non existent prior education
+   */
   @Test(expected = HibernateException.class)
   public void updateNonExistentPriorEducation() {
     PriorEducations newPriorEducation = new PriorEducations();
@@ -216,6 +219,10 @@ public class PriorEducationsDaoTest {
     priorEducationsDao.updatePriorEducation(newPriorEducation);
   }
 
+  /**
+   * This is test for creating, updating and deleting prior education
+   * @throws ParseException
+   */
   @Test
   public void createUpdateDeletePriorEducation() throws ParseException {
     PriorEducations newPriorEducation = new PriorEducations();

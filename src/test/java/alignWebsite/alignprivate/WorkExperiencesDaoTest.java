@@ -84,11 +84,17 @@ public class WorkExperiencesDaoTest {
     studentsDao.deleteStudent("111234567");
   }
 
+  /**
+   * This is test for deleting non existent work experience
+   */
   @Test(expected = HibernateException.class)
   public void deleteNonExistWorkExperience() {
     workExperiencesDao.deleteWorkExperienceById(-200);
   }
 
+  /**
+   * This is test for updating non existent work experience
+   */
   @Test(expected = HibernateException.class)
   public void updateNonExistWorkExperience() {
     WorkExperiences newWorkExperience = new WorkExperiences();
@@ -96,27 +102,10 @@ public class WorkExperiencesDaoTest {
     workExperiencesDao.updateWorkExperience(newWorkExperience);
   }
 
-  @Test
-  public void getStudentEmployersTest() throws ParseException {
-    WorkExperiences newWorkExperience = new WorkExperiences();
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    newWorkExperience.setStartDate(dateFormat.parse("2017-06-01"));
-    newWorkExperience.setEndDate(dateFormat.parse("2017-12-01"));
-    newWorkExperience.setCurrentJob(false);
-    newWorkExperience.setCoop(false);
-    newWorkExperience.setTitle("Title");
-    newWorkExperience.setDescription("Description");
-    newWorkExperience.setNeuId("111234567");
-    newWorkExperience.setCompanyName("Amazon");
-    workExperiencesDao.createWorkExperience(newWorkExperience);
-
-    List<MultipleValueAggregatedData> list = workExperiencesDao.getStudentEmployers();
-    assertTrue(list.size() == 1);
-    assertTrue(list.get(0).getAnalyticTerm().equals(MultipleValueAggregatedDataDao.LIST_OF_EMPLOYERS));
-    assertTrue(list.get(0).getAnalyticKey().equals("Amazon"));
-    assertTrue(list.get(0).getAnalyticValue() == 1);
-  }
-
+  /**
+   * Testing for getting list of students working in the specific company.
+   * @throws ParseException
+   */
   @Test
   public void getStudentsWorkingInACompanyTest() throws ParseException {
     WorkExperiences newWorkExperience = new WorkExperiences();
@@ -146,6 +135,10 @@ public class WorkExperiencesDaoTest {
     assertTrue(list.size() == 1);
   }
 
+  /**
+   * Test for getting list of coop companies that existing student has worked.
+   * @throws ParseException
+   */
   @Test
   public void getStudentCoopCompaniesTest() throws ParseException {
     WorkExperiences newWorkExperience = new WorkExperiences();
@@ -179,6 +172,10 @@ public class WorkExperiencesDaoTest {
     workExperiencesDao.deleteWorkExperienceByNeuId("001234567");
   }
 
+  /**
+   * Test for getting the companies that students are currently working at.
+   * @throws ParseException
+   */
   @Test
   public void getStudentCurrentCompaniesTest() throws ParseException {
     WorkExperiences newWorkExperience = new WorkExperiences();
@@ -208,35 +205,10 @@ public class WorkExperiencesDaoTest {
     workExperiencesDao.deleteWorkExperienceByNeuId("001234567");
   }
 
-  @Test
-  public void getTotalStudentsGotJobTest() throws ParseException {
-    WorkExperiences newWorkExperience = new WorkExperiences();
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    newWorkExperience.setStartDate(dateFormat.parse("2018-06-01"));
-    newWorkExperience.setEndDate(dateFormat.parse("2018-12-01"));
-    newWorkExperience.setCurrentJob(false);
-    newWorkExperience.setCoop(false);
-    newWorkExperience.setTitle("Title");
-    newWorkExperience.setDescription("Description");
-    newWorkExperience.setNeuId("001234567");
-    newWorkExperience.setCompanyName("Amazon");
-    workExperiencesDao.createWorkExperience(newWorkExperience);
-
-    WorkExperiences newWorkExperience2 = new WorkExperiences();
-    SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
-    newWorkExperience2.setStartDate(dateFormat2.parse("2018-06-01"));
-    newWorkExperience2.setEndDate(dateFormat2.parse("2018-12-01"));
-    newWorkExperience2.setCurrentJob(false);
-    newWorkExperience2.setCoop(false);
-    newWorkExperience2.setTitle("Title");
-    newWorkExperience2.setDescription("Description");
-    newWorkExperience2.setNeuId("111234567");
-    newWorkExperience2.setCompanyName("Aaa");
-    workExperiencesDao.createWorkExperience(newWorkExperience2);
-
-    assertTrue(workExperiencesDao.getTotalStudentsGotJob() == 2);
-  }
-
+  /**
+   * Test for getting top ten employers.
+   * @throws ParseException
+   */
   @Test
   public void getTopTenEmployersTest() throws ParseException {
     List<TopEmployer> temp = workExperiencesDao.getTopTenEmployers(null, null);
@@ -283,6 +255,9 @@ public class WorkExperiencesDaoTest {
     workExperiencesDao.deleteWorkExperienceByNeuId("111234567");
   }
 
+  /**
+   * This is test for retrieving work experience by its id
+   */
   @Test
   public void getWorkExperienceIdTest() {
     int tempId = workExperiencesDao.getWorkExperiencesByNeuId("001234567").get(0).getWorkExperienceId();
@@ -293,6 +268,9 @@ public class WorkExperiencesDaoTest {
     assertTrue(notFoundWorkExperience == null);
   }
 
+  /**
+   * This is test for retrieving work experience by student neu id
+   */
   @Test
   public void getWorkExperiencesByNeuIdTest() {
     List<WorkExperiences> listOfWorkExperiences = workExperiencesDao.getWorkExperiencesByNeuId("001234567");
@@ -301,6 +279,10 @@ public class WorkExperiencesDaoTest {
     assertTrue(workExperiencesDao.getWorkExperiencesByNeuId("00000000").size() == 0);
   }
 
+  /**
+   * This is test for creating, updating and deleting work experience
+   * @throws ParseException
+   */
   @Test
   public void createUpdateDeleteWorkExperience() throws ParseException {
     WorkExperiences newWorkExperience = new WorkExperiences();
@@ -331,6 +313,9 @@ public class WorkExperiencesDaoTest {
     assertTrue(workExperiencesDao.getWorkExperienceById(foundWorkExperience.getWorkExperienceId()) == null);
   }
 
+  /**
+   * This is test for retrieving work experience with privacy control
+   */
   @Test
   public void getWorkExperiencesWithPrivacyTest() {
     assertTrue(workExperiencesDao.getWorkExperiencesWithPrivacy("001234567").size()==1);
@@ -340,6 +325,10 @@ public class WorkExperiencesDaoTest {
     assertTrue(workExperiencesDao.getWorkExperiencesWithPrivacy("001234567").size()==0);
   }
 
+  /**
+   * Test for getting a student company ratio.
+   * @throws ParseException
+   */
   @Test
   public void getStudentCompanyRatioTest() throws ParseException {
     Students student = studentsDao.getStudentRecord("111234567");

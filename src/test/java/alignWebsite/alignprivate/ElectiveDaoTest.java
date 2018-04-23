@@ -41,12 +41,18 @@ public class ElectiveDaoTest {
 //    privaciesDao = new PrivaciesDao();
   }
 
+  /**
+   * This is test for adding null record into Electives
+   */
   @Test
   public void addNullElectivesTest() {
     Electives Electives = electivesDao.addElective(null);
     Assert.assertNull(Electives);
   }
 
+  /**
+   * This is test for updating non existent record
+   */
   @Test(expected = HibernateException.class)
   public void updateNonExistentElective() {
     Electives elective = new Electives();
@@ -54,6 +60,9 @@ public class ElectiveDaoTest {
     electivesDao.updateElectives(elective);
   }
 
+  /**
+   * This is test for adding elective for non existent student
+   */
   @Test(expected = HibernateException.class)
   public void addElectiveWithNonExistentNeuId() {
     Electives elective = new Electives();
@@ -61,11 +70,17 @@ public class ElectiveDaoTest {
     electivesDao.addElective(elective);
   }
 
+  /**
+   * This is test for deleting non existent record
+   */
   @Test(expected = HibernateException.class)
   public void deleteNonExistentElective() {
     electivesDao.deleteElectiveRecord(-200);
   }
 
+  /**
+   * This is test for adding new elective record
+   */
   @Test
   public void addElectivesTest() {
     String tempId = "1221";
@@ -97,6 +112,9 @@ public class ElectiveDaoTest {
     studentsDao.deleteStudent(tempId + "");
   }
 
+  /**
+   * This is test for deleting elective record
+   */
   @Test
   public void deleteElectivesTest() {
     String tempId = "289";
@@ -130,6 +148,9 @@ public class ElectiveDaoTest {
     studentsDao.deleteStudent(tempId + "");
   }
 
+  /**
+   * This is test for updating elective record
+   */
   @Test
   public void updateElectivesTest() {
     String tempId = "9187";
@@ -160,6 +181,9 @@ public class ElectiveDaoTest {
     studentsDao.deleteStudent(tempId + "");
   }
 
+  /**
+   * Test for getting the top ten popular electives.
+   */
   @Test
   public void getTopTenElectivesTest() {
     String tempId = "289";
@@ -229,6 +253,9 @@ public class ElectiveDaoTest {
     studentsDao.deleteStudent(tempId);
   }
 
+  /**
+   * This is test for retrieving elective with privacy control
+   */
   @Test
   public void getElectivesWithPrivacyTest() {
     Students newStudent = new Students("11111111", "tomcat2e1kk3@gmail.com", "Tom3", "",

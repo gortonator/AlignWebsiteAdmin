@@ -20,6 +20,9 @@ public class MultipleValueAggregatedDataDaoTest {
 //    dataDao = new MultipleValueAggregatedDataDao();
   }
 
+  /**
+   * This is the test for update / get / delete list of employers test.
+   */
   @Test
   public void updateGetDeleteEmployersTest() {
     // add data
@@ -50,6 +53,9 @@ public class MultipleValueAggregatedDataDaoTest {
     Assert.assertTrue(dataDao.getTopFiveListOfEmployers().isEmpty());
   }
 
+  /**
+   * This is the test for update / get / delete list of bachelor degrees.
+   */
   @Test
   public void updateGetDeleteBachelorDegreesTest() {
     // add data
@@ -80,6 +86,9 @@ public class MultipleValueAggregatedDataDaoTest {
     Assert.assertTrue(dataDao.getTopFiveListOfBachelorDegrees().isEmpty());
   }
 
+  /**
+   * This is the test for update / get / delete students' states.
+   */
   @Test
   public void updateGetDeleteStudentsStatesTest() {
     // add data
@@ -112,6 +121,9 @@ public class MultipleValueAggregatedDataDaoTest {
     Assert.assertTrue(dataDao.getListOfStudentsStatesCount().isEmpty());
   }
 
+  /**
+   * This is the test for update / get / delete students' highest degrees.
+   */
   @Test
   public void updateGetDeleteHighestDegreesTest() {
     // add data

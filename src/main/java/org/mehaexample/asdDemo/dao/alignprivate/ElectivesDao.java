@@ -39,6 +39,12 @@ public class ElectivesDao {
     }
   }
 
+  /**
+   * Get a list of electives for a specified student
+   *
+   * @param neuId Student neu Id
+   * @return A list of electives
+   */
   public List<Electives> getElectivesByNeuId(String neuId) {
     Session session = factory.openSession();
     try {
@@ -50,6 +56,13 @@ public class ElectivesDao {
     }
   }
 
+  /**
+   * Get a list of electives with privacy control.
+   * If user choose not to show course information to others, it will return an empty list.
+   *
+   * @param neuId Student neu Id
+   * @return A list of electives
+   */
   public List<Electives> getElectivesWithPrivacy(String neuId) {
     Privacies privacy = privaciesDao.getPrivacyByNeuId(neuId);
     if (!privacy.isCourse()) {
@@ -59,6 +72,12 @@ public class ElectivesDao {
     }
   }
 
+  /**
+   * Get elective by id
+   *
+   * @param electiveId elective id
+   * @return An elective
+   */
   public Electives getElectiveById(int electiveId) {
     Session session = factory.openSession();
     try {
@@ -105,6 +124,12 @@ public class ElectivesDao {
     return elective;
   }
 
+  /**
+   * Update an elective
+   *
+   * @param elective an elective
+   * @return true if update successfully, false otherwise
+   */
   public synchronized boolean updateElectives(Electives elective) {
     if (getElectiveById(elective.getElectiveId()) == null) {
       throw new HibernateException("Elective does not exist.");
@@ -125,6 +150,12 @@ public class ElectivesDao {
     return true;
   }
 
+  /**
+   * Delete an elective record
+   *
+   * @param id elective id
+   * @return true if delete successfully, false otherwise
+   */
   public synchronized boolean deleteElectiveRecord(int id) {
     if (getElectiveById(id) == null) {
       throw new HibernateException("Elective does not exist.");
@@ -148,27 +179,14 @@ public class ElectivesDao {
     return true;
   }
 
-  public synchronized boolean deleteElectivesByNeuId(String neuId) {
-    Transaction tx = null;
-
-    Session session = factory.openSession();
-    try {
-      tx = session.beginTransaction();
-      org.hibernate.query.Query query = session.createQuery("DELETE FROM Electives " +
-              "WHERE neuId = :neuId ");
-      query.setParameter("neuId", neuId);
-      query.executeUpdate();
-      tx.commit();
-    } catch (HibernateException e) {
-      if (tx != null) tx.rollback();
-      throw new HibernateException(e);
-    } finally {
-      session.close();
-    }
-
-    return true;
-  }
-
+  /**
+   * Get top ten electives based on the list of campus and expected graduation
+   * year filter.
+   *
+   * @param campus Northeastern Campus to be filtered.
+   * @param year   expected graduation year of students.
+   * @return list of top ten electives based on the popularity.
+   */
   public List<TopElective> getTopTenElectives(List<Campus> campus, Integer year) {
     StringBuilder hql = new StringBuilder("SELECT NEW org.mehaexample.asdDemo.model.alignadmin.TopElective( " +
             "e.courseName, Count(*) ) " +

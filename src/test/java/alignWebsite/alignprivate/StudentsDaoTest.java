@@ -81,11 +81,17 @@ public class StudentsDaoTest {
 //    new StudentsDao();
 //  }
 
+  /**
+   * This is test for deleting non existent student
+   */
   @Test(expected = HibernateException.class)
   public void deleteNonExistentNeuId() {
     studentdao.deleteStudent("0101010101");
   }
 
+  /**
+   * This is test for updating non existent student
+   */
   @Test(expected = HibernateException.class)
   public void updateNonExistentStudent() {
     Students student = new Students();
@@ -93,16 +99,25 @@ public class StudentsDaoTest {
     studentdao.updateStudentRecord(student);
   }
 
+  /**
+   * This is test for illegal argument for deleting record
+   */
   @Test(expected = IllegalArgumentException.class)
   public void deleteWithNullArgument() {
     studentdao.deleteStudent(null);
   }
 
+  /**
+   * This is test for illegal argument for deleting record
+   */
   @Test(expected = IllegalArgumentException.class)
   public void deleteWithEmptyArgument() {
     studentdao.deleteStudent("");
   }
 
+  /**
+   * This is test for adding duplicate record.
+   */
   @Test(expected = HibernateException.class)
   public void addDuplicateStudent() {
     Students newStudent = new Students("10101010", "tomcat10@gmail.com", "Tom", "",
@@ -114,6 +129,9 @@ public class StudentsDaoTest {
     studentdao.addStudent(newStudent);
   }
 
+  /**
+   * This is the test for getting the admin auto fill search.
+   */
   @Test
   public void getAdminAutoFillSearch() {
     List<Students> results = studentdao.getAdminAutoFillSearch(
@@ -137,53 +155,10 @@ public class StudentsDaoTest {
     Assert.assertTrue(results.size() == 1);
   }
 
-  @Test
-  public void getStateListTest() {
-    List<MultipleValueAggregatedData> stateList = studentdao.getStateList();
-    Assert.assertTrue(stateList.size() == 2);
-    Assert.assertTrue(stateList.get(0).getAnalyticKey().equals("WA"));
-    Assert.assertTrue(stateList.get(0).getAnalyticTerm().equals(MultipleValueAggregatedDataDao.LIST_OF_STUDENTS_STATES));
-    Assert.assertTrue(stateList.get(0).getAnalyticValue() == 1);
-    Assert.assertTrue(stateList.get(1).getAnalyticKey().equals("MA"));
-    Assert.assertTrue(stateList.get(1).getAnalyticValue() == 1);
-    Assert.assertTrue(stateList.get(1).getAnalyticTerm().equals(MultipleValueAggregatedDataDao.LIST_OF_STUDENTS_STATES));
-  }
-
-  @Test
-  public void getTotalDropoutStudentsTest() {
-    Assert.assertTrue(studentdao.getTotalDropOutStudents() == 1);
-  }
-
-  @Test
-  public void getTotalFullTimeStudentsTest() {
-    Assert.assertTrue(studentdao.getTotalFullTimeStudents() == 1);
-  }
-
-  @Test
-  public void getTotalPartTimeStudentsTest() {
-    Assert.assertTrue(studentdao.getTotalPartTimeStudents() == 1);
-  }
-
-  @Test
-  public void getTotalStudentsWithScholarshipTest() {
-    Assert.assertTrue(studentdao.getTotalStudentsWithScholarship() == 1);
-  }
-
-  @Test
-  public void getTotalStudentInACampusTest() {
-    Assert.assertTrue(studentdao.getTotalCurrentStudentsInACampus(Campus.SEATTLE) == 1);
-    Assert.assertTrue(studentdao.getTotalCurrentStudentsInACampus(Campus.BOSTON) == 1);
-    Assert.assertTrue(studentdao.getTotalCurrentStudentsInACampus(Campus.CHARLOTTE) == 0);
-    Assert.assertTrue(studentdao.getTotalCurrentStudentsInACampus(Campus.SILICON_VALLEY) == 0);
-    Assert.assertTrue(studentdao.getTotalCurrentStudents() == 2);
-    Assert.assertTrue(studentdao.getTotalStudents() == 3);
-  }
-
-  @Test
-  public void getTotalGraduatedStudents() {
-    Assert.assertTrue(studentdao.getTotalGraduatedStudents() == 0);
-  }
-
+  /**
+   * This is the test for retrieving the list of students based on the admin filtering.
+   * @throws ParseException
+   */
   @Test
   public void getAdminFilteredStudentsTest() throws ParseException {
     Students student1 = studentdao.getStudentRecord("0000000");
@@ -285,12 +260,18 @@ public class StudentsDaoTest {
     Assert.assertTrue(studentdao.getAdminFilteredStudents(filters3, 0, 2).isEmpty());
   }
 
+  /**
+   * This is test for searching for student record by email address
+   */
   @Test
   public void findStudentByEmailTest() {
     Assert.assertTrue(studentdao.getStudentRecordByEmailId("tomcat@gmail.com").getNeuId().equals("0000000"));
     Assert.assertTrue(studentdao.getStudentRecordByEmailId("tomcat4@gmail.com") == null);
   }
 
+  /**
+   * This is test for deleting student
+   */
   @Test
   public void deleteStudentRecord() {
     Students newStudent = new Students("3333333", "tomcat4@gmail.com", "Tom", "",
@@ -304,12 +285,18 @@ public class StudentsDaoTest {
     Assert.assertTrue(!studentdao.ifNuidExists("3333333"));
   }
 
+  /**
+   * This is test for getting all student record.
+   */
   @Test
   public void getAllStudents() {
     List<Students> students = studentdao.getAllStudents();
     Assert.assertTrue(students.size() == 3);
   }
 
+  /**
+   * This is the test for getting a student record.
+   */
   @Test
   public void getStudentRecord() {
     Students student = studentdao.getStudentRecord("0000000");
@@ -317,6 +304,9 @@ public class StudentsDaoTest {
     Assert.assertTrue(studentdao.searchStudentRecord("Tom").get(0).getNeuId().equals("0000000"));
   }
 
+  /**
+   * This is the test for counting a male and female student.
+   */
   @Test
   public void countMaleAndFemaleStudents() {
     int males = studentdao.countMaleStudents();
@@ -325,6 +315,9 @@ public class StudentsDaoTest {
     Assert.assertTrue(females == 1);
   }
 
+  /**
+   * This is the test for searching similar students based on their degree candidacy.
+   */
   @Test
   public void searchSimilarStudents() {
     List<Students> students = studentdao.searchSimilarStudents(DegreeCandidacy.MASTERS);
@@ -334,6 +327,9 @@ public class StudentsDaoTest {
     }
   }
 
+  /**
+   * This is test for updating student record
+   */
   @Test
   public void updateStudentRecord() {
     Students student = studentdao.getStudentRecord("0000000");
@@ -345,7 +341,9 @@ public class StudentsDaoTest {
     Assert.assertTrue(student.getAddress().equals("225 Terry Ave"));
   }
 
-
+  /**
+   * This is test for getStudentFilteredStudents function
+   */
   @Test
   public void getStudentFilteredStudents() throws Exception {
     Privacies privacy1 = new Privacies();

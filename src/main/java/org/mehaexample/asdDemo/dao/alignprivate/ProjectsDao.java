@@ -71,6 +71,14 @@ public class ProjectsDao {
     }
   }
 
+  /**
+   * Populate the project object to null if the user choose
+   * not to show it in student search fields.
+   *
+   * @param neuId Student Neu Id; not null.
+   * @return List of the Student's projects corresponding to the
+   * NeuID parameter.
+   */
   public List<Projects> getProjectsWithPrivacy(String neuId) {
     Privacies privacy = privaciesDao.getPrivacyByNeuId(neuId);
     if (!privacy.isProject()) {
@@ -119,27 +127,6 @@ public class ProjectsDao {
     try {
       tx = session.beginTransaction();
       session.delete(project);
-      tx.commit();
-    } catch (HibernateException e) {
-      if (tx != null) tx.rollback();
-      throw new HibernateException(e);
-    } finally {
-      session.close();
-    }
-
-    return true;
-  }
-
-  public synchronized boolean deleteProjectsByNeuId(String neuId) {
-    Transaction tx = null;
-
-    Session session = factory.openSession();
-    try {
-      tx = session.beginTransaction();
-      org.hibernate.query.Query query = session.createQuery("DELETE FROM Projects " +
-              "WHERE neuId = :neuId ");
-      query.setParameter("neuId", neuId);
-      query.executeUpdate();
       tx.commit();
     } catch (HibernateException e) {
       if (tx != null) tx.rollback();
