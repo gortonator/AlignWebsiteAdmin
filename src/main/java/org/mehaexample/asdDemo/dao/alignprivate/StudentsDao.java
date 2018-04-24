@@ -151,7 +151,7 @@ public class StudentsDao {
     if (coop) {
       hql.append("AND we.coop = true ");
     }
-    hql.append(" ORDER BY s.lastName DESC ");
+    hql.append(" ORDER BY s.firstName ASC ");
     Session session = factory.openSession();
     try {
       org.hibernate.query.Query query = session.createQuery(hql.toString());
