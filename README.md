@@ -17,3 +17,6 @@ is "password".
 For the higher level For all 3 schemas, you can look at the ALIGN diagram pdf files 
 in this repo. For more details of the Database construction, you can look inside the
 sql_scripts folder for the SQL Scripts to create the Databases.
+
+## Admin API Documentation
+https://docs.google.com/document/d/19Hpm_TniE9dJtsHz4JIIyGt0NO1B4NXXlD60bOCNZm0/edit?usp=sharing
