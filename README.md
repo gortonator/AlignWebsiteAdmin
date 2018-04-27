@@ -9,6 +9,8 @@ C3P0 as the connection pool. The connection has been protected with TLS layer. T
 access the connection settings, you can look at the resources sections and look at
 the cfg.xml file. There are currently 6 cfg xml in the admin side to access the 
 test databases and original databases for the admin, private, and public databases.
+The username to access the databases for admin is "backend_admin", and the password
+is "password".
 
 ## Database UML Diagram
 
